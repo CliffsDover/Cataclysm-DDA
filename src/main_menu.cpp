@@ -350,8 +350,10 @@ bool game::opening_screen()
                 } else if (sel1 == 6) {
                     display_help();
                 } else if (sel1 == 8) {
+#ifndef CDDA_IOS
                     uquit = QUIT_MENU;
                     return false;
+#endif // CDDA_IOS
                 } else {
                     sel2 = 0;
                     layer = 2;
