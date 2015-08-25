@@ -178,6 +178,9 @@
 		A602D9C31B8C6A6E00EA2879 /* wincurse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D92A1B8C6A6E00EA2879 /* wincurse.cpp */; };
 		A602D9C41B8C6A6E00EA2879 /* wish.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D92B1B8C6A6E00EA2879 /* wish.cpp */; };
 		A602D9C51B8C6A6E00EA2879 /* worldfactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D92C1B8C6A6E00EA2879 /* worldfactory.cpp */; };
+		A602D9CF1B8C724300EA2879 /* config in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CC1B8C724300EA2879 /* config */; };
+		A602D9D01B8C724300EA2879 /* data in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CD1B8C724300EA2879 /* data */; };
+		A602D9D11B8C724300EA2879 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CE1B8C724300EA2879 /* lang */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -531,6 +534,9 @@
 		A602D92B1B8C6A6E00EA2879 /* wish.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wish.cpp; sourceTree = "<group>"; };
 		A602D92C1B8C6A6E00EA2879 /* worldfactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = worldfactory.cpp; sourceTree = "<group>"; };
 		A602D92D1B8C6A6E00EA2879 /* worldfactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldfactory.h; sourceTree = "<group>"; };
+		A602D9CC1B8C724300EA2879 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../BundledData/config; sourceTree = "<group>"; };
+		A602D9CD1B8C724300EA2879 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../BundledData/data; sourceTree = "<group>"; };
+		A602D9CE1B8C724300EA2879 /* lang */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lang; path = ../BundledData/lang; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +579,7 @@
 				A602D7AD1B8C638300EA2879 /* Cataclysm-Dark-Days-Ahead */,
 				A602D7C71B8C638400EA2879 /* Cataclysm-Dark-Days-AheadTests */,
 				A602D7AC1B8C638300EA2879 /* Products */,
+				A602D9CB1B8C721F00EA2879 /* BundledData */,
 				A602D7D41B8C641700EA2879 /* Libraries */,
 			);
 			sourceTree = "<group>";
@@ -983,6 +990,16 @@
 			path = lua;
 			sourceTree = "<group>";
 		};
+		A602D9CB1B8C721F00EA2879 /* BundledData */ = {
+			isa = PBXGroup;
+			children = (
+				A602D9CC1B8C724300EA2879 /* config */,
+				A602D9CD1B8C724300EA2879 /* data */,
+				A602D9CE1B8C724300EA2879 /* lang */,
+			);
+			name = BundledData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1113,10 +1130,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A602D9CF1B8C724300EA2879 /* config in Resources */,
 				A602D7BA1B8C638300EA2879 /* Main.storyboard in Resources */,
 				A602D9BD1B8C6A6E00EA2879 /* version.cmake in Resources */,
+				A602D9D01B8C724300EA2879 /* data in Resources */,
 				A602D9701B8C6A6E00EA2879 /* generate_bindings.lua in Resources */,
 				A602D96F1B8C6A6E00EA2879 /* CMakeLists.txt in Resources */,
+				A602D9D11B8C724300EA2879 /* lang in Resources */,
 				A602D7BF1B8C638300EA2879 /* LaunchScreen.xib in Resources */,
 				A602D7BC1B8C638300EA2879 /* Images.xcassets in Resources */,
 				A602D9BF1B8C6A6E00EA2879 /* version.h.in in Resources */,
@@ -1425,6 +1445,7 @@
 					SDLTILES,
 					TILES,
 					_THREAD_SAFE,
+					CDDA_IOS,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
