@@ -1546,6 +1546,7 @@
 				A602D7D01B8C638400EA2879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A602D7D11B8C638400EA2879 /* Build configuration list for PBXNativeTarget "Cataclysm-Dark-Days-AheadTests" */ = {
 			isa = XCConfigurationList;
@@ -1554,6 +1555,7 @@
 				A602D7D31B8C638400EA2879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
