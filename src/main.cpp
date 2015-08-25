@@ -29,6 +29,12 @@
 #include "SDL/SDL.h"
 #endif
 
+#ifdef CDDA_IOS
+#include "sdl_main.h"
+#import <TargetConditionals.h>
+#import <Foundation/Foundation.h>
+#endif // CDDA_IOS
+
 void exit_handler(int s);
 
 namespace {
@@ -70,15 +76,51 @@ int main(int argc, char *argv[])
 #define QUOTE(STR) Q(STR)
     PATH_INFO::init_base_path(std::string(QUOTE(PREFIX)));
 #else
+#ifndef CDDA_IOS
     PATH_INFO::init_base_path("");
+#else
+    NSString* basePath = [[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/"];
+    NSString* documentPath = [[[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path] stringByAppendingString:@"/"];
+    
+    std::cout << "Document Path: " << [documentPath cStringUsingEncoding:NSUTF8StringEncoding] << std::endl;
+    
+    //NSString* basePath = [[NSBundle mainBundle] bundlePath];
+    //PATH_INFO::init_base_path("");
+    PATH_INFO::init_base_path( [basePath cStringUsingEncoding:NSASCIIStringEncoding] );
+#endif // CDDA_IOS
 #endif
 
 #if (defined USE_HOME_DIR || defined USE_XDG_DIR)
     PATH_INFO::init_user_dir();
 #else
+#ifndef CDDA_IOS
     PATH_INFO::init_user_dir("./");
+#else
+    PATH_INFO::init_user_dir( [basePath cStringUsingEncoding:NSASCIIStringEncoding] );
+#endif // CDDA_IOS
 #endif
     PATH_INFO::set_standard_filenames();
+#ifdef CDDA_IOS
+    PATH_INFO::update_pathname("datadir", [[basePath stringByAppendingString:@"data/"] cStringUsingEncoding:NSASCIIStringEncoding] );
+    PATH_INFO::update_datadir();
+    
+    PATH_INFO::update_pathname("savedir", [[documentPath stringByAppendingString:@"save/"] cStringUsingEncoding:NSASCIIStringEncoding] );
+    PATH_INFO::update_pathname("templatedir", [[documentPath stringByAppendingString:@"templates/"]cStringUsingEncoding:NSASCIIStringEncoding] );
+    PATH_INFO::update_pathname("graveyarddir", [[documentPath stringByAppendingString:@"graveyard/"] cStringUsingEncoding:NSASCIIStringEncoding] );
+    PATH_INFO::update_pathname("memorialdir", [[documentPath stringByAppendingString:@"graveyard/"] cStringUsingEncoding:NSASCIIStringEncoding] );
+    
+    NSString* userOptionsFilePath = [documentPath stringByAppendingPathComponent:@"options.txt"];
+    if( ![[NSFileManager defaultManager] fileExistsAtPath:userOptionsFilePath] )
+    {
+        NSError* e;
+        [[NSFileManager defaultManager] copyItemAtPath:[basePath stringByAppendingString:@"config/options.txt"] toPath:userOptionsFilePath error:&e];
+    }
+    PATH_INFO::update_pathname("options", [userOptionsFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
+    
+    
+    PATH_INFO::update_pathname("user_keybindings", [[documentPath stringByAppendingPathComponent:@"keybindings.json"] cStringUsingEncoding:NSASCIIStringEncoding] );
+
+#endif // CDDA_IOS
 
     MAP_SHARING::setDefaults();
     {

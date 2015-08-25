@@ -1,0 +1,20 @@
+[
+    {
+        "type" : "vehicle",
+        "id" : "custom",
+        "name" : "custom",
+        "blueprint" : "H",
+        "warning" : "Don't remove this vehicle definition!",
+        "parts" : [
+            {"x": 0, "y": 0, "part": "frame_vertical_2"}
+        ]
+    },{
+        "type" : "vehicle",
+        "id" : "none",
+        "name" : "custom_empty",
+        "blueprint" : "H",
+        "warning" : "Don't remove this vehicle definition!",
+        "parts" : [
+        ]
+    }
+]
