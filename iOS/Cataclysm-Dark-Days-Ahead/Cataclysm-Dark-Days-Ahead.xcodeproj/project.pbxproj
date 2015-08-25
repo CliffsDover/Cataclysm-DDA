@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		A602D7B11B8C638300EA2879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A602D7B01B8C638300EA2879 /* main.m */; };
-		A602D7B41B8C638300EA2879 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A602D7B31B8C638300EA2879 /* AppDelegate.m */; };
-		A602D7B71B8C638300EA2879 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A602D7B61B8C638300EA2879 /* ViewController.m */; };
 		A602D7BA1B8C638300EA2879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A602D7B81B8C638300EA2879 /* Main.storyboard */; };
 		A602D7BC1B8C638300EA2879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A602D7BB1B8C638300EA2879 /* Images.xcassets */; };
 		A602D7BF1B8C638300EA2879 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A602D7BD1B8C638300EA2879 /* LaunchScreen.xib */; };
 		A602D7CB1B8C638400EA2879 /* Cataclysm_Dark_Days_AheadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A602D7CA1B8C638400EA2879 /* Cataclysm_Dark_Days_AheadTests.m */; };
+		A602D7EE1B8C671700EA2879 /* libSDL2_image.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7DA1B8C65D100EA2879 /* libSDL2_image.a */; };
+		A602D7EF1B8C671700EA2879 /* libSDL2_mixer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7E01B8C65DD00EA2879 /* libSDL2_mixer.a */; };
+		A602D7F01B8C671700EA2879 /* libSDL2_ttf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7E61B8C65E700EA2879 /* libSDL2_ttf.a */; };
+		A602D7F11B8C671700EA2879 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7ED1B8C65F500EA2879 /* libSDL2.a */; };
+		A602D7FC1B8C682C00EA2879 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7F21B8C682C00EA2879 /* Accelerate.framework */; };
+		A602D7FD1B8C682C00EA2879 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7F31B8C682C00EA2879 /* AudioToolbox.framework */; };
+		A602D7FE1B8C682C00EA2879 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7F41B8C682C00EA2879 /* CoreAudio.framework */; };
+		A602D7FF1B8C682C00EA2879 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7F51B8C682C00EA2879 /* CoreGraphics.framework */; };
+		A602D8001B8C682C00EA2879 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7F61B8C682C00EA2879 /* Foundation.framework */; };
+		A602D8011B8C682C00EA2879 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7F71B8C682C00EA2879 /* ImageIO.framework */; };
+		A602D8021B8C682C00EA2879 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7F81B8C682C00EA2879 /* libiconv.dylib */; };
+		A602D8031B8C682C00EA2879 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7F91B8C682C00EA2879 /* MobileCoreServices.framework */; };
+		A602D8041B8C682C00EA2879 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7FA1B8C682C00EA2879 /* OpenGLES.framework */; };
+		A602D8051B8C682C00EA2879 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D7FB1B8C682C00EA2879 /* QuartzCore.framework */; };
+		A602D8071B8C694100EA2879 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D8061B8C694100EA2879 /* UIKit.framework */; };
+		A602D8091B8C696E00EA2879 /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A602D8081B8C696E00EA2879 /* libintl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,22 +38,62 @@
 			remoteGlobalIDString = A602D7AA1B8C638300EA2879;
 			remoteInfo = "Cataclysm-Dark-Days-Ahead";
 		};
+		A602D7D91B8C65D100EA2879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A602D7D51B8C65D100EA2879 /* SDL_image.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE1FA74107AF4C45004B6283;
+			remoteInfo = libSDL_image;
+		};
+		A602D7DF1B8C65DD00EA2879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A602D7DB1B8C65DD00EA2879 /* SDL_mixer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE1FA95407AF96B2004B6283;
+			remoteInfo = "Static Library";
+		};
+		A602D7E51B8C65E700EA2879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A602D7E11B8C65E700EA2879 /* SDL_ttf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE48FD6E07AFA17000BB41DA;
+			remoteInfo = "Static Library";
+		};
+		A602D7EC1B8C65F500EA2879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A602D7E71B8C65F400EA2879 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FD6526630DE8FCCB002AD96B;
+			remoteInfo = libSDL;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A602D7AB1B8C638300EA2879 /* Cataclysm-Dark-Days-Ahead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cataclysm-Dark-Days-Ahead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A602D7AF1B8C638300EA2879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A602D7B01B8C638300EA2879 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A602D7B21B8C638300EA2879 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A602D7B31B8C638300EA2879 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A602D7B51B8C638300EA2879 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A602D7B61B8C638300EA2879 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A602D7B91B8C638300EA2879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A602D7BB1B8C638300EA2879 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A602D7BE1B8C638300EA2879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A602D7C41B8C638400EA2879 /* Cataclysm-Dark-Days-AheadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cataclysm-Dark-Days-AheadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A602D7C91B8C638400EA2879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A602D7CA1B8C638400EA2879 /* Cataclysm_Dark_Days_AheadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cataclysm_Dark_Days_AheadTests.m; sourceTree = "<group>"; };
+		A602D7D51B8C65D100EA2879 /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = "../../Libraries/SDL2/SDL2_image-2.0.0/Xcode-iOS/SDL_image.xcodeproj"; sourceTree = "<group>"; };
+		A602D7DB1B8C65DD00EA2879 /* SDL_mixer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_mixer.xcodeproj; path = "../../Libraries/SDL2/SDL2_mixer-2.0.0/Xcode-iOS/SDL_mixer.xcodeproj"; sourceTree = "<group>"; };
+		A602D7E11B8C65E700EA2879 /* SDL_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_ttf.xcodeproj; path = "../../Libraries/SDL2/SDL2_ttf-2.0.12/Xcode-iOS/SDL_ttf.xcodeproj"; sourceTree = "<group>"; };
+		A602D7E71B8C65F400EA2879 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = "../../Libraries/SDL2/SDL2-2.0.3/Xcode-iOS/SDL/SDL.xcodeproj"; sourceTree = "<group>"; };
+		A602D7F21B8C682C00EA2879 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A602D7F31B8C682C00EA2879 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A602D7F41B8C682C00EA2879 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		A602D7F51B8C682C00EA2879 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A602D7F61B8C682C00EA2879 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A602D7F71B8C682C00EA2879 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		A602D7F81B8C682C00EA2879 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		A602D7F91B8C682C00EA2879 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A602D7FA1B8C682C00EA2879 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A602D7FB1B8C682C00EA2879 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A602D8061B8C694100EA2879 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A602D8081B8C696E00EA2879 /* libintl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintl.a; path = ../../Libraries/glib/lib/libintl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +101,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A602D8071B8C694100EA2879 /* UIKit.framework in Frameworks */,
+				A602D7FC1B8C682C00EA2879 /* Accelerate.framework in Frameworks */,
+				A602D7FD1B8C682C00EA2879 /* AudioToolbox.framework in Frameworks */,
+				A602D7FE1B8C682C00EA2879 /* CoreAudio.framework in Frameworks */,
+				A602D7FF1B8C682C00EA2879 /* CoreGraphics.framework in Frameworks */,
+				A602D8001B8C682C00EA2879 /* Foundation.framework in Frameworks */,
+				A602D8091B8C696E00EA2879 /* libintl.a in Frameworks */,
+				A602D8011B8C682C00EA2879 /* ImageIO.framework in Frameworks */,
+				A602D8021B8C682C00EA2879 /* libiconv.dylib in Frameworks */,
+				A602D8031B8C682C00EA2879 /* MobileCoreServices.framework in Frameworks */,
+				A602D8041B8C682C00EA2879 /* OpenGLES.framework in Frameworks */,
+				A602D8051B8C682C00EA2879 /* QuartzCore.framework in Frameworks */,
+				A602D7EE1B8C671700EA2879 /* libSDL2_image.a in Frameworks */,
+				A602D7EF1B8C671700EA2879 /* libSDL2_mixer.a in Frameworks */,
+				A602D7F01B8C671700EA2879 /* libSDL2_ttf.a in Frameworks */,
+				A602D7F11B8C671700EA2879 /* libSDL2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +136,7 @@
 				A602D7AD1B8C638300EA2879 /* Cataclysm-Dark-Days-Ahead */,
 				A602D7C71B8C638400EA2879 /* Cataclysm-Dark-Days-AheadTests */,
 				A602D7AC1B8C638300EA2879 /* Products */,
+				A602D7D41B8C641700EA2879 /* Libraries */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +152,6 @@
 		A602D7AD1B8C638300EA2879 /* Cataclysm-Dark-Days-Ahead */ = {
 			isa = PBXGroup;
 			children = (
-				A602D7B21B8C638300EA2879 /* AppDelegate.h */,
-				A602D7B31B8C638300EA2879 /* AppDelegate.m */,
-				A602D7B51B8C638300EA2879 /* ViewController.h */,
-				A602D7B61B8C638300EA2879 /* ViewController.m */,
 				A602D7B81B8C638300EA2879 /* Main.storyboard */,
 				A602D7BB1B8C638300EA2879 /* Images.xcassets */,
 				A602D7BD1B8C638300EA2879 /* LaunchScreen.xib */,
@@ -117,6 +184,62 @@
 				A602D7C91B8C638400EA2879 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A602D7D41B8C641700EA2879 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A602D8061B8C694100EA2879 /* UIKit.framework */,
+				A602D7F21B8C682C00EA2879 /* Accelerate.framework */,
+				A602D7F31B8C682C00EA2879 /* AudioToolbox.framework */,
+				A602D7F41B8C682C00EA2879 /* CoreAudio.framework */,
+				A602D7F51B8C682C00EA2879 /* CoreGraphics.framework */,
+				A602D7F61B8C682C00EA2879 /* Foundation.framework */,
+				A602D7F71B8C682C00EA2879 /* ImageIO.framework */,
+				A602D7F81B8C682C00EA2879 /* libiconv.dylib */,
+				A602D8081B8C696E00EA2879 /* libintl.a */,
+				A602D7F91B8C682C00EA2879 /* MobileCoreServices.framework */,
+				A602D7FA1B8C682C00EA2879 /* OpenGLES.framework */,
+				A602D7FB1B8C682C00EA2879 /* QuartzCore.framework */,
+				A602D7E71B8C65F400EA2879 /* SDL.xcodeproj */,
+				A602D7E11B8C65E700EA2879 /* SDL_ttf.xcodeproj */,
+				A602D7DB1B8C65DD00EA2879 /* SDL_mixer.xcodeproj */,
+				A602D7D51B8C65D100EA2879 /* SDL_image.xcodeproj */,
+			);
+			name = Libraries;
+			path = "Cataclysm-Dark-Days-Ahead";
+			sourceTree = "<group>";
+		};
+		A602D7D61B8C65D100EA2879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A602D7DA1B8C65D100EA2879 /* libSDL2_image.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A602D7DC1B8C65DD00EA2879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A602D7E01B8C65DD00EA2879 /* libSDL2_mixer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A602D7E21B8C65E700EA2879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A602D7E61B8C65E700EA2879 /* libSDL2_ttf.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A602D7E81B8C65F400EA2879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A602D7ED1B8C65F500EA2879 /* libSDL2.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +310,24 @@
 			mainGroup = A602D7A21B8C638300EA2879;
 			productRefGroup = A602D7AC1B8C638300EA2879 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A602D7E81B8C65F400EA2879 /* Products */;
+					ProjectRef = A602D7E71B8C65F400EA2879 /* SDL.xcodeproj */;
+				},
+				{
+					ProductGroup = A602D7D61B8C65D100EA2879 /* Products */;
+					ProjectRef = A602D7D51B8C65D100EA2879 /* SDL_image.xcodeproj */;
+				},
+				{
+					ProductGroup = A602D7DC1B8C65DD00EA2879 /* Products */;
+					ProjectRef = A602D7DB1B8C65DD00EA2879 /* SDL_mixer.xcodeproj */;
+				},
+				{
+					ProductGroup = A602D7E21B8C65E700EA2879 /* Products */;
+					ProjectRef = A602D7E11B8C65E700EA2879 /* SDL_ttf.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A602D7AA1B8C638300EA2879 /* Cataclysm-Dark-Days-Ahead */,
@@ -194,6 +335,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A602D7DA1B8C65D100EA2879 /* libSDL2_image.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_image.a;
+			remoteRef = A602D7D91B8C65D100EA2879 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A602D7E01B8C65DD00EA2879 /* libSDL2_mixer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_mixer.a;
+			remoteRef = A602D7DF1B8C65DD00EA2879 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A602D7E61B8C65E700EA2879 /* libSDL2_ttf.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_ttf.a;
+			remoteRef = A602D7E51B8C65E700EA2879 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A602D7ED1B8C65F500EA2879 /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = A602D7EC1B8C65F500EA2879 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A602D7A91B8C638300EA2879 /* Resources */ = {
@@ -220,8 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A602D7B71B8C638300EA2879 /* ViewController.m in Sources */,
-				A602D7B41B8C638300EA2879 /* AppDelegate.m in Sources */,
 				A602D7B11B8C638300EA2879 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,22 +519,65 @@
 		A602D7CF1B8C638400EA2879 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)/Libraries/SDL2",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					OSX_SDL2_LIBS,
+					SDL_SOUND,
+					SDLTILES,
+					TILES,
+					_THREAD_SAFE,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					Libraries/glib/include,
+					Libraries/SDL2/include,
+					Libraries/SDL2/include/SDL2,
+				);
 				INFOPLIST_FILE = "Cataclysm-Dark-Days-Ahead/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Libraries/glib/lib",
+					"/Users/MyStaub/Documents/git/CliffsDover/Cataclysm-DDA/iOS/Libraries/glib/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = Libraries/glib/include;
 			};
 			name = Debug;
 		};
 		A602D7D01B8C638400EA2879 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)/Libraries/SDL2",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					Libraries/glib/include,
+					Libraries/SDL2/include,
+					Libraries/SDL2/include/SDL2,
+				);
 				INFOPLIST_FILE = "Cataclysm-Dark-Days-Ahead/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Libraries/glib/lib",
+					"/Users/MyStaub/Documents/git/CliffsDover/Cataclysm-DDA/iOS/Libraries/glib/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = Libraries/glib/include;
 			};
 			name = Release;
 		};
