@@ -7,18 +7,20 @@ r3 = re.compile( ".*play_ambient_variant_sound\(.*\);" )
 def DumpSoundUsage( regex, path ):
     for root, dirs, files in os.walk( path ):
         for f in files:
+            lineNum = 1
             foundLines = []
             fileName = os.path.join( root, f )
             for l in open( fileName ):
                 m = regex.match( l )
                 if m:
-                    foundLines.append( l.strip() )
+                    foundLines.append( "%d: %s" % ( lineNum, l.strip() ) )
+                lineNum = lineNum + 1
 
 
             if len( foundLines ) > 0:
                 print fileName
                 for l in foundLines:
-                    print "\t" + l
+                    print l
 
 DumpSoundUsage( r1, sys.argv[1] )
 DumpSoundUsage( r2, sys.argv[1] )
