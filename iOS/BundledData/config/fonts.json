@@ -1,0 +1,15 @@
+{
+    "fontblending" : false,
+    "fontwidth" : 12,
+    "fontheight" : 24,
+    "fontsize" : 24,
+    "typeface" : "Terminus",
+    "map_fontwidth" : 12,
+    "map_fontheight" : 24,
+    "map_fontsize" : 24,
+    "map_typeface" : "Terminus",
+    "overmap_fontwidth" : 12,
+    "overmap_fontheight" : 24,
+    "overmap_fontsize" : 24,
+    "overmap_typeface" : "Terminus"
+}
