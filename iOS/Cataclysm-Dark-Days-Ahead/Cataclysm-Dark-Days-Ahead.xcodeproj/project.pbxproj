@@ -1524,6 +1524,7 @@
 					TILES,
 					_THREAD_SAFE,
 					CDDA_IOS,
+					"LOCALIZE=1",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
