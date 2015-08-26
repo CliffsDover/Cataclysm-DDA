@@ -35,7 +35,13 @@ static std::vector<std::string> mmenu_title;
 static std::vector<std::string> mmenu_motd;
 static std::vector<std::string> mmenu_credits;
 static std::vector<std::string> vMenuItems;
+static std::vector<std::string> vSubItems;
+static std::vector<std::string> vWorldSubItems;
 static std::vector<std::vector<std::string>> vMenuHotkeys;
+
+std::vector<std::string>* pvMenuItems;
+std::vector<std::string>* pvSubItems;
+std::vector<std::string>* pvWorldSubItems;
 
 void game::print_menu(WINDOW *w_open, int iSel, const int iMenuOffsetX, int iMenuOffsetY,
                       bool bShowDDA)
@@ -211,6 +217,7 @@ bool game::opening_screen()
     // please update MOTD and credits to indicate how long they can be.
 
     // fill menu with translated menu items
+    pvMenuItems = &vMenuItems;
     vMenuItems.clear();
     vMenuItems.push_back(pgettext("Main Menu", "<M|m>OTD"));
     vMenuItems.push_back(pgettext("Main Menu", "<N|n>ew Game"));
@@ -228,7 +235,9 @@ bool game::opening_screen()
         vMenuHotkeys.push_back(get_hotkeys(item));
     }
 
-    std::vector<std::string> vSubItems;
+    //std::vector<std::string> vSubItems;
+    pvSubItems = &vSubItems;
+    vSubItems.clear();
     vSubItems.push_back(pgettext("Main Menu|New Game", "<C|c>ustom Character"));
     vSubItems.push_back(pgettext("Main Menu|New Game", "<P|p>reset Character"));
     vSubItems.push_back(pgettext("Main Menu|New Game", "<R|r>andom Character"));
@@ -240,7 +249,10 @@ bool game::opening_screen()
         vNewGameHotkeys.push_back(get_hotkeys(item));
     }
 
-    std::vector<std::string> vWorldSubItems;
+    
+    //std::vector<std::string> vWorldSubItems;
+    pvWorldSubItems = &vWorldSubItems;
+    vWorldSubItems.clear();
     vWorldSubItems.push_back(pgettext("Main Menu|World", "<C|c>reate World"));
     vWorldSubItems.push_back(pgettext("Main Menu|World", "<D|d>elete World"));
     vWorldSubItems.push_back(pgettext("Main Menu|World", "<R|r>eset World"));

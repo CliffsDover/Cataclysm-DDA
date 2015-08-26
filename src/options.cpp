@@ -40,6 +40,10 @@ std::map<std::string, int> mOptionsSort;
 std::map<std::string, std::string> optionNames;
 int iWorldOptPage;
 
+extern std::vector<std::string>* pvMenuItems;
+extern std::vector<std::string>* pvSubItems;
+extern std::vector<std::string>* pvWorldSubItems;
+
 options_data::options_data()
 {
     enable_json("DEFAULT_REGION");
@@ -1444,10 +1448,43 @@ void show_options(bool ingame)
         }
     }
     if( lang_changed ) {
-        set_language(false);
+        set_language(true);
         g->mmenu_refresh_title();
         g->mmenu_refresh_motd();
         g->mmenu_refresh_credits();
+        
+        if( pvMenuItems )
+        {
+            (*pvMenuItems).clear();
+            (*pvMenuItems).push_back(pgettext("Main Menu", "<M|m>OTD"));
+            (*pvMenuItems).push_back(pgettext("Main Menu", "<N|n>ew Game"));
+            (*pvMenuItems).push_back(pgettext("Main Menu", "Lo<a|A>d"));
+            (*pvMenuItems).push_back(pgettext("Main Menu", "<W|w>orld"));
+            (*pvMenuItems).push_back(pgettext("Main Menu", "<S|s>pecial"));
+            (*pvMenuItems).push_back(pgettext("Main Menu", "<O|o>ptions"));
+            (*pvMenuItems).push_back(pgettext("Main Menu", "H<e|E|?>lp"));
+            (*pvMenuItems).push_back(pgettext("Main Menu", "<C|c>redits"));
+            (*pvMenuItems).push_back(pgettext("Main Menu", "<Q|q>uit"));        
+        }
+        
+        if( pvSubItems )
+        {
+            (*pvSubItems).clear();
+            (*pvSubItems).push_back(pgettext("Main Menu|New Game", "<C|c>ustom Character"));
+            (*pvSubItems).push_back(pgettext("Main Menu|New Game", "<P|p>reset Character"));
+            (*pvSubItems).push_back(pgettext("Main Menu|New Game", "<R|r>andom Character"));
+            if(!MAP_SHARING::isSharing()) { // "Play Now" function doesn't play well together with shared maps
+                (*pvSubItems).push_back(pgettext("Main Menu|New Game", "Play <N|n>ow!"));
+            }
+        }
+        
+        if( pvWorldSubItems )
+        {
+            (*pvWorldSubItems).clear();
+            (*pvWorldSubItems).push_back(pgettext("Main Menu|World", "<C|c>reate World"));
+            (*pvWorldSubItems).push_back(pgettext("Main Menu|World", "<D|d>elete World"));
+            (*pvWorldSubItems).push_back(pgettext("Main Menu|World", "<R|r>eset World"));
+        }
     }
 #ifdef TILES
     if( used_tiles_changed ) {
