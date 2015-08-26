@@ -50,6 +50,10 @@
 #include "sounds.h"
 #endif
 
+#ifdef CDDA_IOS
+#import "SDiPhoneVersion.h"
+#endif // CDDA_IOS
+
 #define dbg(x) DebugLog((DebugLevel)(x),D_SDL) << __FILE__ << ":" << __LINE__ << ": "
 
 //***********************************
@@ -1372,8 +1376,33 @@ WINDOW *curses_init(void)
     int overmap_fontwidth = 8;
     int overmap_fontheight = 16;
     int overmap_fontsize = 8;
-
+    
+#ifdef CDDA_IOS
+    std::ifstream jsonstream;//(FILENAMES["fontdata"].c_str(), std::ifstream::binary);
+    // Check for iPhone device screen size
+    if ( [SDiPhoneVersion deviceSize] == iPhone4inch)
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_4inches" ) );
+        NSLog(@"Your screen is 4 inches");
+    }
+    else if ( [SDiPhoneVersion deviceSize] == iPhone35inch)
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_3.5inches" ) );
+        NSLog(@"Your screen is 3.5 inches");
+    }
+    else if ( [SDiPhoneVersion deviceSize] == iPhone47inch)
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_4.7inches" ) );
+        NSLog(@"Your screen is 4.7 inches");
+    }
+    else if ( [SDiPhoneVersion deviceSize] == iPhone55inch)
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_5.5inches" ) );
+        NSLog(@"Your screen is 5.5 inches");
+    }
+#else
     std::ifstream jsonstream(FILENAMES["fontdata"].c_str(), std::ifstream::binary);
+#endif // CDDA_IOS
     if (jsonstream.good()) {
         JsonIn json(jsonstream);
         JsonObject config = json.get_object();

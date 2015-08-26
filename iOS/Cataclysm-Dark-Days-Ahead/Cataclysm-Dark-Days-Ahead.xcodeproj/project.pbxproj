@@ -151,7 +151,7 @@
 		A602D9A81B8C6A6E00EA2879 /* savegame_json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D8F51B8C6A6D00EA2879 /* savegame_json.cpp */; };
 		A602D9A91B8C6A6E00EA2879 /* savegame_legacy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D8F61B8C6A6D00EA2879 /* savegame_legacy.cpp */; };
 		A602D9AA1B8C6A6E00EA2879 /* scenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D8F71B8C6A6D00EA2879 /* scenario.cpp */; };
-		A602D9AB1B8C6A6E00EA2879 /* sdltiles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D8F91B8C6A6D00EA2879 /* sdltiles.cpp */; };
+		A602D9AB1B8C6A6E00EA2879 /* sdltiles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D8F91B8C6A6D00EA2879 /* sdltiles.cpp */; settings = {COMPILER_FLAGS = "-x objective-c++ -fobjc-arc"; }; };
 		A602D9AC1B8C6A6E00EA2879 /* simplexnoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D8FA1B8C6A6D00EA2879 /* simplexnoise.cpp */; };
 		A602D9AD1B8C6A6E00EA2879 /* skill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D8FC1B8C6A6D00EA2879 /* skill.cpp */; };
 		A602D9AE1B8C6A6E00EA2879 /* sounds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A602D8FE1B8C6A6D00EA2879 /* sounds.cpp */; };
@@ -181,6 +181,7 @@
 		A602D9CF1B8C724300EA2879 /* config in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CC1B8C724300EA2879 /* config */; };
 		A602D9D01B8C724300EA2879 /* data in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CD1B8C724300EA2879 /* data */; };
 		A602D9D11B8C724300EA2879 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CE1B8C724300EA2879 /* lang */; };
+		A62ADE3B1B8DBC6400562FEA /* SDiPhoneVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = A62ADE3A1B8DBC6400562FEA /* SDiPhoneVersion.m */; };
 		A677B1A01B8CDC740034F15B /* dPad-Down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B18F1B8CDC740034F15B /* dPad-Down@2x.png */; };
 		A677B1A11B8CDC740034F15B /* dPad-DownLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B1901B8CDC740034F15B /* dPad-DownLeft@2x.png */; };
 		A677B1A21B8CDC740034F15B /* dPad-DownRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B1911B8CDC740034F15B /* dPad-DownRight@2x.png */; };
@@ -554,6 +555,8 @@
 		A602D9CC1B8C724300EA2879 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../BundledData/config; sourceTree = "<group>"; };
 		A602D9CD1B8C724300EA2879 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../BundledData/data; sourceTree = "<group>"; };
 		A602D9CE1B8C724300EA2879 /* lang */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lang; path = ../BundledData/lang; sourceTree = "<group>"; };
+		A62ADE391B8DBC6400562FEA /* SDiPhoneVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDiPhoneVersion.h; sourceTree = "<group>"; };
+		A62ADE3A1B8DBC6400562FEA /* SDiPhoneVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDiPhoneVersion.m; sourceTree = "<group>"; };
 		A677B18F1B8CDC740034F15B /* dPad-Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down@2x.png"; sourceTree = "<group>"; };
 		A677B1901B8CDC740034F15B /* dPad-DownLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-DownLeft@2x.png"; sourceTree = "<group>"; };
 		A677B1911B8CDC740034F15B /* dPad-DownRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-DownRight@2x.png"; sourceTree = "<group>"; };
@@ -669,6 +672,7 @@
 		A602D7D41B8C641700EA2879 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				A62ADE381B8DBC6400562FEA /* SDiPhoneVersion */,
 				A602D8061B8C694100EA2879 /* UIKit.framework */,
 				A602D7F21B8C682C00EA2879 /* Accelerate.framework */,
 				A602D7F31B8C682C00EA2879 /* AudioToolbox.framework */,
@@ -1035,6 +1039,16 @@
 			name = BundledData;
 			sourceTree = "<group>";
 		};
+		A62ADE381B8DBC6400562FEA /* SDiPhoneVersion */ = {
+			isa = PBXGroup;
+			children = (
+				A62ADE391B8DBC6400562FEA /* SDiPhoneVersion.h */,
+				A62ADE3A1B8DBC6400562FEA /* SDiPhoneVersion.m */,
+			);
+			name = SDiPhoneVersion;
+			path = ../../Libraries/SDiPhoneVersion;
+			sourceTree = "<group>";
+		};
 		A677B18E1B8CDC740034F15B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1246,6 +1260,7 @@
 				A602D9521B8C6A6E00EA2879 /* effect.cpp in Sources */,
 				A602D9771B8C6A6E00EA2879 /* mapgen_functions.cpp in Sources */,
 				A602D92E1B8C6A6E00EA2879 /* action.cpp in Sources */,
+				A62ADE3B1B8DBC6400562FEA /* SDiPhoneVersion.m in Sources */,
 				A602D92F1B8C6A6E00EA2879 /* active_item_cache.cpp in Sources */,
 				A602D96E1B8C6A6E00EA2879 /* live_view.cpp in Sources */,
 				A602D9441B8C6A6E00EA2879 /* clzones.cpp in Sources */,
