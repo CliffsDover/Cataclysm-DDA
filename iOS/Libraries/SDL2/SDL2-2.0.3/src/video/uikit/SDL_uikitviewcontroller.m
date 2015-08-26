@@ -68,6 +68,7 @@ enum
     NSMutableArray* userKeyBindings;
     
     MHWDirectoryWatcher* optionsFileWatcher;
+    MHWDirectoryWatcher* keybindingsFileWatcher;
     
     NSArray* allMenuItems;
 }
@@ -460,6 +461,11 @@ enum
         [self performSelectorOnMainThread:@selector(optionsFileDidChange) withObject:nil waitUntilDone:NO];
     }];
     
+    
+    keybindingsFileWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:[documentPath stringByAppendingPathComponent:@"keybindings.json"] callback:^{
+        [keybindingsFileWatcher stopWatching];
+        [self performSelectorOnMainThread:@selector(keybindingsFileDidChange) withObject:nil waitUntilDone:NO];
+    }];
     
 }
 
@@ -1022,6 +1028,21 @@ enum
     //actionsMenu.delegate = self;
     
     [optionsFileWatcher startWatching];
+    
+}
+
+- (void)keybindingsFileDidChange
+{
+    NSLog(@"keybindings.json files changed" );
+    
+    [self loadKeyBindings];
+    
+    NSArray* allMenuItems = [self createMenuItems:userKeyBindings];
+    //actionsMenu = [[CNPGridMenu alloc] initWithMenuItems:allMenuItems];
+    [actionsMenu setMenuItems:allMenuItems];
+    //actionsMenu.delegate = self;
+    
+    [keybindingsFileWatcher startWatching];
     
 }
 
