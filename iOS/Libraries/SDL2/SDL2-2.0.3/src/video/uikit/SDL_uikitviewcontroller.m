@@ -35,7 +35,10 @@
 
 #include "libintl.h"
 
+#import <AVFoundation/AVFoundation.h>
 
+
+int count = 0;
 enum
 {
     MENU_KEYBOARD = 10001,
@@ -71,6 +74,10 @@ enum
     MHWDirectoryWatcher* keybindingsFileWatcher;
     
     NSArray* allMenuItems;
+    
+    ABCIntroView* introView;
+    
+    AVAudioPlayer *myAudioPlayer;
 }
 
 @synthesize window;
@@ -107,6 +114,21 @@ enum
                          };
     */
     
+    if( 1 == count )
+    {
+            //track = [OALAudioTrack track];
+            //[track preloadFile:@"CBRadioMessageHelp_ZA01.146.wav"];
+            //[track setNumberOfLoops:-1];
+            //[track play];
+        //[[OALSimpleAudio sharedInstance] playBg:@"CBRadioMessageHelp_ZA01.146.wav" loop:-1];
+        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"CBRadioMessageHelp_ZA01.146.wav" ];
+        myAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+        myAudioPlayer.numberOfLoops = -1; //infinite loop
+        [myAudioPlayer play];
+    }
+    
+    count++;
+
     
     return self;
 }
@@ -321,8 +343,26 @@ enum
     NSLog(@"TouchUpInside");
 }
 
+
+-(void)doVolumeFade
+{
+    if (myAudioPlayer.volume > 0.1) {
+        myAudioPlayer.volume = myAudioPlayer.volume - 0.1;
+        [self performSelector:@selector(doVolumeFade) withObject:nil afterDelay:0.1];
+    } else {
+        // Stop and get the sound ready for playing again
+        [myAudioPlayer stop];
+//        self.player.currentTime = 0;
+//        [self.player prepareToPlay];
+//        self.player.volume = 1.0;
+    }
+}
+
 - (void)viewDidLayoutSubviews
 {
+    //[track play];
+    //[track fadeTo:0.0 duration:3.0 target:nil selector:nil];
+    [self doVolumeFade];
     if (self->window->flags & SDL_WINDOW_RESIZABLE) {
         SDL_WindowData *data = self->window->driverdata;
         SDL_VideoDisplay *display = SDL_GetDisplayForWindow(self->window);
@@ -336,6 +376,7 @@ enum
         SDL_SendWindowEvent(self->window, SDL_WINDOWEVENT_RESIZED, w, h);
     }
     
+
 
     
 
@@ -466,6 +507,14 @@ enum
         [keybindingsFileWatcher stopWatching];
         [self performSelectorOnMainThread:@selector(keybindingsFileDidChange) withObject:nil waitUntilDone:NO];
     }];
+    
+    
+//    
+//    introView = [[ABCIntroView alloc] initWithFrame:self.view.frame];
+//    introView.delegate = self;
+//    introView.alpha = 1.0f;
+//    introView.backgroundColor = [UIColor greenColor];
+//    [self.view addSubview:introView];
     
 }
 
@@ -1045,6 +1094,22 @@ enum
     [keybindingsFileWatcher startWatching];
     
 }
+
+
+#pragma mark - ABCIntroViewDelegate Methods
+
+-(void)onDoneButtonPressed{
+    //    Uncomment so that the IntroView does not show after the user clicks "DONE"
+    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]
+    //    [defaults setObject:@"YES"forKey:@"intro_screen_viewed"];
+    //    [defaults synchronize];
+    [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        introView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [introView removeFromSuperview];
+    }];
+}
+
 
 @end
 

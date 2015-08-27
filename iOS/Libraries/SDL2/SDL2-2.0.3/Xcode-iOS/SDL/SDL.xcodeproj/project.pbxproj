@@ -93,6 +93,8 @@
 		A68B76791B1C499600FE4036 /* CNPGridMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A68B76771B1C499600FE4036 /* CNPGridMenu.h */; };
 		A68B767A1B1C499600FE4036 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A68B76781B1C499600FE4036 /* CNPGridMenu.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A68B767D1B1C4F0B00FE4036 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68B767C1B1C4F0B00FE4036 /* Accelerate.framework */; };
+		A6D6A5ED1B8EF21800BCD61C /* ABCIntroView.h in Headers */ = {isa = PBXBuildFile; fileRef = A6D6A5EB1B8EF21800BCD61C /* ABCIntroView.h */; };
+		A6D6A5EE1B8EF21800BCD61C /* ABCIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D6A5EC1B8EF21800BCD61C /* ABCIntroView.m */; };
 		A6EE87B21B26DE000034A2AE /* JSDPad.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE87B01B26DE000034A2AE /* JSDPad.h */; };
 		A6EE87B31B26DE000034A2AE /* JSDPad.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE87B11B26DE000034A2AE /* JSDPad.m */; };
 		AA0AD06216647BBB00CE5896 /* SDL_gamecontroller.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0AD06116647BBB00CE5896 /* SDL_gamecontroller.c */; };
@@ -308,6 +310,8 @@
 		A68B76771B1C499600FE4036 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
 		A68B76781B1C499600FE4036 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
 		A68B767C1B1C4F0B00FE4036 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A6D6A5EB1B8EF21800BCD61C /* ABCIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCIntroView.h; sourceTree = "<group>"; };
+		A6D6A5EC1B8EF21800BCD61C /* ABCIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCIntroView.m; sourceTree = "<group>"; };
 		A6EE879E1B26DE000034A2AE /* dPad-Down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down.png"; sourceTree = "<group>"; };
 		A6EE879F1B26DE000034A2AE /* dPad-Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down@2x.png"; sourceTree = "<group>"; };
 		A6EE87A01B26DE000034A2AE /* dPad-DownLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-DownLeft.png"; sourceTree = "<group>"; };
@@ -694,6 +698,16 @@
 			path = ../../RWDropdownMenu;
 			sourceTree = "<group>";
 		};
+		A6D6A5EA1B8EF21800BCD61C /* ABCIntroView */ = {
+			isa = PBXGroup;
+			children = (
+				A6D6A5EB1B8EF21800BCD61C /* ABCIntroView.h */,
+				A6D6A5EC1B8EF21800BCD61C /* ABCIntroView.m */,
+			);
+			name = ABCIntroView;
+			path = ../../../../../ABCIntroView;
+			sourceTree = "<group>";
+		};
 		A6EE879D1B26DE000034A2AE /* JSDPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -766,6 +780,7 @@
 		FD689F090E26E5D900F90B21 /* uikit */ = {
 			isa = PBXGroup;
 			children = (
+				A6D6A5EA1B8EF21800BCD61C /* ABCIntroView */,
 				A61044561B4E6A1700672BA3 /* MHWDirectoryWatcher */,
 				A62328B11B38041C001C64B1 /* RWDropdownMenu */,
 				A6EE879D1B26DE000034A2AE /* JSDPad */,
@@ -1093,6 +1108,7 @@
 				A68B76791B1C499600FE4036 /* CNPGridMenu.h in Headers */,
 				FDA684670DF2374E00F98A1A /* SDL_sysvideo.h in Headers */,
 				FDA685FC0DF244C800F98A1A /* SDL_nullevents_c.h in Headers */,
+				A6D6A5ED1B8EF21800BCD61C /* ABCIntroView.h in Headers */,
 				FDA686000DF244C800F98A1A /* SDL_nullvideo.h in Headers */,
 				FD5F9D300E0E08B3008E885B /* SDL_joystick_c.h in Headers */,
 				FD5F9D310E0E08B3008E885B /* SDL_sysjoystick.h in Headers */,
@@ -1362,6 +1378,7 @@
 				AA628ADB159369E3005138DD /* SDL_rotate.c in Sources */,
 				AA126AD51617C5E7005ABC8F /* SDL_uikitmodes.m in Sources */,
 				AA704DD7162AA90A0076D1C1 /* SDL_dropevents.c in Sources */,
+				A6D6A5EE1B8EF21800BCD61C /* ABCIntroView.m in Sources */,
 				AABCC3951640643D00AB8930 /* SDL_uikitmessagebox.m in Sources */,
 				AA0AD06216647BBB00CE5896 /* SDL_gamecontroller.c in Sources */,
 				AA0F8495178D5F1A00823F9D /* SDL_systls.c in Sources */,

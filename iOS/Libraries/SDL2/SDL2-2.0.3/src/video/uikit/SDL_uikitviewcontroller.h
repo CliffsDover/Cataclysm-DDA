@@ -27,9 +27,10 @@
 #import "JSDPad.h"
 #import "JSButton.h"
 #import "MHWDirectoryWatcher.h"
+#import "ABCIntroView.h"
 
 
-@interface SDL_uikitviewcontroller : UIViewController<CNPGridMenuDelegate,JSDPadDelegate,JSButtonDelegate,UIGestureRecognizerDelegate> {
+@interface SDL_uikitviewcontroller : UIViewController<CNPGridMenuDelegate,JSDPadDelegate,JSButtonDelegate,UIGestureRecognizerDelegate, ABCIntroViewDelegate > {
 @private
     SDL_Window *window;
 }
