@@ -82,19 +82,15 @@
 		93CB792613FC5F5300BD3E05 /* SDL_uikitviewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB792513FC5F5300BD3E05 /* SDL_uikitviewcontroller.m */; };
 		A61044591B4E6A1700672BA3 /* MHWDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A61044571B4E6A1700672BA3 /* MHWDirectoryWatcher.h */; };
 		A610445A1B4E6A1700672BA3 /* MHWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A61044581B4E6A1700672BA3 /* MHWDirectoryWatcher.m */; };
-		A62328B81B38041C001C64B1 /* RWDropdownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A62328B21B38041C001C64B1 /* RWDropdownMenu.h */; };
-		A62328B91B38041C001C64B1 /* RWDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A62328B31B38041C001C64B1 /* RWDropdownMenu.m */; };
-		A62328BA1B38041C001C64B1 /* RWDropdownMenuCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A62328B41B38041C001C64B1 /* RWDropdownMenuCell.h */; };
-		A62328BB1B38041C001C64B1 /* RWDropdownMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A62328B51B38041C001C64B1 /* RWDropdownMenuCell.m */; };
-		A62328BC1B38041C001C64B1 /* RWDropdownMenuTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = A62328B61B38041C001C64B1 /* RWDropdownMenuTransitionController.h */; };
-		A62328BD1B38041C001C64B1 /* RWDropdownMenuTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62328B71B38041C001C64B1 /* RWDropdownMenuTransitionController.m */; };
 		A65337791B281490008C61D1 /* JSButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A65337771B281490008C61D1 /* JSButton.h */; };
 		A653377A1B281490008C61D1 /* JSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A65337781B281490008C61D1 /* JSButton.m */; };
+		A67D88131B8F271600F7AE63 /* MYBlurIntroductionView.h in Headers */ = {isa = PBXBuildFile; fileRef = A67D880F1B8F271600F7AE63 /* MYBlurIntroductionView.h */; };
+		A67D88141B8F271600F7AE63 /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D88101B8F271600F7AE63 /* MYBlurIntroductionView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A67D88151B8F271600F7AE63 /* MYIntroductionPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = A67D88111B8F271600F7AE63 /* MYIntroductionPanel.h */; };
+		A67D88161B8F271600F7AE63 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D88121B8F271600F7AE63 /* MYIntroductionPanel.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A68B76791B1C499600FE4036 /* CNPGridMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A68B76771B1C499600FE4036 /* CNPGridMenu.h */; };
 		A68B767A1B1C499600FE4036 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A68B76781B1C499600FE4036 /* CNPGridMenu.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A68B767D1B1C4F0B00FE4036 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68B767C1B1C4F0B00FE4036 /* Accelerate.framework */; };
-		A6D6A5ED1B8EF21800BCD61C /* ABCIntroView.h in Headers */ = {isa = PBXBuildFile; fileRef = A6D6A5EB1B8EF21800BCD61C /* ABCIntroView.h */; };
-		A6D6A5EE1B8EF21800BCD61C /* ABCIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D6A5EC1B8EF21800BCD61C /* ABCIntroView.m */; };
 		A6EE87B21B26DE000034A2AE /* JSDPad.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE87B01B26DE000034A2AE /* JSDPad.h */; };
 		A6EE87B31B26DE000034A2AE /* JSDPad.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE87B11B26DE000034A2AE /* JSDPad.m */; };
 		AA0AD06216647BBB00CE5896 /* SDL_gamecontroller.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0AD06116647BBB00CE5896 /* SDL_gamecontroller.c */; };
@@ -297,21 +293,17 @@
 		93CB792513FC5F5300BD3E05 /* SDL_uikitviewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDL_uikitviewcontroller.m; sourceTree = "<group>"; };
 		A61044571B4E6A1700672BA3 /* MHWDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHWDirectoryWatcher.h; sourceTree = "<group>"; };
 		A61044581B4E6A1700672BA3 /* MHWDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHWDirectoryWatcher.m; sourceTree = "<group>"; };
-		A62328B21B38041C001C64B1 /* RWDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWDropdownMenu.h; sourceTree = "<group>"; };
-		A62328B31B38041C001C64B1 /* RWDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWDropdownMenu.m; sourceTree = "<group>"; };
-		A62328B41B38041C001C64B1 /* RWDropdownMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWDropdownMenuCell.h; sourceTree = "<group>"; };
-		A62328B51B38041C001C64B1 /* RWDropdownMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWDropdownMenuCell.m; sourceTree = "<group>"; };
-		A62328B61B38041C001C64B1 /* RWDropdownMenuTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWDropdownMenuTransitionController.h; sourceTree = "<group>"; };
-		A62328B71B38041C001C64B1 /* RWDropdownMenuTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWDropdownMenuTransitionController.m; sourceTree = "<group>"; };
 		A65337771B281490008C61D1 /* JSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSButton.h; sourceTree = "<group>"; };
 		A65337781B281490008C61D1 /* JSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSButton.m; sourceTree = "<group>"; };
 		A653377B1B2815F2008C61D1 /* No@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No@2x.png"; sourceTree = "<group>"; };
 		A653377C1B2815F2008C61D1 /* Yes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yes@2x.png"; sourceTree = "<group>"; };
+		A67D880F1B8F271600F7AE63 /* MYBlurIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlurIntroductionView.h; sourceTree = "<group>"; };
+		A67D88101B8F271600F7AE63 /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
+		A67D88111B8F271600F7AE63 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
+		A67D88121B8F271600F7AE63 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
 		A68B76771B1C499600FE4036 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
 		A68B76781B1C499600FE4036 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
 		A68B767C1B1C4F0B00FE4036 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		A6D6A5EB1B8EF21800BCD61C /* ABCIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCIntroView.h; sourceTree = "<group>"; };
-		A6D6A5EC1B8EF21800BCD61C /* ABCIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCIntroView.m; sourceTree = "<group>"; };
 		A6EE879E1B26DE000034A2AE /* dPad-Down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down.png"; sourceTree = "<group>"; };
 		A6EE879F1B26DE000034A2AE /* dPad-Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down@2x.png"; sourceTree = "<group>"; };
 		A6EE87A01B26DE000034A2AE /* dPad-DownLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-DownLeft.png"; sourceTree = "<group>"; };
@@ -684,28 +676,16 @@
 			path = ../../MHWDirectoryWatcher;
 			sourceTree = "<group>";
 		};
-		A62328B11B38041C001C64B1 /* RWDropdownMenu */ = {
+		A67D880E1B8F271600F7AE63 /* MYBlurIntroductionView */ = {
 			isa = PBXGroup;
 			children = (
-				A62328B21B38041C001C64B1 /* RWDropdownMenu.h */,
-				A62328B31B38041C001C64B1 /* RWDropdownMenu.m */,
-				A62328B41B38041C001C64B1 /* RWDropdownMenuCell.h */,
-				A62328B51B38041C001C64B1 /* RWDropdownMenuCell.m */,
-				A62328B61B38041C001C64B1 /* RWDropdownMenuTransitionController.h */,
-				A62328B71B38041C001C64B1 /* RWDropdownMenuTransitionController.m */,
+				A67D880F1B8F271600F7AE63 /* MYBlurIntroductionView.h */,
+				A67D88101B8F271600F7AE63 /* MYBlurIntroductionView.m */,
+				A67D88111B8F271600F7AE63 /* MYIntroductionPanel.h */,
+				A67D88121B8F271600F7AE63 /* MYIntroductionPanel.m */,
 			);
-			name = RWDropdownMenu;
-			path = ../../RWDropdownMenu;
-			sourceTree = "<group>";
-		};
-		A6D6A5EA1B8EF21800BCD61C /* ABCIntroView */ = {
-			isa = PBXGroup;
-			children = (
-				A6D6A5EB1B8EF21800BCD61C /* ABCIntroView.h */,
-				A6D6A5EC1B8EF21800BCD61C /* ABCIntroView.m */,
-			);
-			name = ABCIntroView;
-			path = ../../../../../ABCIntroView;
+			name = MYBlurIntroductionView;
+			path = ../../../../../MYBlurIntroductionView;
 			sourceTree = "<group>";
 		};
 		A6EE879D1B26DE000034A2AE /* JSDPad */ = {
@@ -780,9 +760,8 @@
 		FD689F090E26E5D900F90B21 /* uikit */ = {
 			isa = PBXGroup;
 			children = (
-				A6D6A5EA1B8EF21800BCD61C /* ABCIntroView */,
+				A67D880E1B8F271600F7AE63 /* MYBlurIntroductionView */,
 				A61044561B4E6A1700672BA3 /* MHWDirectoryWatcher */,
-				A62328B11B38041C001C64B1 /* RWDropdownMenu */,
 				A6EE879D1B26DE000034A2AE /* JSDPad */,
 				A68B76771B1C499600FE4036 /* CNPGridMenu.h */,
 				A68B76781B1C499600FE4036 /* CNPGridMenu.m */,
@@ -1108,7 +1087,7 @@
 				A68B76791B1C499600FE4036 /* CNPGridMenu.h in Headers */,
 				FDA684670DF2374E00F98A1A /* SDL_sysvideo.h in Headers */,
 				FDA685FC0DF244C800F98A1A /* SDL_nullevents_c.h in Headers */,
-				A6D6A5ED1B8EF21800BCD61C /* ABCIntroView.h in Headers */,
+				A67D88151B8F271600F7AE63 /* MYIntroductionPanel.h in Headers */,
 				FDA686000DF244C800F98A1A /* SDL_nullvideo.h in Headers */,
 				FD5F9D300E0E08B3008E885B /* SDL_joystick_c.h in Headers */,
 				FD5F9D310E0E08B3008E885B /* SDL_sysjoystick.h in Headers */,
@@ -1127,13 +1106,13 @@
 				0420497011E6F03D007E7EC9 /* SDL_clipboardevents_c.h in Headers */,
 				04BA9D6311EF474A00B60E01 /* SDL_gesture_c.h in Headers */,
 				04BA9D6511EF474A00B60E01 /* SDL_touch_c.h in Headers */,
+				A67D88131B8F271600F7AE63 /* MYBlurIntroductionView.h in Headers */,
 				041B2CF212FA0F680087D585 /* SDL_sysrender.h in Headers */,
 				04409BA612FA989600FB9AA8 /* mmx.h in Headers */,
 				04409BA812FA989600FB9AA8 /* SDL_yuv_sw_c.h in Headers */,
 				04F7807712FB751400FC43C0 /* SDL_blendfillrect.h in Headers */,
 				04F7807912FB751400FC43C0 /* SDL_blendline.h in Headers */,
 				A65337791B281490008C61D1 /* JSButton.h in Headers */,
-				A62328BA1B38041C001C64B1 /* RWDropdownMenuCell.h in Headers */,
 				04F7807B12FB751400FC43C0 /* SDL_blendpoint.h in Headers */,
 				04F7807C12FB751400FC43C0 /* SDL_draw.h in Headers */,
 				04F7807E12FB751400FC43C0 /* SDL_drawline.h in Headers */,
@@ -1183,7 +1162,6 @@
 				AA7558BA1595D55500BBD41B /* SDL_rect.h in Headers */,
 				AA7558BB1595D55500BBD41B /* SDL_render.h in Headers */,
 				AA7558BC1595D55500BBD41B /* SDL_revision.h in Headers */,
-				A62328BC1B38041C001C64B1 /* RWDropdownMenuTransitionController.h in Headers */,
 				AA7558BD1595D55500BBD41B /* SDL_rwops.h in Headers */,
 				AA7558BE1595D55500BBD41B /* SDL_scancode.h in Headers */,
 				AA7558BF1595D55500BBD41B /* SDL_shape.h in Headers */,
@@ -1192,7 +1170,6 @@
 				AA7558C21595D55500BBD41B /* SDL_system.h in Headers */,
 				AA7558C31595D55500BBD41B /* SDL_syswm.h in Headers */,
 				AA7558C41595D55500BBD41B /* SDL_thread.h in Headers */,
-				A62328B81B38041C001C64B1 /* RWDropdownMenu.h in Headers */,
 				AA7558C51595D55500BBD41B /* SDL_timer.h in Headers */,
 				AA7558C61595D55500BBD41B /* SDL_touch.h in Headers */,
 				AA7558C71595D55500BBD41B /* SDL_types.h in Headers */,
@@ -1298,7 +1275,6 @@
 				FD6526740DE8FCDD002AD96B /* SDL_quit.c in Sources */,
 				FD6526750DE8FCDD002AD96B /* SDL_windowevents.c in Sources */,
 				FD6526760DE8FCDD002AD96B /* SDL_rwops.c in Sources */,
-				A62328BB1B38041C001C64B1 /* RWDropdownMenuCell.m in Sources */,
 				FD6526780DE8FCDD002AD96B /* SDL_error.c in Sources */,
 				FD65267A0DE8FCDD002AD96B /* SDL.c in Sources */,
 				FD65267B0DE8FCDD002AD96B /* SDL_syscond.c in Sources */,
@@ -1308,16 +1284,17 @@
 				FD65267F0DE8FCDD002AD96B /* SDL_thread.c in Sources */,
 				FD3F4A760DEA620800C5B771 /* SDL_getenv.c in Sources */,
 				FD3F4A770DEA620800C5B771 /* SDL_iconv.c in Sources */,
-				A62328B91B38041C001C64B1 /* RWDropdownMenu.m in Sources */,
 				FD3F4A780DEA620800C5B771 /* SDL_malloc.c in Sources */,
 				FD3F4A790DEA620800C5B771 /* SDL_qsort.c in Sources */,
 				FD3F4A7A0DEA620800C5B771 /* SDL_stdlib.c in Sources */,
 				FDA6844D0DF2374E00F98A1A /* SDL_blit.c in Sources */,
 				FDA6844F0DF2374E00F98A1A /* SDL_blit_0.c in Sources */,
 				FDA684500DF2374E00F98A1A /* SDL_blit_1.c in Sources */,
+				A67D88141B8F271600F7AE63 /* MYBlurIntroductionView.m in Sources */,
 				FDA684510DF2374E00F98A1A /* SDL_blit_A.c in Sources */,
 				FDA684520DF2374E00F98A1A /* SDL_blit_auto.c in Sources */,
 				FDA684540DF2374E00F98A1A /* SDL_blit_copy.c in Sources */,
+				A67D88161B8F271600F7AE63 /* MYIntroductionPanel.m in Sources */,
 				FDA684560DF2374E00F98A1A /* SDL_blit_N.c in Sources */,
 				A68B767A1B1C499600FE4036 /* CNPGridMenu.m in Sources */,
 				FDA684570DF2374E00F98A1A /* SDL_blit_slow.c in Sources */,
@@ -1356,7 +1333,6 @@
 				04BA9D6611EF474A00B60E01 /* SDL_touch.c in Sources */,
 				04FFAB8B12E23B8D00BA343D /* SDL_atomic.c in Sources */,
 				04FFAB8C12E23B8D00BA343D /* SDL_spinlock.c in Sources */,
-				A62328BD1B38041C001C64B1 /* RWDropdownMenuTransitionController.m in Sources */,
 				041B2CF112FA0F680087D585 /* SDL_render.c in Sources */,
 				04409BA712FA989600FB9AA8 /* SDL_yuv_mmx.c in Sources */,
 				04409BA912FA989600FB9AA8 /* SDL_yuv_sw.c in Sources */,
@@ -1378,7 +1354,6 @@
 				AA628ADB159369E3005138DD /* SDL_rotate.c in Sources */,
 				AA126AD51617C5E7005ABC8F /* SDL_uikitmodes.m in Sources */,
 				AA704DD7162AA90A0076D1C1 /* SDL_dropevents.c in Sources */,
-				A6D6A5EE1B8EF21800BCD61C /* ABCIntroView.m in Sources */,
 				AABCC3951640643D00AB8930 /* SDL_uikitmessagebox.m in Sources */,
 				AA0AD06216647BBB00CE5896 /* SDL_gamecontroller.c in Sources */,
 				AA0F8495178D5F1A00823F9D /* SDL_systls.c in Sources */,

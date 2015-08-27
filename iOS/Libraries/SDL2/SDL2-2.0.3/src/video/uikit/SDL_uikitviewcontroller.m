@@ -75,9 +75,11 @@ enum
     
     NSArray* allMenuItems;
     
-    ABCIntroView* introView;
-    
     AVAudioPlayer *myAudioPlayer;
+    
+    MYBlurIntroductionView *introductionView;
+    
+    BOOL showIntroduction;
 }
 
 @synthesize window;
@@ -125,6 +127,8 @@ enum
         myAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
         myAudioPlayer.numberOfLoops = -1; //infinite loop
         [myAudioPlayer play];
+        
+        showIntroduction = YES;
     }
     
     count++;
@@ -509,13 +513,17 @@ enum
     }];
     
     
-//    
-//    introView = [[ABCIntroView alloc] initWithFrame:self.view.frame];
-//    introView.delegate = self;
-//    introView.alpha = 1.0f;
-//    introView.backgroundColor = [UIColor greenColor];
-//    [self.view addSubview:introView];
     
+    if( showIntroduction )
+    {
+        introductionView = [[MYBlurIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        introductionView.delegate = self;
+        
+        MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Automated Stock Panels" description:@"Need a quick-and-dirty solution for your app introduction? MYBlurIntroductionView comes with customizable stock panels that make writing an introduction a walk in the park. Stock panels come with optional overlay on background images. A full panel is just one method away!" image:nil];
+        [introductionView setBackgroundColor:[UIColor blackColor]];
+        [introductionView buildIntroductionWithPanels:@[panel]];
+        [self.view addSubview:introductionView];
+    }
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -1096,18 +1104,16 @@ enum
 }
 
 
-#pragma mark - ABCIntroViewDelegate Methods
 
--(void)onDoneButtonPressed{
-    //    Uncomment so that the IntroView does not show after the user clicks "DONE"
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]
-    //    [defaults setObject:@"YES"forKey:@"intro_screen_viewed"];
-    //    [defaults synchronize];
-    [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        introView.alpha = 0;
-    } completion:^(BOOL finished) {
-        [introView removeFromSuperview];
-    }];
+#pragma mark - MYIntroductionDelegate Methods
+-(void)introduction:(MYBlurIntroductionView *)introductionView didFinishWithType:(MYFinishType)finishType
+{
+    showIntroduction = NO;
+}
+
+-(void)introduction:(MYBlurIntroductionView *)introductionView didChangeToPanel:(MYIntroductionPanel *)panel withIndex:(NSInteger)panelIndex
+{
+    
 }
 
 
