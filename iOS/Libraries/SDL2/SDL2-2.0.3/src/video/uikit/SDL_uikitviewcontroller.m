@@ -348,17 +348,35 @@ enum
 }
 
 
--(void)doVolumeFade
+-(void)doVolumeFade1
 {
     if (myAudioPlayer.volume > 0.1) {
         myAudioPlayer.volume = myAudioPlayer.volume - 0.1;
-        [self performSelector:@selector(doVolumeFade) withObject:nil afterDelay:0.1];
+        [self performSelector:@selector(doVolumeFade1) withObject:nil afterDelay:0.1];
     } else {
         // Stop and get the sound ready for playing again
         [myAudioPlayer stop];
+        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"DTA_Eminor_Spheres.wav" ];
+        myAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+        myAudioPlayer.numberOfLoops = -1; //infinite loop
+        [myAudioPlayer play];
 //        self.player.currentTime = 0;
 //        [self.player prepareToPlay];
 //        self.player.volume = 1.0;
+    }
+}
+
+-(void)doVolumeFade2
+{
+    if (myAudioPlayer.volume > 0.1) {
+        myAudioPlayer.volume = myAudioPlayer.volume - 0.1;
+        [self performSelector:@selector(doVolumeFade2) withObject:nil afterDelay:0.1];
+    } else {
+        // Stop and get the sound ready for playing again
+        [myAudioPlayer stop];
+        //        self.player.currentTime = 0;
+        //        [self.player prepareToPlay];
+        //        self.player.volume = 1.0;
     }
 }
 
@@ -366,164 +384,164 @@ enum
 {
     //[track play];
     //[track fadeTo:0.0 duration:3.0 target:nil selector:nil];
-    [self doVolumeFade];
-    if (self->window->flags & SDL_WINDOW_RESIZABLE) {
-        SDL_WindowData *data = self->window->driverdata;
-        SDL_VideoDisplay *display = SDL_GetDisplayForWindow(self->window);
-        SDL_DisplayModeData *displaymodedata = (SDL_DisplayModeData *) display->current_mode.driverdata;
-        const CGSize size = data->view.bounds.size;
-        int w, h;
-
-        w = (int)(size.width * displaymodedata->scale);
-        h = (int)(size.height * displaymodedata->scale);
-
-        SDL_SendWindowEvent(self->window, SDL_WINDOWEVENT_RESIZED, w, h);
-    }
-    
-
-
-    
-
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(singleTapped)];
-    singleTap.numberOfTapsRequired = 1;
-    singleTap.delegate = self;
-    [self.view addGestureRecognizer:singleTap];
-    
-    
-    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    swipeUp.numberOfTouchesRequired = 1;
-    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-    swipeUp.delegate = self;
-    [self.view addGestureRecognizer:swipeUp];
-    
-    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    swipeDown.numberOfTouchesRequired = 1;
-    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
-    swipeDown.delegate = self;
-    [self.view addGestureRecognizer:swipeDown];
-    
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    swipeLeft.numberOfTouchesRequired = 1;
-    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
-    swipeLeft.delegate = self;
-    [self.view addGestureRecognizer:swipeLeft];
-    
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    swipeRight.numberOfTouchesRequired = 1;
-    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
-    swipeRight.delegate = self;
-    [self.view addGestureRecognizer:swipeRight];
-    
-    
-    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    panGesture.minimumNumberOfTouches = 2;
-    panGesture.maximumNumberOfTouches = 3;
-    panGesture.delegate = self;
-    [self.view addGestureRecognizer:panGesture];
-    
-    noButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64-64-16, self.view.bounds.size.height-64, 64, 64)];
-    //[[yesButton titleLabel] setText:@"Next"];
-    [noButton setBackgroundImage:[UIImage imageNamed:@"No"]];
-    [noButton setBackgroundImagePressed:[UIImage imageNamed:@"No_Touched"]];
-    noButton.delegate = self;
-    noButton.alpha = 0.3f;
-    [self.view addSubview:noButton];
-    
-    
-    yesButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64, self.view.bounds.size.height-64, 64, 64)];
-    //[[noButton titleLabel] setText:@"Prev"];
-    [yesButton setBackgroundImage:[UIImage imageNamed:@"Yes"]];
-    [yesButton setBackgroundImagePressed:[UIImage imageNamed:@"Yes_Touched"]];
-    yesButton.delegate = self;
-    yesButton.alpha = 0.3f;
-    [self.view addSubview:yesButton];
-    
-    prevButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64-64-16, self.view.bounds.size.height-64-64, 64, 64)];
-    //[[yesButton titleLabel] setText:@"Next"];
-    [prevButton setBackgroundImage:[UIImage imageNamed:@"Prev"]];
-    [prevButton setBackgroundImagePressed:[UIImage imageNamed:@"Prev_Touched"]];
-    prevButton.delegate = self;
-    prevButton.alpha = 0.3f;
-    [self.view addSubview:prevButton];
-    
-    nextButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64, self.view.bounds.size.height-64-64, 64, 64)];
-    //[[yesButton titleLabel] setText:@"Next"];
-    [nextButton setBackgroundImage:[UIImage imageNamed:@"Next"]];
-    [nextButton setBackgroundImagePressed:[UIImage imageNamed:@"Next_Touched"]];
-    nextButton.delegate = self;
-    nextButton.alpha = 0.3f;
-    [self.view addSubview:nextButton];
-    
-    
-    
-    settingsButton = [[JSButton alloc] initWithFrame:CGRectMake(8, 8, 32, 32)];
-    //[[yesButton titleLabel] setText:@"Next"];
-    [settingsButton setBackgroundImage:[UIImage imageNamed:@"Next"]];
-    [settingsButton setBackgroundImagePressed:[UIImage imageNamed:@"Next_Touched"]];
-    settingsButton.delegate = self;
-    //[self.view addSubview:settingsButton];
-    
-    
-    
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:button1 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
-//    
-//    NSDictionary *views = NSDictionaryOfVariableBindings(button1, button2, button3, button4, button5, button6, button7, button8);
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button1][button2(==button1)][button3(==button1)][button4(==button1)][button5(==button1)][button6(==button1)][button7(==button1)][button8(==button1)]|" options:NSLayoutFormatAlignAllTop metrics:nil views:views]];
-
-
-    UIPinchGestureRecognizer* pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
-    [self.view addGestureRecognizer:pinchGestureRecognizer];
-    
-    
-    
-    dPad = [[JSDPad alloc] initWithFrame:CGRectMake(8, self.view.bounds.size.height - 8 - 144, 144, 144)];
-    dPad.delegate = self;
-    dPad.alpha = 0.3f;
-    [self.view addSubview:dPad];
-    
-    
-    
-    
-    
-    [self loadKeyBindings];
-    
-    allMenuItems = [self createMenuItems:userKeyBindings];
-    actionsMenu = [[CNPGridMenu alloc] initWithMenuItems:allMenuItems];
-    actionsMenu.delegate = self;
-    
-    
-    NSArray* settingsMenuItems = [self createSettingsMenuItems];
-//    settingsMenu = [[CNPGridMenu alloc] initWithMenuItems:settingsMenuItems];
-    settingsMenu = [[CNPGridMenu alloc] initWithMenuItems:@[]];
-    [settingsMenu setMenuItems:settingsMenuItems];
-    settingsMenu.delegate = self;
-    
-    
-    
-    NSString* documentPath = [[[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path] stringByAppendingString:@"/"];
-    optionsFileWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:[documentPath stringByAppendingPathComponent:@"options.txt"] callback:^{
-        [optionsFileWatcher stopWatching];
-        [self performSelectorOnMainThread:@selector(optionsFileDidChange) withObject:nil waitUntilDone:NO];
-    }];
-    
-    
-    keybindingsFileWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:[documentPath stringByAppendingPathComponent:@"keybindings.json"] callback:^{
-        [keybindingsFileWatcher stopWatching];
-        [self performSelectorOnMainThread:@selector(keybindingsFileDidChange) withObject:nil waitUntilDone:NO];
-    }];
-    
-    
     
     if( showIntroduction )
     {
-        introductionView = [[MYBlurIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        introductionView.delegate = self;
-        
-        MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Automated Stock Panels" description:@"Need a quick-and-dirty solution for your app introduction? MYBlurIntroductionView comes with customizable stock panels that make writing an introduction a walk in the park. Stock panels come with optional overlay on background images. A full panel is just one method away!" image:nil];
-        [introductionView setBackgroundColor:[UIColor blackColor]];
-        [introductionView buildIntroductionWithPanels:@[panel]];
-        [self.view addSubview:introductionView];
+        [self doVolumeFade1];
+        showIntroduction = NO;
+        [self showIntroductionView];
     }
+    else
+    {
+        
+        if (self->window->flags & SDL_WINDOW_RESIZABLE) {
+            SDL_WindowData *data = self->window->driverdata;
+            SDL_VideoDisplay *display = SDL_GetDisplayForWindow(self->window);
+            SDL_DisplayModeData *displaymodedata = (SDL_DisplayModeData *) display->current_mode.driverdata;
+            const CGSize size = data->view.bounds.size;
+            int w, h;
+
+            w = (int)(size.width * displaymodedata->scale);
+            h = (int)(size.height * displaymodedata->scale);
+
+            SDL_SendWindowEvent(self->window, SDL_WINDOWEVENT_RESIZED, w, h);
+        }
+        
+
+
+        
+
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(singleTapped)];
+        singleTap.numberOfTapsRequired = 1;
+        singleTap.delegate = self;
+        [self.view addGestureRecognizer:singleTap];
+        
+        
+        UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+        swipeUp.numberOfTouchesRequired = 1;
+        swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+        swipeUp.delegate = self;
+        [self.view addGestureRecognizer:swipeUp];
+        
+        UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+        swipeDown.numberOfTouchesRequired = 1;
+        swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+        swipeDown.delegate = self;
+        [self.view addGestureRecognizer:swipeDown];
+        
+        UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+        swipeLeft.numberOfTouchesRequired = 1;
+        swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+        swipeLeft.delegate = self;
+        [self.view addGestureRecognizer:swipeLeft];
+        
+        UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+        swipeRight.numberOfTouchesRequired = 1;
+        swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+        swipeRight.delegate = self;
+        [self.view addGestureRecognizer:swipeRight];
+        
+        
+        UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+        panGesture.minimumNumberOfTouches = 2;
+        panGesture.maximumNumberOfTouches = 3;
+        panGesture.delegate = self;
+        [self.view addGestureRecognizer:panGesture];
+        
+        noButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64-64-16, self.view.bounds.size.height-64, 64, 64)];
+        //[[yesButton titleLabel] setText:@"Next"];
+        [noButton setBackgroundImage:[UIImage imageNamed:@"No"]];
+        [noButton setBackgroundImagePressed:[UIImage imageNamed:@"No_Touched"]];
+        noButton.delegate = self;
+        noButton.alpha = 0.3f;
+        [self.view addSubview:noButton];
+        
+        
+        yesButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64, self.view.bounds.size.height-64, 64, 64)];
+        //[[noButton titleLabel] setText:@"Prev"];
+        [yesButton setBackgroundImage:[UIImage imageNamed:@"Yes"]];
+        [yesButton setBackgroundImagePressed:[UIImage imageNamed:@"Yes_Touched"]];
+        yesButton.delegate = self;
+        yesButton.alpha = 0.3f;
+        [self.view addSubview:yesButton];
+        
+        prevButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64-64-16, self.view.bounds.size.height-64-64, 64, 64)];
+        //[[yesButton titleLabel] setText:@"Next"];
+        [prevButton setBackgroundImage:[UIImage imageNamed:@"Prev"]];
+        [prevButton setBackgroundImagePressed:[UIImage imageNamed:@"Prev_Touched"]];
+        prevButton.delegate = self;
+        prevButton.alpha = 0.3f;
+        [self.view addSubview:prevButton];
+        
+        nextButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64, self.view.bounds.size.height-64-64, 64, 64)];
+        //[[yesButton titleLabel] setText:@"Next"];
+        [nextButton setBackgroundImage:[UIImage imageNamed:@"Next"]];
+        [nextButton setBackgroundImagePressed:[UIImage imageNamed:@"Next_Touched"]];
+        nextButton.delegate = self;
+        nextButton.alpha = 0.3f;
+        [self.view addSubview:nextButton];
+        
+        
+        
+        settingsButton = [[JSButton alloc] initWithFrame:CGRectMake(8, 8, 32, 32)];
+        //[[yesButton titleLabel] setText:@"Next"];
+        [settingsButton setBackgroundImage:[UIImage imageNamed:@"Next"]];
+        [settingsButton setBackgroundImagePressed:[UIImage imageNamed:@"Next_Touched"]];
+        settingsButton.delegate = self;
+        //[self.view addSubview:settingsButton];
+        
+        
+        
+    //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:button1 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
+    //    
+    //    NSDictionary *views = NSDictionaryOfVariableBindings(button1, button2, button3, button4, button5, button6, button7, button8);
+    //    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button1][button2(==button1)][button3(==button1)][button4(==button1)][button5(==button1)][button6(==button1)][button7(==button1)][button8(==button1)]|" options:NSLayoutFormatAlignAllTop metrics:nil views:views]];
+
+
+        UIPinchGestureRecognizer* pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
+        [self.view addGestureRecognizer:pinchGestureRecognizer];
+        
+        
+        
+        dPad = [[JSDPad alloc] initWithFrame:CGRectMake(8, self.view.bounds.size.height - 8 - 144, 144, 144)];
+        dPad.delegate = self;
+        dPad.alpha = 0.3f;
+        [self.view addSubview:dPad];
+        
+        
+        
+        
+        
+        [self loadKeyBindings];
+        
+        allMenuItems = [self createMenuItems:userKeyBindings];
+        actionsMenu = [[CNPGridMenu alloc] initWithMenuItems:allMenuItems];
+        actionsMenu.delegate = self;
+        
+        
+        NSArray* settingsMenuItems = [self createSettingsMenuItems];
+    //    settingsMenu = [[CNPGridMenu alloc] initWithMenuItems:settingsMenuItems];
+        settingsMenu = [[CNPGridMenu alloc] initWithMenuItems:@[]];
+        [settingsMenu setMenuItems:settingsMenuItems];
+        settingsMenu.delegate = self;
+        
+        
+        
+        NSString* documentPath = [[[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path] stringByAppendingString:@"/"];
+        optionsFileWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:[documentPath stringByAppendingPathComponent:@"options.txt"] callback:^{
+            [optionsFileWatcher stopWatching];
+            [self performSelectorOnMainThread:@selector(optionsFileDidChange) withObject:nil waitUntilDone:NO];
+        }];
+        
+        
+        keybindingsFileWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:[documentPath stringByAppendingPathComponent:@"keybindings.json"] callback:^{
+            [keybindingsFileWatcher stopWatching];
+            [self performSelectorOnMainThread:@selector(keybindingsFileDidChange) withObject:nil waitUntilDone:NO];
+        }];
+    
+    
+    }
+    
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -1103,12 +1121,81 @@ enum
     
 }
 
+-(void)showIntroductionView
+{
+    introductionView = [[MYBlurIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    introductionView.delegate = self;
+    [introductionView setBackgroundColor:[UIColor blackColor]];
+    
+    
+    MYIntroductionPanel *panelStory1 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Cataclysm: Dark Days Ahead" description:@"You emerge from the shelter into the dim light of an overcast day, and look around for the first time since the disaster." image:nil];
+    MYIntroductionPanel *panelStory2 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Cataclysm: Dark Days Ahead" description:@"The world as you knew it is gone and in its place, a twisted mockery of all that was once familiar." image:nil];
+    
+    MYIntroductionPanel *panelStory3 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Cataclysm: Dark Days Ahead" description:@"Everything was cast aside in that frantic race for the shelter. You have no food, nothing to drink, no weapons. Nothing but your ingenuity and the fierce determination to survive against appalling odds." image:nil];
+    
+    MYIntroductionPanel *panelStory4 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Cataclysm: Dark Days Ahead" description:@"A grim prospect faces you. Perhaps worse even than the nightmares of last night, when you were tortured by dreams of the dead themselves rising to jealously tear life from the living." image:nil];
+    
+    MYIntroductionPanel *panelStory5 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Cataclysm: Dark Days Ahead" description:@"You cast your eyes up the road and begin to walk towards a house in the far distance. Things may be bad right now, but you've got a sinking feeling that there are darker days ahead." image:nil];
+    
+    MYIntroductionPanel *panelTitle = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Cataclysm: Dark Days Ahead" description:nil image:nil];
+    
+    
+    MYIntroductionPanel *panelControlDPad = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the D-Pad to move your character or cursor." image:nil];
+    
+    MYIntroductionPanel *panelControlActionButtons = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the action buttons to confirm or cancel actions. They work like the RETURN and ESC keys on the keyboard" image:nil];
+    
+    MYIntroductionPanel *panelControlTabButtons= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the tab buttons to move to next/previous tab, or descend/ascend stairs. They work like the > and < keys on the keyboard." image:nil];
+    
+    MYIntroductionPanel *panelGesturesSwipeUpAndDown= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe up to show the keyboard. Swipe down to hide it." image:nil];
+    
+    MYIntroductionPanel *panelGesturesSwipeRight= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe right to show map. It works like pressing m key on the keyboard." image:nil];
+    
+    MYIntroductionPanel *panelGesturesSwipeLeft= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe left to list all items/creatures around the player. It works like pressing V key on the keyboard." image:nil];
+    
+    MYIntroductionPanel *panelGesturesPause= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Single tap to pause character, or keep moving while driving. It works like pressing . key on the keyboard." image:nil];
+    
+    MYIntroductionPanel *panelGesturesDoubleSwipe= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Two-finger swipe in any directions to show show all the controls. Tap empty space to dismiss." image:nil];
+    
+    MYIntroductionPanel *panelGesturesTripleSwipe= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Three-finger swipe up to increase opacity of the onscreen controls. Three-finger swipe down to decrease the opacity." image:nil];
+    
+    
+    MYIntroductionPanel *panelCredits= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Credits" description:@"Original author:    Project Manager:    Website/Forum:\nWhales (retired)    KevinGranade        GlyphGryph\n\nCurrent Main Developers/Github Managers:\nKevinGranade, Rivet-the-Zombie, BevapDin, Coolthulu, i2amroy\n\nCataclysm:Dark Days Ahead is the result of contributions from over 300 volunteers. You can download compiled versions of Cataclysm DDA for Linux, Mac and Windows systems for free at http://en.cataclysmdda.com\n\nFor a full list of contributors please see:\nhttps://github.com/CleverRaven/Cataclysm-DDA/contributors\nCataclysm: Dark Days Ahead is released under CC-BY-SA 3.0." image:nil];
+    
+
+    
+    
+    [introductionView setBackgroundColor:[UIColor blackColor]];
+    
+    [introductionView buildIntroductionWithPanels:@[ panelStory1,
+                                                     panelStory2,
+                                                     panelStory3,
+                                                     panelStory4,
+                                                     panelStory5,
+                                                     panelTitle,
+                                                     panelControlActionButtons,
+                                                     panelControlTabButtons,
+                                                     panelControlDPad,
+                                                     panelGesturesSwipeUpAndDown,
+                                                     panelGesturesPause,
+                                                     panelGesturesDoubleSwipe,
+                                                     panelGesturesTripleSwipe,
+                                                     panelCredits ]];
+    [self.view addSubview:introductionView];
+
+}
+
 
 
 #pragma mark - MYIntroductionDelegate Methods
 -(void)introduction:(MYBlurIntroductionView *)introductionView didFinishWithType:(MYFinishType)finishType
 {
-    showIntroduction = NO;
+    [myAudioPlayer stop];
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"StabStringsCinematic_ZA02.520.wav" ];
+    AVAudioPlayer* soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+    soundPlayer.numberOfLoops = 0;
+    [soundPlayer play];
+    
+    //[self doVolumeFade2];
 }
 
 -(void)introduction:(MYBlurIntroductionView *)introductionView didChangeToPanel:(MYIntroductionPanel *)panel withIndex:(NSInteger)panelIndex

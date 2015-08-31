@@ -199,6 +199,8 @@
 		A677B1AE1B8CDC740034F15B /* Prev_Touched@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B19D1B8CDC740034F15B /* Prev_Touched@2x.png */; };
 		A677B1AF1B8CDC740034F15B /* Yes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B19E1B8CDC740034F15B /* Yes@2x.png */; };
 		A677B1B01B8CDC740034F15B /* Yes_Touched@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B19F1B8CDC740034F15B /* Yes_Touched@2x.png */; };
+		A6BBC8F01B90455200E31621 /* DTA_Eminor_Spheres.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6BBC8EE1B90455200E31621 /* DTA_Eminor_Spheres.wav */; };
+		A6BBC8F11B90455200E31621 /* StabStringsCinematic_ZA02.520.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6BBC8EF1B90455200E31621 /* StabStringsCinematic_ZA02.520.wav */; };
 		A6D6A67C1B8EFC4B00BCD61C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6A67B1B8EFC4B00BCD61C /* AVFoundation.framework */; };
 		A6D6A67E1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6D6A67D1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav */; };
 /* End PBXBuildFile section */
@@ -576,6 +578,8 @@
 		A677B19D1B8CDC740034F15B /* Prev_Touched@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prev_Touched@2x.png"; sourceTree = "<group>"; };
 		A677B19E1B8CDC740034F15B /* Yes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yes@2x.png"; sourceTree = "<group>"; };
 		A677B19F1B8CDC740034F15B /* Yes_Touched@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yes_Touched@2x.png"; sourceTree = "<group>"; };
+		A6BBC8EE1B90455200E31621 /* DTA_Eminor_Spheres.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = DTA_Eminor_Spheres.wav; path = ../BundledData/DTA_Eminor_Spheres.wav; sourceTree = "<group>"; };
+		A6BBC8EF1B90455200E31621 /* StabStringsCinematic_ZA02.520.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = StabStringsCinematic_ZA02.520.wav; path = ../BundledData/StabStringsCinematic_ZA02.520.wav; sourceTree = "<group>"; };
 		A6D6A6741B8EFC3000BCD61C /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		A6D6A67B1B8EFC4B00BCD61C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A6D6A67D1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CBRadioMessageHelp_ZA01.146.wav; path = ../BundledData/CBRadioMessageHelp_ZA01.146.wav; sourceTree = "<group>"; };
@@ -1040,6 +1044,8 @@
 		A602D9CB1B8C721F00EA2879 /* BundledData */ = {
 			isa = PBXGroup;
 			children = (
+				A6BBC8EE1B90455200E31621 /* DTA_Eminor_Spheres.wav */,
+				A6BBC8EF1B90455200E31621 /* StabStringsCinematic_ZA02.520.wav */,
 				A6D6A67D1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav */,
 				A602D9CC1B8C724300EA2879 /* config */,
 				A602D9CD1B8C724300EA2879 /* data */,
@@ -1221,6 +1227,7 @@
 				A677B1A11B8CDC740034F15B /* dPad-DownLeft@2x.png in Resources */,
 				A677B1A01B8CDC740034F15B /* dPad-Down@2x.png in Resources */,
 				A677B1A91B8CDC740034F15B /* Next@2x.png in Resources */,
+				A6BBC8F01B90455200E31621 /* DTA_Eminor_Spheres.wav in Resources */,
 				A602D9BD1B8C6A6E00EA2879 /* version.cmake in Resources */,
 				A602D9D01B8C724300EA2879 /* data in Resources */,
 				A677B1AC1B8CDC740034F15B /* No_Touched@2x.png in Resources */,
@@ -1233,6 +1240,7 @@
 				A602D9D11B8C724300EA2879 /* lang in Resources */,
 				A602D7BF1B8C638300EA2879 /* LaunchScreen.xib in Resources */,
 				A677B1AD1B8CDC740034F15B /* Prev@2x.png in Resources */,
+				A6BBC8F11B90455200E31621 /* StabStringsCinematic_ZA02.520.wav in Resources */,
 				A602D7BC1B8C638300EA2879 /* Images.xcassets in Resources */,
 				A677B1A21B8CDC740034F15B /* dPad-DownRight@2x.png in Resources */,
 				A677B1AE1B8CDC740034F15B /* Prev_Touched@2x.png in Resources */,

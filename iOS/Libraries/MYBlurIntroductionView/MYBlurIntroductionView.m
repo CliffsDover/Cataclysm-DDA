@@ -53,7 +53,7 @@
     [self addSubview:self.PageControl];
     
     //Get skipString dimensions
-    NSString *skipString = NSLocalizedString(@"Skip", nil);
+    NSString *skipString = NSLocalizedString(@"Play", nil);
     CGFloat skipStringWidth = 0;
     kSkipButtonFont = [UIFont systemFontOfSize:16];
     
