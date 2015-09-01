@@ -249,6 +249,75 @@ bool fexists(const char *filename)
   return (bool)ifile;
 }
 
+#ifdef CDDA_IOS
+void ReleaseSounds( void )
+{
+//    const auto iter = sound_effects_p
+    for( auto iter = sound_effects_p.begin(); iter != sound_effects_p.end(); ++iter )
+    {
+        auto &vector = iter->second;
+        
+        if( vector.empty() ) {
+            return;
+        }
+        
+        for( int i = 0; i < vector.size(); ++i )
+        {
+            sound_effect* selected = &vector[i];
+            Mix_Chunk* chunk = selected->chunk.get();
+            if( chunk )
+            {
+                std::cout << "Releasing " << selected->fileName << std::endl;
+                Mix_FreeChunk( chunk );
+                selected->chunk.release();
+            }
+        }
+    }
+}
+int HandleAppEvents(void *userdata, SDL_Event *event)
+{
+    switch (event->type)
+    {
+//        case SDL_APP_TERMINATING:
+//            /* Terminate the app.
+//             Shut everything down before returning from this function.
+//             */
+//            return 0;
+        case SDL_APP_LOWMEMORY:
+            /* You will get this when your app is paused and iOS wants more memory.
+             Release as much memory as possible.
+             */
+            ReleaseSounds();
+            return 0;
+//        case SDL_APP_WILLENTERBACKGROUND:
+//            /* Prepare your app to go into the background.  Stop loops, etc.
+//             This gets called when the user hits the home button, or gets a call.
+//             */
+//            return 0;
+//        case SDL_APP_DIDENTERBACKGROUND:
+//            /* This will get called if the user accepted whatever sent your app to the background.
+//             If the user got a phone call and canceled it, you'll instead get an    SDL_APP_DIDENTERFOREGROUND event and restart your loops.
+//             When you get this, you have 5 seconds to save all your state or the app will be terminated.
+//             Your app is NOT active at this point.
+//             */
+//            return 0;
+//        case SDL_APP_WILLENTERFOREGROUND:
+//            /* This call happens when your app is coming back to the foreground.
+//             Restore all your state here.
+//             */
+//            return 0;
+//        case SDL_APP_DIDENTERFOREGROUND:
+//            /* Restart your loops here.
+//             Your app is interactive and getting CPU again.
+//             */
+//            return 0;
+        default:
+            /* No special processing, add it to the event queue */
+            return 1;
+    }
+}
+#endif // CDDA_IOS
+
 bool InitSDL()
 {
     int init_flags = SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER;
@@ -279,7 +348,9 @@ bool InitSDL()
 
     //SDL2 has no functionality for INPUT_DELAY, we would have to query it manually, which is expensive
     //SDL2 instead uses the OS's Input Delay.
-
+#ifdef CDDA_IOS
+    SDL_SetEventFilter(HandleAppEvents, NULL);
+#endif // CDDA_IOS
     atexit(SDL_Quit);
 
     return true;
