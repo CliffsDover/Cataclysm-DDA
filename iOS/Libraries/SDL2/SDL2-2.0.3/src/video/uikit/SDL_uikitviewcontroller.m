@@ -936,13 +936,14 @@ enum
 
 - (void)dPad:(JSDPad *)dPad didPressDirection:(JSDPadDirection)direction
 {
-    NSLog(@"Changing direction to: %@", [self stringForDirection:direction]);
+    [self stringForDirection:direction];
+    //NSLog(@"Changing direction to: %@", [self stringForDirection:direction]);
     //[self updateDirectionLabel];
 }
 
 - (void)dPadDidReleaseDirection:(JSDPad *)dpad
 {
-    NSLog(@"Releasing DPad");
+    //NSLog(@"Releasing DPad");
     //[self updateDirectionLabel];
     [dpadTimer invalidate];
     dpadTimer = nil;

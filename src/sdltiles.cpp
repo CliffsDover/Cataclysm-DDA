@@ -52,6 +52,7 @@
 
 #ifdef CDDA_IOS
 #import "SDiPhoneVersion.h"
+//#include "lrucache.hpp"
 #endif // CDDA_IOS
 
 #define dbg(x) DebugLog((DebugLevel)(x),D_SDL) << __FILE__ << ":" << __LINE__ << ": "
@@ -72,6 +73,7 @@ std::string current_playlist = "";
 int current_playlist_at = 0;
 
 struct sound_effect {
+    std::string fileName;
     int volume;
 
     struct deleter {
@@ -2062,11 +2064,12 @@ void sfx::load_sound_effects( JsonObject &jsobj ) {
         sound_effect new_sound_effect;
         const std::string file = jsarr.next_string();
         std::string path = ( FILENAMES[ "datadir" ] + "/sound/" + file );
-        new_sound_effect.chunk.reset( Mix_LoadWAV( path.c_str() ) );
-        if( !new_sound_effect.chunk ) {
-            dbg( D_ERROR ) << "Failed to load audio file " << path << ": " << Mix_GetError();
-            continue; // don't want empty chunks in the map
-        }
+        //new_sound_effect.chunk.reset( Mix_LoadWAV( path.c_str() ) );
+        //if( !new_sound_effect.chunk ) {
+        //    dbg( D_ERROR ) << "Failed to load audio file " << path << ": " << Mix_GetError();
+        //    continue; // don't want empty chunks in the map
+        //}
+        new_sound_effect.fileName = path;
         new_sound_effect.volume = volume;
 
         effects.push_back( std::move( new_sound_effect ) );
@@ -2096,20 +2099,29 @@ void sfx::load_playlist( JsonObject &jsobj )
 
 // Returns a random sound effect matching given id and variant or `nullptr` if there is no
 // matching sound effect.
-const sound_effect* find_random_effect( const id_and_variant &id_variants_pair )
+/*const */sound_effect* find_random_effect( const id_and_variant &id_variants_pair )
 {
     const auto iter = sound_effects_p.find( id_variants_pair );
     if( iter == sound_effects_p.end() ) {
         return nullptr;
     }
-    const auto &vector = iter->second;
+    /*const */auto &vector = iter->second;
     if( vector.empty() ) {
         return nullptr;
     }
-    return &vector[rng( 0, vector.size() - 1 )];
+    sound_effect* selected = &vector[rng( 0, vector.size() - 1 )];
+    
+    
+    if( !selected->chunk )
+    {
+        std::cout << "Loading " << selected->fileName << std::endl;
+        selected->chunk.reset( Mix_LoadWAV( selected->fileName.c_str() ) );
+    }
+    
+    return selected;
 }
 // Same as above, but with fallback to "default" variant. May still return `nullptr`
-const sound_effect* find_random_effect( const std::string &id, const std::string& variant )
+/*const */sound_effect* find_random_effect( const std::string &id, const std::string& variant )
 {
     const auto eff = find_random_effect( id_and_variant( id, variant ) );
     if( eff != nullptr ) {
