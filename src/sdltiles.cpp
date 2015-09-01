@@ -51,7 +51,7 @@
 #endif
 
 #ifdef CDDA_IOS
-#import "SDiPhoneVersion.h"
+#import "SDVersion.h"
 //#include "lrucache.hpp"
 #endif // CDDA_IOS
 
@@ -1456,25 +1456,45 @@ WINDOW *curses_init(void)
 #ifdef CDDA_IOS
     std::ifstream jsonstream;//(FILENAMES["fontdata"].c_str(), std::ifstream::binary);
     // Check for iPhone device screen size
-    if ( [SDiPhoneVersion deviceSize] == iPhone4inch)
+    if ( [SDVersion deviceSize] == Screen4inch)
     {
         jsonstream.open( FILENAMES["fontdata"].append( "_4inches" ) );
         NSLog(@"Your screen is 4 inches");
     }
-    else if ( [SDiPhoneVersion deviceSize] == iPhone35inch)
+    else if ( [SDVersion deviceSize] == Screen3Dot5inch)
     {
         jsonstream.open( FILENAMES["fontdata"].append( "_3.5inches" ) );
         NSLog(@"Your screen is 3.5 inches");
     }
-    else if ( [SDiPhoneVersion deviceSize] == iPhone47inch)
+    else if ( [SDVersion deviceSize] == Screen4Dot7inch)
     {
         jsonstream.open( FILENAMES["fontdata"].append( "_4.7inches" ) );
         NSLog(@"Your screen is 4.7 inches");
     }
-    else if ( [SDiPhoneVersion deviceSize] == iPhone55inch)
+    else if ( [SDVersion deviceSize] == Screen5Dot5inch)
     {
         jsonstream.open( FILENAMES["fontdata"].append( "_5.5inches" ) );
         NSLog(@"Your screen is 5.5 inches");
+    }
+    else if( [SDVersion deviceVersion] == iPad2 )
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_iPad2" ) );
+        NSLog(@"You got the iPad 2");
+    }
+    else if( [SDVersion deviceVersion] == iPadMini )
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_iPadMini" ) );
+        NSLog(@"You got the iPad Mini");
+    }
+    else if( [SDVersion deviceVersion] == iPadAir )
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_iPadAir" ) );
+        NSLog(@"You got the iPad Air");
+    }
+    else if( [SDVersion deviceVersion] == iPadMini2 )
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_iPadMiniRetina" ) );
+        NSLog(@"You got the iPad Mini Retina");
     }
     else
     {

@@ -255,8 +255,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2275"
             endingLineNumber = "2275"
-            landmarkName = "sfx::play_variant_sound( std::string id, std::string variant, int volume )"
-            landmarkType = "5">
+            landmarkName = "do_pitch_shift( Mix_Chunk *s, float pitch )"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -271,7 +271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2293"
             endingLineNumber = "2293"
-            landmarkName = "sfx::play_variant_sound( std::string id, std::string variant, int volume, int angle, float pitch_min, float pitch_max )"
+            landmarkName = "sfx::play_variant_sound( std::string id, std::string variant, int volume )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -181,7 +181,6 @@
 		A602D9CF1B8C724300EA2879 /* config in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CC1B8C724300EA2879 /* config */; };
 		A602D9D01B8C724300EA2879 /* data in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CD1B8C724300EA2879 /* data */; };
 		A602D9D11B8C724300EA2879 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CE1B8C724300EA2879 /* lang */; };
-		A62ADE3B1B8DBC6400562FEA /* SDiPhoneVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = A62ADE3A1B8DBC6400562FEA /* SDiPhoneVersion.m */; };
 		A677B1A01B8CDC740034F15B /* dPad-Down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B18F1B8CDC740034F15B /* dPad-Down@2x.png */; };
 		A677B1A11B8CDC740034F15B /* dPad-DownLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B1901B8CDC740034F15B /* dPad-DownLeft@2x.png */; };
 		A677B1A21B8CDC740034F15B /* dPad-DownRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B1911B8CDC740034F15B /* dPad-DownRight@2x.png */; };
@@ -201,6 +200,7 @@
 		A677B1B01B8CDC740034F15B /* Yes_Touched@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B19F1B8CDC740034F15B /* Yes_Touched@2x.png */; };
 		A6BBC8F01B90455200E31621 /* DTA_Eminor_Spheres.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6BBC8EE1B90455200E31621 /* DTA_Eminor_Spheres.wav */; };
 		A6BBC8F11B90455200E31621 /* StabStringsCinematic_ZA02.520.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6BBC8EF1B90455200E31621 /* StabStringsCinematic_ZA02.520.wav */; };
+		A6BCB5A21B95BCFA00D7C5B2 /* SDiOSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BCB59D1B95BCFA00D7C5B2 /* SDiOSVersion.m */; };
 		A6D6A67C1B8EFC4B00BCD61C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6A67B1B8EFC4B00BCD61C /* AVFoundation.framework */; };
 		A6D6A67E1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6D6A67D1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav */; };
 /* End PBXBuildFile section */
@@ -559,8 +559,6 @@
 		A602D9CC1B8C724300EA2879 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../BundledData/config; sourceTree = "<group>"; };
 		A602D9CD1B8C724300EA2879 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../BundledData/data; sourceTree = "<group>"; };
 		A602D9CE1B8C724300EA2879 /* lang */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lang; path = ../BundledData/lang; sourceTree = "<group>"; };
-		A62ADE391B8DBC6400562FEA /* SDiPhoneVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDiPhoneVersion.h; sourceTree = "<group>"; };
-		A62ADE3A1B8DBC6400562FEA /* SDiPhoneVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDiPhoneVersion.m; sourceTree = "<group>"; };
 		A677B18F1B8CDC740034F15B /* dPad-Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down@2x.png"; sourceTree = "<group>"; };
 		A677B1901B8CDC740034F15B /* dPad-DownLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-DownLeft@2x.png"; sourceTree = "<group>"; };
 		A677B1911B8CDC740034F15B /* dPad-DownRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-DownRight@2x.png"; sourceTree = "<group>"; };
@@ -580,6 +578,9 @@
 		A677B19F1B8CDC740034F15B /* Yes_Touched@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yes_Touched@2x.png"; sourceTree = "<group>"; };
 		A6BBC8EE1B90455200E31621 /* DTA_Eminor_Spheres.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = DTA_Eminor_Spheres.wav; path = ../BundledData/DTA_Eminor_Spheres.wav; sourceTree = "<group>"; };
 		A6BBC8EF1B90455200E31621 /* StabStringsCinematic_ZA02.520.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = StabStringsCinematic_ZA02.520.wav; path = ../BundledData/StabStringsCinematic_ZA02.520.wav; sourceTree = "<group>"; };
+		A6BCB59C1B95BCFA00D7C5B2 /* SDiOSVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDiOSVersion.h; sourceTree = "<group>"; };
+		A6BCB59D1B95BCFA00D7C5B2 /* SDiOSVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDiOSVersion.m; sourceTree = "<group>"; };
+		A6BCB5A11B95BCFA00D7C5B2 /* SDVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDVersion.h; sourceTree = "<group>"; };
 		A6D6A6741B8EFC3000BCD61C /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		A6D6A67B1B8EFC4B00BCD61C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A6D6A67D1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CBRadioMessageHelp_ZA01.146.wav; path = ../BundledData/CBRadioMessageHelp_ZA01.146.wav; sourceTree = "<group>"; };
@@ -682,7 +683,7 @@
 		A602D7D41B8C641700EA2879 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				A62ADE381B8DBC6400562FEA /* SDiPhoneVersion */,
+				A6BCB59A1B95BCFA00D7C5B2 /* SDVersion */,
 				A6D6A67B1B8EFC4B00BCD61C /* AVFoundation.framework */,
 				A6D6A6741B8EFC3000BCD61C /* OpenAL.framework */,
 				A602D8061B8C694100EA2879 /* UIKit.framework */,
@@ -1054,16 +1055,6 @@
 			name = BundledData;
 			sourceTree = "<group>";
 		};
-		A62ADE381B8DBC6400562FEA /* SDiPhoneVersion */ = {
-			isa = PBXGroup;
-			children = (
-				A62ADE391B8DBC6400562FEA /* SDiPhoneVersion.h */,
-				A62ADE3A1B8DBC6400562FEA /* SDiPhoneVersion.m */,
-			);
-			name = SDiPhoneVersion;
-			path = ../../Libraries/SDiPhoneVersion;
-			sourceTree = "<group>";
-		};
 		A677B18E1B8CDC740034F15B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,6 +1078,25 @@
 			);
 			name = Resources;
 			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		A6BCB59A1B95BCFA00D7C5B2 /* SDVersion */ = {
+			isa = PBXGroup;
+			children = (
+				A6BCB59B1B95BCFA00D7C5B2 /* SDiOSVersion */,
+				A6BCB5A11B95BCFA00D7C5B2 /* SDVersion.h */,
+			);
+			name = SDVersion;
+			path = ../../Libraries/SDVersion;
+			sourceTree = "<group>";
+		};
+		A6BCB59B1B95BCFA00D7C5B2 /* SDiOSVersion */ = {
+			isa = PBXGroup;
+			children = (
+				A6BCB59C1B95BCFA00D7C5B2 /* SDiOSVersion.h */,
+				A6BCB59D1B95BCFA00D7C5B2 /* SDiOSVersion.m */,
+			);
+			path = SDiOSVersion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1278,7 +1288,6 @@
 				A602D9521B8C6A6E00EA2879 /* effect.cpp in Sources */,
 				A602D9771B8C6A6E00EA2879 /* mapgen_functions.cpp in Sources */,
 				A602D92E1B8C6A6E00EA2879 /* action.cpp in Sources */,
-				A62ADE3B1B8DBC6400562FEA /* SDiPhoneVersion.m in Sources */,
 				A602D92F1B8C6A6E00EA2879 /* active_item_cache.cpp in Sources */,
 				A602D96E1B8C6A6E00EA2879 /* live_view.cpp in Sources */,
 				A602D9441B8C6A6E00EA2879 /* clzones.cpp in Sources */,
@@ -1338,6 +1347,7 @@
 				A602D9781B8C6A6E00EA2879 /* mapgenformat.cpp in Sources */,
 				A602D9331B8C6A6E00EA2879 /* advanced_inv.cpp in Sources */,
 				A602D9951B8C6A6E00EA2879 /* npc.cpp in Sources */,
+				A6BCB5A21B95BCFA00D7C5B2 /* SDiOSVersion.m in Sources */,
 				A602D9821B8C6A6E00EA2879 /* mission_place.cpp in Sources */,
 				A602D99A1B8C6A6E00EA2879 /* overmap.cpp in Sources */,
 				A602D9681B8C6A6E00EA2879 /* iuse_software_kitten.cpp in Sources */,
