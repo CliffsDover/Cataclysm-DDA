@@ -1400,6 +1400,11 @@ WINDOW *curses_init(void)
         jsonstream.open( FILENAMES["fontdata"].append( "_5.5inches" ) );
         NSLog(@"Your screen is 5.5 inches");
     }
+    else
+    {
+        jsonstream.open( FILENAMES["fontdata"].append( "_iPad2" ) );
+        NSLog(@"Your device and screen size is 5.5 unknown");
+    }
 #else
     std::ifstream jsonstream(FILENAMES["fontdata"].c_str(), std::ifstream::binary);
 #endif // CDDA_IOS
