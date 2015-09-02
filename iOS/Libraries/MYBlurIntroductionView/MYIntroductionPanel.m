@@ -47,6 +47,10 @@
     return [self initWithFrame: frame title: title description: description image: image header: nil];
 }
 
+-(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description images:(NSArray *)images{
+    return [self initWithFrame: frame title: title description: description images: images header: nil];
+}
+
 -(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description image:(UIImage *)image header:(UIView *)headerView{
     self = [super initWithFrame:frame];
     if (self) {
@@ -57,6 +61,24 @@
         self.PanelTitle = title;
         self.PanelDescription = description;
         self.PanelImageView = [[UIImageView alloc] initWithImage:image];
+        [self buildPanelWithFrame:frame];
+    }
+    return self;
+}
+
+-(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description images:(NSArray *)images header:(UIView *)headerView{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        [self initializeConstants];
+        
+        self.PanelHeaderView = headerView;
+        self.PanelTitle = title;
+        self.PanelDescription = description;
+        self.PanelImageView = [[UIImageView alloc] initWithImage:images[0]];
+        self.PanelImageView.animationImages = [NSArray arrayWithArray:images];
+        self.PanelImageView.animationDuration = 1.0f;
+        self.PanelImageView.animationRepeatCount = 0;
         [self buildPanelWithFrame:frame];
     }
     return self;
@@ -208,6 +230,8 @@
             [[self PanelDescriptionLabel] setFrame:initialDescriptionFrame];
             [[self PanelImageView] setAlpha:1];
             [[self PanelImageView] setFrame:initialImageFrame];
+            if( [[self PanelImageView] animationImages] != nil )
+               [[self PanelImageView] startAnimating];
         }];
     }];
 }

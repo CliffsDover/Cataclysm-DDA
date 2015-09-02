@@ -1577,6 +1577,7 @@
 					../Libraries/SDL2/include/SDL2,
 				);
 				INFOPLIST_FILE = "Cataclysm-Dark-Days-Ahead/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../Libraries/glib/lib",
@@ -1606,6 +1607,7 @@
 					../Libraries/SDL2/include/SDL2,
 				);
 				INFOPLIST_FILE = "Cataclysm-Dark-Days-Ahead/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../Libraries/glib/lib",
