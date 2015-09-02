@@ -63,7 +63,6 @@ enum
     JSButton* noButton;
     JSButton* nextButton;
     JSButton* prevButton;
-    JSButton* settingsButton;
     
     NSTimer* dpadTimer;
     
@@ -161,6 +160,7 @@ enum
         [menuItems addObject:menuItem];
     }
     
+#if 0
     // append setting menu item
     CNPGridMenuItem *menuItem = [[CNPGridMenuItem alloc] init];
     menuItem.icon = [self imageWithText:@"👼" fontSize:32 rectSize:CGSizeMake(40, 40)];
@@ -171,7 +171,7 @@ enum
         [self performSelectorOnMainThread:@selector(showSettingsMenu) withObject:nil waitUntilDone:NO];
     };
     [menuItems addObject:menuItem];
-    
+#endif
     
     return [NSArray arrayWithArray:menuItems];
 }
@@ -482,16 +482,6 @@ enum
         [self.view addSubview:nextButton];
         
         
-        
-        settingsButton = [[JSButton alloc] initWithFrame:CGRectMake(8, 8, 32, 32)];
-        //[[yesButton titleLabel] setText:@"Next"];
-        [settingsButton setBackgroundImage:[UIImage imageNamed:@"Next"]];
-        [settingsButton setBackgroundImagePressed:[UIImage imageNamed:@"Next_Touched"]];
-        settingsButton.delegate = self;
-        //[self.view addSubview:settingsButton];
-        
-        
-        
     //    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:button1 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
     //    
     //    NSDictionary *views = NSDictionaryOfVariableBindings(button1, button2, button3, button4, button5, button6, button7, button8);
@@ -605,14 +595,14 @@ enum
 
 -(void)singleTapped
 {
-    NSLog( @"Single Tapped" );
+    //NSLog( @"Single Tapped" );
     SDL_SendKeyboardText( "." );
 }
 
 
 - (void) handleSwipe:(UISwipeGestureRecognizer*)gesture
 {
-    NSLog( @"Double Swipe: %lu", (unsigned long)gesture.direction );
+    //NSLog( @"Double Swipe: %lu", (unsigned long)gesture.direction );
     
     if( UISwipeGestureRecognizerDirectionUp == gesture.direction )
     {
@@ -639,7 +629,7 @@ enum
 
 -(void)handlePanGesture:(UIPanGestureRecognizer*)gesture
 {
-    NSLog( @"%lu %f", (unsigned long)gesture.numberOfTouches, [gesture translationInView:self.view].y );
+    //NSLog( @"%lu %f", (unsigned long)gesture.numberOfTouches, [gesture translationInView:self.view].y );
     
     
     if( 2 == gesture.numberOfTouches )
@@ -669,8 +659,6 @@ enum
         noButton.alpha = alpha;
         nextButton.alpha = alpha;
         prevButton.alpha = alpha;
-        settingsButton.alpha = alpha;
-
     }
     
     
@@ -767,7 +755,7 @@ enum
 
 -(void)dpadTimerHandler:(NSTimer *)timer
 {
-    NSLog( @"dpadTimerHandler" );
+    //NSLog( @"dpadTimerHandler" );
     
     switch( [[timer userInfo][@"Direction"] integerValue] )
     {
@@ -1167,12 +1155,12 @@ enum
     
     [introductionView setBackgroundColor:[UIColor blackColor]];
     
-    [introductionView buildIntroductionWithPanels:@[ panelStory1,
-                                                     panelStory2,
-                                                     panelStory3,
-                                                     panelStory4,
-                                                     panelStory5,
-                                                     panelTitle,
+    [introductionView buildIntroductionWithPanels:@[ //panelStory1,
+                                                     //panelStory2,
+                                                     //panelStory3,
+                                                     //panelStory4,
+                                                     //panelStory5,
+                                                     //panelTitle,
                                                      panelControlActionButtons,
                                                      panelControlTabButtons,
                                                      panelControlDPad,
