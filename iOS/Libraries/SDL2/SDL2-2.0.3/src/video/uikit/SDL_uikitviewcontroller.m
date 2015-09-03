@@ -448,6 +448,12 @@ enum
         panGesture.delegate = self;
         [self.view addGestureRecognizer:panGesture];
         
+        
+        UILongPressGestureRecognizer * longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(hangleLongPress:)];
+        longPressGesture.minimumPressDuration = 1.0;
+        [self.view addGestureRecognizer:longPressGesture];
+        
+        
         noButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64-64-16, self.view.bounds.size.height-64, 64, 64)];
         //[[yesButton titleLabel] setText:@"Next"];
         [noButton setBackgroundImage:[UIImage imageNamed:@"No"]];
@@ -614,7 +620,10 @@ enum
     else if( UISwipeGestureRecognizerDirectionDown == gesture.direction )
     {
         if( SDL_IsScreenKeyboardShown( SDL_GetFocusWindow() ) )
+        {
             SDL_StopTextInput();
+            self.lockKeyboard = NO;
+        }
         //[self presentGridMenu:actionsMenu animated:YES completion:nil];
     }
     else if( UISwipeGestureRecognizerDirectionLeft == gesture.direction )
@@ -665,7 +674,22 @@ enum
     [gesture setTranslation:CGPointMake(0, 0) inView:self.view];
 }
 
-
+-(void)hangleLongPress:(UILongPressGestureRecognizer*)gesture
+{
+    if( gesture.state == UIGestureRecognizerStateEnded )
+    {
+        NSLog( @"Long Press Ended" );
+    }
+    else if( gesture.state == UIGestureRecognizerStateBegan )
+    {
+        NSLog( @"Long Press Began" );
+        if( !SDL_IsScreenKeyboardShown( SDL_GetFocusWindow() ) )
+        {
+            self.lockKeyboard = YES;
+            SDL_StartTextInput();
+        }
+    }
+}
 
 
 -(void)handlePinchGesture:(UIPinchGestureRecognizer*)pinchGestureRecognier

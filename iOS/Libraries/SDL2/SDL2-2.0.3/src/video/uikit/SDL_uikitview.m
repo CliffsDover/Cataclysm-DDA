@@ -308,7 +308,8 @@ void _uikit_keyboard_init() ;
         NSLog( @"[SDL] Sending character:%@", string );
     }
     // hide keyboard after typing a character
-    [self hideKeyboard];
+    if( !self->viewcontroller.lockKeyboard )
+        [self hideKeyboard];
     return NO; /* don't allow the edit! (keep placeholder text there) */
 }
 

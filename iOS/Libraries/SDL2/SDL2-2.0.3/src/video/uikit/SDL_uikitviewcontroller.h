@@ -36,6 +36,7 @@
 }
 
 @property (readwrite) SDL_Window *window;
+@property (nonatomic, assign) BOOL lockKeyboard;
 
 - (id)initWithSDLWindow:(SDL_Window *)_window;
 - (void)loadView;
