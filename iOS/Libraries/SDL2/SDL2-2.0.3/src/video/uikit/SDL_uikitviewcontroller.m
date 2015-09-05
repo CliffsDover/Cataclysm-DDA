@@ -80,6 +80,8 @@ enum
     
     MYBlurIntroductionView *introductionView;
     
+    UILongPressGestureRecognizer * longPressGesture;
+    
     BOOL showIntroduction;
 }
 
@@ -451,7 +453,7 @@ enum
         [self.view addGestureRecognizer:panGesture];
         
         
-        UILongPressGestureRecognizer * longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(hangleLongPress:)];
+        longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(hangleLongPress:)];
         longPressGesture.minimumPressDuration = 1.0;
         [self.view addGestureRecognizer:longPressGesture];
         
@@ -951,6 +953,7 @@ enum
 
 - (void)dPad:(JSDPad *)dPad didPressDirection:(JSDPadDirection)direction
 {
+    [longPressGesture setEnabled:NO];
     [self stringForDirection:direction];
     //NSLog(@"Changing direction to: %@", [self stringForDirection:direction]);
     //[self updateDirectionLabel];
@@ -962,6 +965,7 @@ enum
     //[self updateDirectionLabel];
     [dpadTimer invalidate];
     dpadTimer = nil;
+    [longPressGesture setEnabled:YES];
 }
 
 
@@ -969,7 +973,7 @@ enum
 
 - (void)buttonPressed:(JSButton *)button
 {
-    
+    [longPressGesture setEnabled:NO];
     
     
 }
@@ -994,6 +998,7 @@ enum
     {
         SDL_SendKeyboardText(">");
     }
+    [longPressGesture setEnabled:YES];
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
