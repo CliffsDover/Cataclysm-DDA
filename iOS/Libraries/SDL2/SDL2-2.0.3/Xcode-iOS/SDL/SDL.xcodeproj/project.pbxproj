@@ -91,6 +91,10 @@
 		A68B76791B1C499600FE4036 /* CNPGridMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A68B76771B1C499600FE4036 /* CNPGridMenu.h */; };
 		A68B767A1B1C499600FE4036 /* CNPGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A68B76781B1C499600FE4036 /* CNPGridMenu.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A68B767D1B1C4F0B00FE4036 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68B767C1B1C4F0B00FE4036 /* Accelerate.framework */; };
+		A6AB27E71B9A8C0100FA29C1 /* COSTouchVisualizerWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AB27E11B9A8C0100FA29C1 /* COSTouchVisualizerWindow.h */; };
+		A6AB27E81B9A8C0100FA29C1 /* COSTouchVisualizerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AB27E21B9A8C0100FA29C1 /* COSTouchVisualizerWindow.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A6AB27EC1B9A8E9C00FA29C1 /* ASTouchVisualizer.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AB27EA1B9A8E9C00FA29C1 /* ASTouchVisualizer.h */; };
+		A6AB27ED1B9A8E9C00FA29C1 /* ASTouchVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AB27EB1B9A8E9C00FA29C1 /* ASTouchVisualizer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A6EE87B21B26DE000034A2AE /* JSDPad.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE87B01B26DE000034A2AE /* JSDPad.h */; };
 		A6EE87B31B26DE000034A2AE /* JSDPad.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE87B11B26DE000034A2AE /* JSDPad.m */; };
 		AA0AD06216647BBB00CE5896 /* SDL_gamecontroller.c in Sources */ = {isa = PBXBuildFile; fileRef = AA0AD06116647BBB00CE5896 /* SDL_gamecontroller.c */; };
@@ -304,6 +308,12 @@
 		A68B76771B1C499600FE4036 /* CNPGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPGridMenu.h; sourceTree = "<group>"; };
 		A68B76781B1C499600FE4036 /* CNPGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPGridMenu.m; sourceTree = "<group>"; };
 		A68B767C1B1C4F0B00FE4036 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A6AB27E11B9A8C0100FA29C1 /* COSTouchVisualizerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSTouchVisualizerWindow.h; sourceTree = "<group>"; };
+		A6AB27E21B9A8C0100FA29C1 /* COSTouchVisualizerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSTouchVisualizerWindow.m; sourceTree = "<group>"; };
+		A6AB27E41B9A8C0100FA29C1 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		A6AB27E61B9A8C0100FA29C1 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		A6AB27EA1B9A8E9C00FA29C1 /* ASTouchVisualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTouchVisualizer.h; sourceTree = "<group>"; };
+		A6AB27EB1B9A8E9C00FA29C1 /* ASTouchVisualizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTouchVisualizer.m; sourceTree = "<group>"; };
 		A6EE879E1B26DE000034A2AE /* dPad-Down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down.png"; sourceTree = "<group>"; };
 		A6EE879F1B26DE000034A2AE /* dPad-Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down@2x.png"; sourceTree = "<group>"; };
 		A6EE87A01B26DE000034A2AE /* dPad-DownLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-DownLeft.png"; sourceTree = "<group>"; };
@@ -688,6 +698,44 @@
 			path = ../../../../../MYBlurIntroductionView;
 			sourceTree = "<group>";
 		};
+		A6AB27E01B9A8C0100FA29C1 /* COSTouchVisualizer */ = {
+			isa = PBXGroup;
+			children = (
+				A6AB27E11B9A8C0100FA29C1 /* COSTouchVisualizerWindow.h */,
+				A6AB27E21B9A8C0100FA29C1 /* COSTouchVisualizerWindow.m */,
+				A6AB27E31B9A8C0100FA29C1 /* ios */,
+				A6AB27E51B9A8C0100FA29C1 /* osx */,
+			);
+			name = COSTouchVisualizer;
+			path = ../../../../../COSTouchVisualizer;
+			sourceTree = "<group>";
+		};
+		A6AB27E31B9A8C0100FA29C1 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A6AB27E41B9A8C0100FA29C1 /* .gitkeep */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A6AB27E51B9A8C0100FA29C1 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				A6AB27E61B9A8C0100FA29C1 /* .gitkeep */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		A6AB27E91B9A8E9C00FA29C1 /* ASTouchVisualizer */ = {
+			isa = PBXGroup;
+			children = (
+				A6AB27EA1B9A8E9C00FA29C1 /* ASTouchVisualizer.h */,
+				A6AB27EB1B9A8E9C00FA29C1 /* ASTouchVisualizer.m */,
+			);
+			name = ASTouchVisualizer;
+			path = ../../../../../ASTouchVisualizer;
+			sourceTree = "<group>";
+		};
 		A6EE879D1B26DE000034A2AE /* JSDPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +808,8 @@
 		FD689F090E26E5D900F90B21 /* uikit */ = {
 			isa = PBXGroup;
 			children = (
+				A6AB27E91B9A8E9C00FA29C1 /* ASTouchVisualizer */,
+				A6AB27E01B9A8C0100FA29C1 /* COSTouchVisualizer */,
 				A67D880E1B8F271600F7AE63 /* MYBlurIntroductionView */,
 				A61044561B4E6A1700672BA3 /* MHWDirectoryWatcher */,
 				A6EE879D1B26DE000034A2AE /* JSDPad */,
@@ -1128,11 +1178,13 @@
 				AA7558991595D55500BBD41B /* close_code.h in Headers */,
 				AA75589A1595D55500BBD41B /* SDL_assert.h in Headers */,
 				AA75589B1595D55500BBD41B /* SDL_atomic.h in Headers */,
+				A6AB27EC1B9A8E9C00FA29C1 /* ASTouchVisualizer.h in Headers */,
 				AA75589C1595D55500BBD41B /* SDL_audio.h in Headers */,
 				AA75589D1595D55500BBD41B /* SDL_blendmode.h in Headers */,
 				AA75589E1595D55500BBD41B /* SDL_clipboard.h in Headers */,
 				AA75589F1595D55500BBD41B /* SDL_config_iphoneos.h in Headers */,
 				AA7558A01595D55500BBD41B /* SDL_config.h in Headers */,
+				A6AB27E71B9A8C0100FA29C1 /* COSTouchVisualizerWindow.h in Headers */,
 				AA7558A11595D55500BBD41B /* SDL_copying.h in Headers */,
 				AA7558A21595D55500BBD41B /* SDL_cpuinfo.h in Headers */,
 				AA7558A31595D55500BBD41B /* SDL_endian.h in Headers */,
@@ -1290,6 +1342,7 @@
 				FDA6844D0DF2374E00F98A1A /* SDL_blit.c in Sources */,
 				FDA6844F0DF2374E00F98A1A /* SDL_blit_0.c in Sources */,
 				FDA684500DF2374E00F98A1A /* SDL_blit_1.c in Sources */,
+				A6AB27E81B9A8C0100FA29C1 /* COSTouchVisualizerWindow.m in Sources */,
 				A67D88141B8F271600F7AE63 /* MYBlurIntroductionView.m in Sources */,
 				FDA684510DF2374E00F98A1A /* SDL_blit_A.c in Sources */,
 				FDA684520DF2374E00F98A1A /* SDL_blit_auto.c in Sources */,
@@ -1307,6 +1360,7 @@
 				FDA684680DF2374E00F98A1A /* SDL_video.c in Sources */,
 				FDA685FB0DF244C800F98A1A /* SDL_nullevents.c in Sources */,
 				FDA685FF0DF244C800F98A1A /* SDL_nullvideo.c in Sources */,
+				A6AB27ED1B9A8E9C00FA29C1 /* ASTouchVisualizer.m in Sources */,
 				FD5F9D2F0E0E08B3008E885B /* SDL_joystick.c in Sources */,
 				FD689F030E26E5B600F90B21 /* SDL_sysjoystick.m in Sources */,
 				FD689F050E26E5B600F90B21 /* SDLUIAccelerationDelegate.m in Sources */,

@@ -37,6 +37,8 @@
 
 #import <AVFoundation/AVFoundation.h>
 
+#import "ASTouchVisualizer.h"
+
 
 int count = 0;
 enum
@@ -536,6 +538,7 @@ enum
         }];
     
     
+        [ASTouchVisualizer install];
     }
     
 }
