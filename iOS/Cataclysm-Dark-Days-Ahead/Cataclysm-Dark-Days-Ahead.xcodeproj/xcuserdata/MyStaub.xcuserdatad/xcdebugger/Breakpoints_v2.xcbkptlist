@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitappdelegate.m"
-            timestampString = "463114024.314215"
+            timestampString = "463114930.292179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "-applicationDidReceiveMemoryWarning:"
             landmarkType = "5">
          </BreakpointContent>

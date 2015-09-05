@@ -11,7 +11,7 @@
 #import <objc/runtime.h>
 
 static CGFloat const kTouchViewAttentionScale = 3;
-static CGFloat const kTouchViewSize = 60;
+static CGFloat const kTouchViewSize = 45;
 static CGFloat const kTouchViewAlpha = 0.5;
 static NSTimeInterval const kTouchAnimationduration = 0.25;
 
