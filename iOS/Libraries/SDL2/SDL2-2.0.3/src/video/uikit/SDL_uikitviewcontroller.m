@@ -289,7 +289,11 @@ enum
 
 
 - (void)gridMenuDidTapOnBackground:(CNPGridMenu *)menu {
+    if( ![ASTouchVisualizer isInstalled] )
+        [ASTouchVisualizer install];
+    
     [self dismissGridMenuAnimated:YES completion:^{
+        
         NSLog(@"Grid Menu Dismissed With Background Tap");
     }];
 }
@@ -304,52 +308,52 @@ enum
 #endif
 
 
--(void)TouchUpInside:(id)sender
-{
-    UIButton* button = (UIButton*)sender;
-    switch ( button.tag )
-    {
-        case 1000:
-            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_LEFT );
-            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_LEFT );
-            break;
-        case 1001:
-            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_RIGHT );
-            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_RIGHT );
-            break;
-        case 1002:
-            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_UP );
-            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_UP );
-            break;
-        case 1003:
-            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_DOWN );
-            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_DOWN );
-            break;
-        case 1004:
-            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_RETURN );
-            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_RETURN );
-            
-            break;
-        case 1005:
-            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_ESCAPE );
-            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_ESCAPE );
-            
-            break;
-
-        case 1006:
-            SDL_SendKeyboardText("<");
-            break;
-            
-        case 1007:
-            SDL_SendKeyboardText( ">" );
-            break;
-
-        default:
-            break;
-    }
-    
-    NSLog(@"TouchUpInside");
-}
+//-(void)TouchUpInside:(id)sender
+//{
+//    UIButton* button = (UIButton*)sender;
+//    switch ( button.tag )
+//    {
+//        case 1000:
+//            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_LEFT );
+//            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_LEFT );
+//            break;
+//        case 1001:
+//            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_RIGHT );
+//            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_RIGHT );
+//            break;
+//        case 1002:
+//            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_UP );
+//            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_UP );
+//            break;
+//        case 1003:
+//            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_DOWN );
+//            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_DOWN );
+//            break;
+//        case 1004:
+//            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_RETURN );
+//            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_RETURN );
+//            
+//            break;
+//        case 1005:
+//            SDL_SendKeyboardKey( SDL_PRESSED, SDL_SCANCODE_ESCAPE );
+//            SDL_SendKeyboardKey( SDL_RELEASED, SDL_SCANCODE_ESCAPE );
+//            
+//            break;
+//
+//        case 1006:
+//            SDL_SendKeyboardText("<");
+//            break;
+//            
+//        case 1007:
+//            SDL_SendKeyboardText( ">" );
+//            break;
+//
+//        default:
+//            break;
+//    }
+//    
+//    NSLog(@"TouchUpInside");
+//}
 
 
 -(void)doVolumeFade1
@@ -539,8 +543,8 @@ enum
             [self performSelectorOnMainThread:@selector(keybindingsFileDidChange) withObject:nil waitUntilDone:NO];
         }];
     
-    
-        [ASTouchVisualizer install];
+        if( ![ASTouchVisualizer isInstalled] )
+            [ASTouchVisualizer install];
     }
     
 }
@@ -646,9 +650,17 @@ enum
     //NSLog( @"%lu %f", (unsigned long)gesture.numberOfTouches, [gesture translationInView:self.view].y );
     
     
+    
+    
     if( 2 == gesture.numberOfTouches )
     {
-        [self presentGridMenu:actionsMenu animated:YES completion:nil];
+        //if( [ASTouchVisualizer isInstalled] )
+        //    [ASTouchVisualizer uninstall];
+        
+        [self presentGridMenu:actionsMenu animated:YES completion:^{
+            
+            NSLog(@"Grid Menu Dismissed With Background Tap");
+        }];
 
     }
     else if( 3 == gesture.numberOfTouches )
