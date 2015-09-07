@@ -37,8 +37,6 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-#import "ASTouchVisualizer.h"
-
 
 int count = 0;
 enum
@@ -289,8 +287,6 @@ enum
 
 
 - (void)gridMenuDidTapOnBackground:(CNPGridMenu *)menu {
-    if( ![ASTouchVisualizer isInstalled] )
-        [ASTouchVisualizer install];
     
     [self dismissGridMenuAnimated:YES completion:^{
         
@@ -542,9 +538,7 @@ enum
             [keybindingsFileWatcher stopWatching];
             [self performSelectorOnMainThread:@selector(keybindingsFileDidChange) withObject:nil waitUntilDone:NO];
         }];
-    
-        if( ![ASTouchVisualizer isInstalled] )
-            [ASTouchVisualizer install];
+
     }
     
 }
@@ -654,9 +648,6 @@ enum
     
     if( 2 == gesture.numberOfTouches )
     {
-        //if( [ASTouchVisualizer isInstalled] )
-        //    [ASTouchVisualizer uninstall];
-        
         [self presentGridMenu:actionsMenu animated:YES completion:^{
             
             NSLog(@"Grid Menu Dismissed With Background Tap");

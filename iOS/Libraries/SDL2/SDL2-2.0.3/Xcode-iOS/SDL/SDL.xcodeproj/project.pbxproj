@@ -84,6 +84,8 @@
 		A610445A1B4E6A1700672BA3 /* MHWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A61044581B4E6A1700672BA3 /* MHWDirectoryWatcher.m */; };
 		A65337791B281490008C61D1 /* JSButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A65337771B281490008C61D1 /* JSButton.h */; };
 		A653377A1B281490008C61D1 /* JSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A65337781B281490008C61D1 /* JSButton.m */; };
+		A662B4F51B9D648600823610 /* COSTouchVisualizerWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = A662B4F31B9D648600823610 /* COSTouchVisualizerWindow.h */; };
+		A662B4F61B9D648600823610 /* COSTouchVisualizerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A662B4F41B9D648600823610 /* COSTouchVisualizerWindow.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A67D88131B8F271600F7AE63 /* MYBlurIntroductionView.h in Headers */ = {isa = PBXBuildFile; fileRef = A67D880F1B8F271600F7AE63 /* MYBlurIntroductionView.h */; };
 		A67D88141B8F271600F7AE63 /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D88101B8F271600F7AE63 /* MYBlurIntroductionView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A67D88151B8F271600F7AE63 /* MYIntroductionPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = A67D88111B8F271600F7AE63 /* MYIntroductionPanel.h */; };
@@ -299,6 +301,10 @@
 		A65337781B281490008C61D1 /* JSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSButton.m; sourceTree = "<group>"; };
 		A653377B1B2815F2008C61D1 /* No@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No@2x.png"; sourceTree = "<group>"; };
 		A653377C1B2815F2008C61D1 /* Yes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yes@2x.png"; sourceTree = "<group>"; };
+		A662B4F11B9D648600823610 /* .clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".clang-format"; sourceTree = "<group>"; };
+		A662B4F21B9D648600823610 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A662B4F31B9D648600823610 /* COSTouchVisualizerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSTouchVisualizerWindow.h; sourceTree = "<group>"; };
+		A662B4F41B9D648600823610 /* COSTouchVisualizerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSTouchVisualizerWindow.m; sourceTree = "<group>"; };
 		A67D880F1B8F271600F7AE63 /* MYBlurIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlurIntroductionView.h; sourceTree = "<group>"; };
 		A67D88101B8F271600F7AE63 /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
 		A67D88111B8F271600F7AE63 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
@@ -680,6 +686,18 @@
 			path = ../../MHWDirectoryWatcher;
 			sourceTree = "<group>";
 		};
+		A662B4F01B9D648600823610 /* COSTouchVisualizer */ = {
+			isa = PBXGroup;
+			children = (
+				A662B4F11B9D648600823610 /* .clang-format */,
+				A662B4F21B9D648600823610 /* .gitignore */,
+				A662B4F31B9D648600823610 /* COSTouchVisualizerWindow.h */,
+				A662B4F41B9D648600823610 /* COSTouchVisualizerWindow.m */,
+			);
+			name = COSTouchVisualizer;
+			path = ../../../../../COSTouchVisualizer;
+			sourceTree = "<group>";
+		};
 		A67D880E1B8F271600F7AE63 /* MYBlurIntroductionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +792,7 @@
 		FD689F090E26E5D900F90B21 /* uikit */ = {
 			isa = PBXGroup;
 			children = (
+				A662B4F01B9D648600823610 /* COSTouchVisualizer */,
 				A6AB27E91B9A8E9C00FA29C1 /* ASTouchVisualizer */,
 				A67D880E1B8F271600F7AE63 /* MYBlurIntroductionView */,
 				A61044561B4E6A1700672BA3 /* MHWDirectoryWatcher */,
@@ -1095,6 +1114,7 @@
 			files = (
 				FDA6844E0DF2374E00F98A1A /* SDL_blit.h in Headers */,
 				FDA684530DF2374E00F98A1A /* SDL_blit_auto.h in Headers */,
+				A662B4F51B9D648600823610 /* COSTouchVisualizerWindow.h in Headers */,
 				FDA684550DF2374E00F98A1A /* SDL_blit_copy.h in Headers */,
 				FDA6845D0DF2374E00F98A1A /* SDL_pixels_c.h in Headers */,
 				56A6703618565E760007D20F /* SDL_dynapi_procs.h in Headers */,
@@ -1334,6 +1354,7 @@
 				FD689F250E26E5D900F90B21 /* SDL_uikitwindow.m in Sources */,
 				FD689F270E26E5D900F90B21 /* SDL_uikitopenglview.m in Sources */,
 				FD689FCE0E26E9D400F90B21 /* SDL_uikitappdelegate.m in Sources */,
+				A662B4F61B9D648600823610 /* COSTouchVisualizerWindow.m in Sources */,
 				FD8BD8250E27E25900B52CD5 /* SDL_sysloadso.c in Sources */,
 				047677BB0EA76A31008ABAF1 /* SDL_syshaptic.c in Sources */,
 				047677BC0EA76A31008ABAF1 /* SDL_haptic.c in Sources */,
