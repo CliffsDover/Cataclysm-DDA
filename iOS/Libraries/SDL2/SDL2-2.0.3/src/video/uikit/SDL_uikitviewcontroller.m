@@ -125,7 +125,7 @@ enum
             //[track setNumberOfLoops:-1];
             //[track play];
         //[[OALSimpleAudio sharedInstance] playBg:@"CBRadioMessageHelp_ZA01.146.wav" loop:-1];
-        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"CBRadioMessageHelp_ZA01.146.wav" ];
+        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"DTA_Eminor_Spheres.wav" ];
         myAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
         myAudioPlayer.numberOfLoops = -1; //infinite loop
         [myAudioPlayer play];
@@ -390,10 +390,11 @@ enum
 {
     //[track play];
     //[track fadeTo:0.0 duration:3.0 target:nil selector:nil];
+    [super viewDidLayoutSubviews];
     
     if( showIntroduction )
     {
-        [self doVolumeFade1];
+        //[self doVolumeFade1];
         showIntroduction = NO;
         [self showIntroductionView];
     }
@@ -1196,7 +1197,7 @@ enum
     MYIntroductionPanel *panelBeta1= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Notes About Beta Version" description:@"This beta is based on \n\n\n\nAll sounds in this beta will be replaced in the final version.\n\n\n\nPlease report bugs/issues in the forum." image:nil];
     
     
-    [introductionView setBackgroundColor:[UIColor blackColor]];
+    //[introductionView setBackgroundColor:[UIColor blackColor]];
     
     [introductionView buildIntroductionWithPanels:@[ //panelStory1,
                                                      //panelStory2,

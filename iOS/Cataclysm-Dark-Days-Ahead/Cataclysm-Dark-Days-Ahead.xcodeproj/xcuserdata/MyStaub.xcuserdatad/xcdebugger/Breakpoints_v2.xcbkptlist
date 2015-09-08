@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitviewcontroller.m"
-            timestampString = "463399017.352931"
+            timestampString = "463402931.110325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1238"
-            endingLineNumber = "1238"
+            startingLineNumber = "1239"
+            endingLineNumber = "1239"
             landmarkName = "@implementation SDL_uikitviewcontroller"
             landmarkType = "3">
          </BreakpointContent>
@@ -64,6 +64,38 @@
             startingLineNumber = "362"
             endingLineNumber = "362"
             landmarkName = "-presentGridMenu:animated:completion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitviewcontroller.m"
+            timestampString = "463402931.110325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1224"
+            endingLineNumber = "1224"
+            landmarkName = "-introduction:didFinishWithType:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitviewcontroller.m"
+            timestampString = "463402931.110325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
+            landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
