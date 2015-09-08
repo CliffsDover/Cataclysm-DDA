@@ -1599,6 +1599,15 @@
 					"$(PROJECT_DIR)/../Libraries/SDL2",
 				);
 				GCC_FAST_MATH = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					OSX_SDL2_LIBS,
+					SDL_SOUND,
+					SDLTILES,
+					TILES,
+					_THREAD_SAFE,
+					CDDA_IOS,
+					"LOCALIZE=1",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

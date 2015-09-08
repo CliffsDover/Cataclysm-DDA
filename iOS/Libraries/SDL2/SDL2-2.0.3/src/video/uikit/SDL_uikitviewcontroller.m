@@ -79,6 +79,7 @@ enum
     MYBlurIntroductionView *introductionView;
     
     UILongPressGestureRecognizer * longPressGesture;
+    UIPanGestureRecognizer* panGesture;
     
     BOOL showIntroduction;
 }
@@ -158,6 +159,7 @@ enum
         menuItem.selectionHandler = ^(CNPGridMenuItem* menuItem){
             SDL_SendKeyboardText( [item[@"Command"] cStringUsingEncoding:NSASCIIStringEncoding] );
             [actionsMenu dismissGridMenuAnimated:YES completion:nil];
+            [panGesture setEnabled:YES];
         };
         [menuItems addObject:menuItem];
     }
@@ -289,7 +291,7 @@ enum
 - (void)gridMenuDidTapOnBackground:(CNPGridMenu *)menu {
     
     [self dismissGridMenuAnimated:YES completion:^{
-        
+        [panGesture setEnabled:YES];
         NSLog(@"Grid Menu Dismissed With Background Tap");
     }];
 }
@@ -446,7 +448,7 @@ enum
         [self.view addGestureRecognizer:swipeRight];
         
         
-        UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+        panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
         panGesture.minimumNumberOfTouches = 2;
         panGesture.maximumNumberOfTouches = 3;
         panGesture.delegate = self;
@@ -456,6 +458,7 @@ enum
         longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(hangleLongPress:)];
         longPressGesture.minimumPressDuration = 1.0;
         [self.view addGestureRecognizer:longPressGesture];
+
         
         
         noButton = [[JSButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width-64-64-16, self.view.bounds.size.height-64, 64, 64)];
@@ -648,9 +651,9 @@ enum
     
     if( 2 == gesture.numberOfTouches )
     {
+        [panGesture setEnabled:NO];
         [self presentGridMenu:actionsMenu animated:YES completion:^{
             
-            NSLog(@"Grid Menu Dismissed With Background Tap");
         }];
 
     }
