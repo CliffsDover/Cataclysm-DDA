@@ -33,6 +33,9 @@
 #include "sdl_main.h"
 #import <TargetConditionals.h>
 #import <Foundation/Foundation.h>
+
+#import "SDVersion.h"
+
 #endif // CDDA_IOS
 
 void exit_handler(int s);
@@ -110,10 +113,50 @@ int main(int argc, char *argv[])
     PATH_INFO::update_pathname("memorialdir", [[documentPath stringByAppendingString:@"graveyard/"] cStringUsingEncoding:NSASCIIStringEncoding] );
     
     NSString* userOptionsFilePath = [documentPath stringByAppendingPathComponent:@"options.txt"];
+    
     if( ![[NSFileManager defaultManager] fileExistsAtPath:userOptionsFilePath] )
     {
         NSError* e;
-        [[NSFileManager defaultManager] copyItemAtPath:[basePath stringByAppendingString:@"config/options.txt"] toPath:userOptionsFilePath error:&e];
+        
+        NSString* defautOptionsFilePath;
+        if ( [SDVersion deviceSize] == Screen4inch)
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_32.txt"];
+        }
+        else if ( [SDVersion deviceSize] == Screen3Dot5inch)
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_24.txt"];
+        }
+        else if ( [SDVersion deviceSize] == Screen4Dot7inch)
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_32.txt"];
+        }
+        else if ( [SDVersion deviceSize] == Screen5Dot5inch)
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_48.txt"];
+        }
+        else if( [SDVersion deviceVersion] == iPad2 )
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_24.txt"];
+        }
+        else if( [SDVersion deviceVersion] == iPadMini )
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_24.txt"];
+        }
+        else if( [SDVersion deviceVersion] == iPadAir )
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_48.txt"];
+        }
+        else if( [SDVersion deviceVersion] == iPadMini2 )
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_48.txt"];
+        }
+        else
+        {
+            defautOptionsFilePath = [basePath stringByAppendingPathComponent:@"config/options_24.txt"];
+        }
+        
+        [[NSFileManager defaultManager] copyItemAtPath:defautOptionsFilePath toPath:userOptionsFilePath error:&e];
     }
     PATH_INFO::update_pathname("options", [userOptionsFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
     
