@@ -75,6 +75,7 @@ enum
     NSArray* allMenuItems;
     
     AVAudioPlayer *myAudioPlayer;
+    AVAudioPlayer* soundPlayer;
     
     MYBlurIntroductionView *introductionView;
     
@@ -128,6 +129,11 @@ enum
         NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"DTA_Eminor_Spheres.wav" ];
         myAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
         myAudioPlayer.numberOfLoops = -1; //infinite loop
+        
+        fileURL = [[NSURL alloc] initFileURLWithPath:@"StabStringsCinematic_ZA02.520.wav" ];
+        soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+        soundPlayer.numberOfLoops = 0;
+        
         [myAudioPlayer play];
         
         showIntroduction = YES;
@@ -362,10 +368,10 @@ enum
     } else {
         // Stop and get the sound ready for playing again
         [myAudioPlayer stop];
-        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"DTA_Eminor_Spheres.wav" ];
-        myAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
-        myAudioPlayer.numberOfLoops = -1; //infinite loop
-        [myAudioPlayer play];
+//        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"DTA_Eminor_Spheres.wav" ];
+//        myAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+//        myAudioPlayer.numberOfLoops = -1; //infinite loop
+//        [myAudioPlayer play];
 //        self.player.currentTime = 0;
 //        [self.player prepareToPlay];
 //        self.player.volume = 1.0;
@@ -1199,10 +1205,9 @@ enum
 #pragma mark - MYIntroductionDelegate Methods
 -(void)introduction:(MYBlurIntroductionView *)introductionView didFinishWithType:(MYFinishType)finishType
 {
-    [myAudioPlayer stop];
-    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"StabStringsCinematic_ZA02.520.wav" ];
-    AVAudioPlayer* soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
-    soundPlayer.numberOfLoops = 0;
+    [self doVolumeFade1];
+    
+    
     [soundPlayer play];
     
     //[self doVolumeFade2];
