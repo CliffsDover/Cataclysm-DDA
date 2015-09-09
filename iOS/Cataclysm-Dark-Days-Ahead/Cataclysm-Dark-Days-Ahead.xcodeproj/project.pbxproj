@@ -204,7 +204,6 @@
 		A6BBC8F11B90455200E31621 /* StabStringsCinematic_ZA02.520.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6BBC8EF1B90455200E31621 /* StabStringsCinematic_ZA02.520.wav */; };
 		A6BCB5A21B95BCFA00D7C5B2 /* SDiOSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BCB59D1B95BCFA00D7C5B2 /* SDiOSVersion.m */; };
 		A6D6A67C1B8EFC4B00BCD61C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6A67B1B8EFC4B00BCD61C /* AVFoundation.framework */; };
-		A6D6A67E1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6D6A67D1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -587,7 +586,6 @@
 		A6BCB5A11B95BCFA00D7C5B2 /* SDVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDVersion.h; sourceTree = "<group>"; };
 		A6D6A6741B8EFC3000BCD61C /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		A6D6A67B1B8EFC4B00BCD61C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		A6D6A67D1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CBRadioMessageHelp_ZA01.146.wav; path = ../BundledData/CBRadioMessageHelp_ZA01.146.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1051,7 +1049,6 @@
 			children = (
 				A6BBC8EE1B90455200E31621 /* DTA_Eminor_Spheres.wav */,
 				A6BBC8EF1B90455200E31621 /* StabStringsCinematic_ZA02.520.wav */,
-				A6D6A67D1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav */,
 				A602D9CC1B8C724300EA2879 /* config */,
 				A602D9CD1B8C724300EA2879 /* data */,
 				A602D9CE1B8C724300EA2879 /* lang */,
@@ -1252,7 +1249,6 @@
 				A602D9701B8C6A6E00EA2879 /* generate_bindings.lua in Resources */,
 				A602D96F1B8C6A6E00EA2879 /* CMakeLists.txt in Resources */,
 				A677B1A51B8CDC740034F15B /* dPad-Right@2x.png in Resources */,
-				A6D6A67E1B8EFE6000BCD61C /* CBRadioMessageHelp_ZA01.146.wav in Resources */,
 				A677B1A41B8CDC740034F15B /* dPad-None@2x.png in Resources */,
 				A602D9D11B8C724300EA2879 /* lang in Resources */,
 				A602D7BF1B8C638300EA2879 /* LaunchScreen.xib in Resources */,
