@@ -79,7 +79,7 @@
 		56ED04E1118A8EE200A56AA6 /* SDL_power.c in Sources */ = {isa = PBXBuildFile; fileRef = 56ED04E0118A8EE200A56AA6 /* SDL_power.c */; };
 		56ED04E3118A8EFD00A56AA6 /* SDL_syspower.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED04E2118A8EFD00A56AA6 /* SDL_syspower.m */; };
 		93CB792313FC5E5200BD3E05 /* SDL_uikitviewcontroller.h in Headers */ = {isa = PBXBuildFile; fileRef = 93CB792213FC5E5200BD3E05 /* SDL_uikitviewcontroller.h */; };
-		93CB792613FC5F5300BD3E05 /* SDL_uikitviewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB792513FC5F5300BD3E05 /* SDL_uikitviewcontroller.m */; };
+		93CB792613FC5F5300BD3E05 /* SDL_uikitviewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB792513FC5F5300BD3E05 /* SDL_uikitviewcontroller.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A61044591B4E6A1700672BA3 /* MHWDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A61044571B4E6A1700672BA3 /* MHWDirectoryWatcher.h */; };
 		A610445A1B4E6A1700672BA3 /* MHWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A61044581B4E6A1700672BA3 /* MHWDirectoryWatcher.m */; };
 		A65337791B281490008C61D1 /* JSButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A65337771B281490008C61D1 /* JSButton.h */; };

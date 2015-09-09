@@ -27,13 +27,13 @@
 
 typedef struct
 {
-    UIScreen *uiscreen;
+    __unsafe_unretained UIScreen *uiscreen;
     CGFloat scale;
 } SDL_DisplayData;
 
 typedef struct
 {
-    UIScreenMode *uiscreenmode;
+    __unsafe_unretained UIScreenMode *uiscreenmode;
     CGFloat scale;
 } SDL_DisplayModeData;
 

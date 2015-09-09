@@ -41,9 +41,9 @@ extern SDL_bool UIKit_GetWindowWMInfo(_THIS, SDL_Window * window,
 
 struct SDL_WindowData
 {
-    UIWindow *uiwindow;
-    SDL_uikitopenglview *view;
-    SDL_uikitviewcontroller *viewcontroller;
+    __unsafe_unretained UIWindow *uiwindow;
+    __unsafe_unretained SDL_uikitopenglview *view;
+    __unsafe_unretained SDL_uikitviewcontroller *viewcontroller;
 };
 
 #endif /* _SDL_uikitwindow_h */

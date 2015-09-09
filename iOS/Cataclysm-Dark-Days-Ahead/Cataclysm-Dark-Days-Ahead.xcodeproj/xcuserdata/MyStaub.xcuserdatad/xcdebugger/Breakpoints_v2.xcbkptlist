@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitviewcontroller.m"
-            timestampString = "463402931.110325"
+            timestampString = "463457775.929946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1239"
-            endingLineNumber = "1239"
+            startingLineNumber = "1216"
+            endingLineNumber = "1216"
             landmarkName = "@implementation SDL_uikitviewcontroller"
             landmarkType = "3">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitviewcontroller.m"
-            timestampString = "463402931.110325"
+            timestampString = "463457775.929946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1224"
-            endingLineNumber = "1224"
+            startingLineNumber = "1201"
+            endingLineNumber = "1201"
             landmarkName = "-introduction:didFinishWithType:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitviewcontroller.m"
-            timestampString = "463402931.110325"
+            timestampString = "463403709.514639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "-viewDidAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitviewcontroller.m"
+            timestampString = "463403709.514639"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
+            landmarkName = "-viewDidAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Libraries/SDL2/SDL2-2.0.3/src/video/uikit/SDL_uikitviewcontroller.m"
+            timestampString = "463403709.514639"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
