@@ -160,7 +160,10 @@ int main(int argc, char *argv[])
     }
     PATH_INFO::update_pathname("options", [userOptionsFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
     
-    
+    NSError* e;
+    if( ![[NSFileManager defaultManager] fileExistsAtPath:[documentPath stringByAppendingPathComponent:@"keybindings.json"]] )
+        [[NSFileManager defaultManager] copyItemAtPath:[basePath stringByAppendingPathComponent:@"config/keybindings.json"] toPath:[documentPath stringByAppendingPathComponent:@"keybindings.json"] error:&e];
+        
     PATH_INFO::update_pathname("user_keybindings", [[documentPath stringByAppendingPathComponent:@"keybindings.json"] cStringUsingEncoding:NSASCIIStringEncoding] );
 
 #endif // CDDA_IOS

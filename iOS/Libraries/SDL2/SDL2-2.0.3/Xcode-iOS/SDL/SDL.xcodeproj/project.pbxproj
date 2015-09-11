@@ -82,6 +82,9 @@
 		93CB792613FC5F5300BD3E05 /* SDL_uikitviewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB792513FC5F5300BD3E05 /* SDL_uikitviewcontroller.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A61044591B4E6A1700672BA3 /* MHWDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A61044571B4E6A1700672BA3 /* MHWDirectoryWatcher.h */; };
 		A610445A1B4E6A1700672BA3 /* MHWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A61044581B4E6A1700672BA3 /* MHWDirectoryWatcher.m */; };
+		A62C1AEA1BA047CC00898F51 /* SDiOSVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = A62C1AE41BA047CC00898F51 /* SDiOSVersion.h */; };
+		A62C1AEB1BA047CC00898F51 /* SDiOSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = A62C1AE51BA047CC00898F51 /* SDiOSVersion.m */; };
+		A62C1AEE1BA047CC00898F51 /* SDVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = A62C1AE91BA047CC00898F51 /* SDVersion.h */; };
 		A65337791B281490008C61D1 /* JSButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A65337771B281490008C61D1 /* JSButton.h */; };
 		A653377A1B281490008C61D1 /* JSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A65337781B281490008C61D1 /* JSButton.m */; };
 		A662B4F51B9D648600823610 /* COSTouchVisualizerWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = A662B4F31B9D648600823610 /* COSTouchVisualizerWindow.h */; };
@@ -297,6 +300,9 @@
 		93CB792513FC5F5300BD3E05 /* SDL_uikitviewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDL_uikitviewcontroller.m; sourceTree = "<group>"; };
 		A61044571B4E6A1700672BA3 /* MHWDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHWDirectoryWatcher.h; sourceTree = "<group>"; };
 		A61044581B4E6A1700672BA3 /* MHWDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHWDirectoryWatcher.m; sourceTree = "<group>"; };
+		A62C1AE41BA047CC00898F51 /* SDiOSVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDiOSVersion.h; sourceTree = "<group>"; };
+		A62C1AE51BA047CC00898F51 /* SDiOSVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDiOSVersion.m; sourceTree = "<group>"; };
+		A62C1AE91BA047CC00898F51 /* SDVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDVersion.h; sourceTree = "<group>"; };
 		A65337771B281490008C61D1 /* JSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSButton.h; sourceTree = "<group>"; };
 		A65337781B281490008C61D1 /* JSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSButton.m; sourceTree = "<group>"; };
 		A653377B1B2815F2008C61D1 /* No@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No@2x.png"; sourceTree = "<group>"; };
@@ -686,6 +692,25 @@
 			path = ../../MHWDirectoryWatcher;
 			sourceTree = "<group>";
 		};
+		A62C1AE21BA047CC00898F51 /* SDVersion */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1AE31BA047CC00898F51 /* SDiOSVersion */,
+				A62C1AE91BA047CC00898F51 /* SDVersion.h */,
+			);
+			name = SDVersion;
+			path = ../../../../../SDVersion;
+			sourceTree = "<group>";
+		};
+		A62C1AE31BA047CC00898F51 /* SDiOSVersion */ = {
+			isa = PBXGroup;
+			children = (
+				A62C1AE41BA047CC00898F51 /* SDiOSVersion.h */,
+				A62C1AE51BA047CC00898F51 /* SDiOSVersion.m */,
+			);
+			path = SDiOSVersion;
+			sourceTree = "<group>";
+		};
 		A662B4F01B9D648600823610 /* COSTouchVisualizer */ = {
 			isa = PBXGroup;
 			children = (
@@ -792,6 +817,7 @@
 		FD689F090E26E5D900F90B21 /* uikit */ = {
 			isa = PBXGroup;
 			children = (
+				A62C1AE21BA047CC00898F51 /* SDVersion */,
 				A662B4F01B9D648600823610 /* COSTouchVisualizer */,
 				A6AB27E91B9A8E9C00FA29C1 /* ASTouchVisualizer */,
 				A67D880E1B8F271600F7AE63 /* MYBlurIntroductionView */,
@@ -1135,6 +1161,7 @@
 				56A6703818565E760007D20F /* SDL_dynapi.h in Headers */,
 				FD689FCF0E26E9D400F90B21 /* SDL_uikitappdelegate.h in Headers */,
 				56A6703518565E760007D20F /* SDL_dynapi_overrides.h in Headers */,
+				A62C1AEA1BA047CC00898F51 /* SDiOSVersion.h in Headers */,
 				047677BD0EA76A31008ABAF1 /* SDL_syshaptic.h in Headers */,
 				046387420F0B5B7D0041FD65 /* SDL_blit_slow.h in Headers */,
 				006E9888119552DD001DE610 /* SDL_rwopsbundlesupport.h in Headers */,
@@ -1165,6 +1192,7 @@
 				AA75589B1595D55500BBD41B /* SDL_atomic.h in Headers */,
 				A6AB27EC1B9A8E9C00FA29C1 /* ASTouchVisualizer.h in Headers */,
 				AA75589C1595D55500BBD41B /* SDL_audio.h in Headers */,
+				A62C1AEE1BA047CC00898F51 /* SDVersion.h in Headers */,
 				AA75589D1595D55500BBD41B /* SDL_blendmode.h in Headers */,
 				AA75589E1595D55500BBD41B /* SDL_clipboard.h in Headers */,
 				AA75589F1595D55500BBD41B /* SDL_config_iphoneos.h in Headers */,
@@ -1294,6 +1322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6526810DE8FCDD002AD96B /* SDL_systimer.c in Sources */,
+				A62C1AEB1BA047CC00898F51 /* SDiOSVersion.m in Sources */,
 				FD6526800DE8FCDD002AD96B /* SDL_timer.c in Sources */,
 				FD3F4A7B0DEA620800C5B771 /* SDL_string.c in Sources */,
 				FD6526660DE8FCDD002AD96B /* SDL_dummyaudio.c in Sources */,

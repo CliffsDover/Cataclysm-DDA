@@ -7,6 +7,7 @@
 //
 
 #import "MYIntroductionPanel.h"
+#import "SDVersion.h"
 
 @interface MYIntroductionPanel ()
 
@@ -97,6 +98,44 @@
 }
 
 -(void)initializeConstants{
+    
+    if ( [SDVersion deviceSize] == Screen4inch)
+    {
+
+    }
+    else if ( [SDVersion deviceSize] == Screen3Dot5inch)
+    {
+
+    }
+    else if ( [SDVersion deviceSize] == Screen4Dot7inch)
+    {
+
+    }
+    else if ( [SDVersion deviceSize] == Screen5Dot5inch)
+    {
+
+    }
+    else if( [SDVersion deviceVersion] == iPad2 )
+    {
+
+    }
+    else if( [SDVersion deviceVersion] == iPadMini )
+    {
+
+    }
+    else if( [SDVersion deviceVersion] == iPadAir )
+    {
+
+    }
+    else if( [SDVersion deviceVersion] == iPadMini2 )
+    {
+
+    }
+    else
+    {
+
+    }
+    
     kTitleFont = [UIFont boldSystemFontOfSize:21];
     kTitleTextColor = [UIColor whiteColor];
     kDescriptionFont = [UIFont systemFontOfSize:14];

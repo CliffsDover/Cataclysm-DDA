@@ -38,6 +38,9 @@
 #import <AVFoundation/AVFoundation.h>
 
 
+
+
+
 int count = 0;
 enum
 {
@@ -70,7 +73,10 @@ enum
     NSMutableArray* userKeyBindings;
     
     MHWDirectoryWatcher* optionsFileWatcher;
-    MHWDirectoryWatcher* keybindingsFileWatcher;
+    
+    NSDate* keybindingsLastModificationDate;
+    NSString* documentPath;
+    NSString* userKeyBindingsPath;
     
     NSArray* allMenuItems;
     
@@ -538,18 +544,19 @@ enum
         
         
         
-        NSString* documentPath = [[[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path] stringByAppendingString:@"/"];
+        documentPath = [[[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path] stringByAppendingString:@"/"];
         optionsFileWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:[documentPath stringByAppendingPathComponent:@"options.txt"] callback:^{
             [optionsFileWatcher stopWatching];
             [self performSelectorOnMainThread:@selector(optionsFileDidChange) withObject:nil waitUntilDone:NO];
         }];
         
-        
-        keybindingsFileWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:[documentPath stringByAppendingPathComponent:@"keybindings.json"] callback:^{
-            [keybindingsFileWatcher stopWatching];
-            [self performSelectorOnMainThread:@selector(keybindingsFileDidChange) withObject:nil waitUntilDone:NO];
-        }];
 
+        userKeyBindingsPath = [documentPath stringByAppendingPathComponent:@"keybindings.json"];
+        
+        NSError* e;
+        NSDictionary* attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:userKeyBindingsPath error:&e];
+        keybindingsLastModificationDate = attributes[@"NSFileModificationDate"];
+        
     }
     
     if( showIntroduction )
@@ -666,6 +673,17 @@ enum
     if( 2 == gesture.numberOfTouches )
     {
         [panGesture setEnabled:NO];
+        
+        NSError* e;
+        NSDictionary* attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:userKeyBindingsPath error:&e];
+        NSDate* currentModificationDate = attributes[@"NSFileModificationDate"];
+        
+        if( [currentModificationDate compare:keybindingsLastModificationDate] == NSOrderedDescending )
+        {
+            keybindingsLastModificationDate = currentModificationDate;
+            [self keybindingsFileDidChange];
+        }
+        
         [self presentGridMenu:actionsMenu animated:YES completion:^{
             
         }];
@@ -1050,11 +1068,7 @@ enum
     
     
     
-    NSString* documentPath = [[[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path] stringByAppendingString:@"/"];
     
-    
-    
-    NSString* userKeyBindingsPath = [documentPath stringByAppendingPathComponent:@"keybindings.json"];
     
     if( [[NSFileManager defaultManager] fileExistsAtPath:userKeyBindingsPath] )
     {
@@ -1108,9 +1122,9 @@ enum
     
     [self loadKeyBindings];
     
-    NSArray* allMenuItems = [self createMenuItems:userKeyBindings];
+    NSArray* newMenuItems = [self createMenuItems:userKeyBindings];
     //actionsMenu = [[CNPGridMenu alloc] initWithMenuItems:allMenuItems];
-    [actionsMenu setMenuItems:allMenuItems];
+    [actionsMenu setMenuItems:newMenuItems];
     //actionsMenu.delegate = self;
     
     [optionsFileWatcher startWatching];
@@ -1123,13 +1137,10 @@ enum
     
     [self loadKeyBindings];
     
-    NSArray* allMenuItems = [self createMenuItems:userKeyBindings];
+    NSArray* newMenuItems = [self createMenuItems:userKeyBindings];
     //actionsMenu = [[CNPGridMenu alloc] initWithMenuItems:allMenuItems];
-    [actionsMenu setMenuItems:allMenuItems];
+    [actionsMenu setMenuItems:newMenuItems];
     //actionsMenu.delegate = self;
-    
-    [keybindingsFileWatcher startWatching];
-    
 }
 
 -(void)showIntroductionView
