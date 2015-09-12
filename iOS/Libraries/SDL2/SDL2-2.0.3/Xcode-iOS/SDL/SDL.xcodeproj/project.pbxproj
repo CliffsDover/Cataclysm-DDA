@@ -80,6 +80,7 @@
 		56ED04E3118A8EFD00A56AA6 /* SDL_syspower.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED04E2118A8EFD00A56AA6 /* SDL_syspower.m */; };
 		93CB792313FC5E5200BD3E05 /* SDL_uikitviewcontroller.h in Headers */ = {isa = PBXBuildFile; fileRef = 93CB792213FC5E5200BD3E05 /* SDL_uikitviewcontroller.h */; };
 		93CB792613FC5F5300BD3E05 /* SDL_uikitviewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CB792513FC5F5300BD3E05 /* SDL_uikitviewcontroller.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A60FB83D1BA3458D008EC763 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FB83C1BA3458D008EC763 /* MediaPlayer.framework */; };
 		A61044591B4E6A1700672BA3 /* MHWDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A61044571B4E6A1700672BA3 /* MHWDirectoryWatcher.h */; };
 		A610445A1B4E6A1700672BA3 /* MHWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A61044581B4E6A1700672BA3 /* MHWDirectoryWatcher.m */; };
 		A62C1AEA1BA047CC00898F51 /* SDiOSVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = A62C1AE41BA047CC00898F51 /* SDiOSVersion.h */; };
@@ -298,6 +299,7 @@
 		56ED04E2118A8EFD00A56AA6 /* SDL_syspower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDL_syspower.m; path = ../../src/power/uikit/SDL_syspower.m; sourceTree = SOURCE_ROOT; };
 		93CB792213FC5E5200BD3E05 /* SDL_uikitviewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_uikitviewcontroller.h; sourceTree = "<group>"; };
 		93CB792513FC5F5300BD3E05 /* SDL_uikitviewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDL_uikitviewcontroller.m; sourceTree = "<group>"; };
+		A60FB83C1BA3458D008EC763 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A61044571B4E6A1700672BA3 /* MHWDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHWDirectoryWatcher.h; sourceTree = "<group>"; };
 		A61044581B4E6A1700672BA3 /* MHWDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHWDirectoryWatcher.m; sourceTree = "<group>"; };
 		A62C1AE41BA047CC00898F51 /* SDiOSVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDiOSVersion.h; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60FB83D1BA3458D008EC763 /* MediaPlayer.framework in Frameworks */,
 				A68B767D1B1C4F0B00FE4036 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +631,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				A60FB83C1BA3458D008EC763 /* MediaPlayer.framework */,
 				A68B767C1B1C4F0B00FE4036 /* Accelerate.framework */,
 				FD99B8BC0DD52E5C00FB1D6B /* Public Headers */,
 				FD99B8BD0DD52E6D00FB1D6B /* Library Source */,

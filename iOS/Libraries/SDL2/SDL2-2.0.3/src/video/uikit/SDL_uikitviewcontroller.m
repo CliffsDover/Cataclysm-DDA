@@ -1162,33 +1162,35 @@ enum
     MYIntroductionPanel *panelTitle = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Cataclysm: Dark Days Ahead" description:nil image:nil];
     
     
-    MYIntroductionPanel *panelControlDPad = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the D-Pad to move your character or cursor." image:nil];
+    MYIntroductionPanel *panelControlDPad = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the D-Pad to move your character or cursor." video:@"DPad"];
     
-    MYIntroductionPanel *panelControlActionButtons = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the action buttons to confirm or cancel actions. They work like the RETURN and ESC keys on the keyboard" image:nil];
+    MYIntroductionPanel *panelControlActionButtons = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the action buttons to confirm or cancel actions. They work like the RETURN and ESC keys on the keyboard" video:@"ConfirmCancel"];
     
-    MYIntroductionPanel *panelControlTabButtons= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the tab buttons to move to next/previous tab, or descend/ascend stairs. They work like the > and < keys on the keyboard." image:nil];
+    MYIntroductionPanel *panelControlTabButtons= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Use the tab buttons to move to next/previous tab, or descend/ascend stairs. They work like the > and < keys on the keyboard." video:@"TabStair"];
     
-    MYIntroductionPanel *panelGesturesSwipeUpAndDown= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe up to show the keyboard. Swipe down to hide it." image:nil];
+    MYIntroductionPanel *panelGesturesSwipeUpAndDown= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe up to show the keyboard. Swipe down to hide it." video:@"SwipeUp"];
     
-    MYIntroductionPanel *panelGesturesSwipeRight= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe right to show map. It works like pressing m key on the keyboard." image:nil];
+    MYIntroductionPanel *panelGesturesLongPress= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Long press empty space to show locked keyboard. It can be used to type long strings." video:@"LongPress"];
     
-    MYIntroductionPanel *panelGesturesSwipeLeft= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe left to list all items/creatures around the player. It works like pressing V key on the keyboard." image:nil];
+    MYIntroductionPanel *panelGesturesSwipeRight= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe right to show map. It works like pressing m key on the keyboard." video:@"SwipeRight"];
     
-    MYIntroductionPanel *panelGesturesPause= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Single tap to pause character, or keep moving while driving. It works like pressing . key on the keyboard." image:nil];
+    MYIntroductionPanel *panelGesturesSwipeLeft= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Swipe left to list all items/creatures around the player. It works like pressing V key on the keyboard." video:@"SwipeLeft"];
     
-    MYIntroductionPanel *panelGesturesDoubleSwipe= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Two-finger swipe in any directions to show show all the controls. Tap empty space to dismiss." image:nil];
+    MYIntroductionPanel *panelGesturesPause= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Single tap to pause character, or keep moving while driving. It works like pressing . key on the keyboard." video:@"PauseDrive"];
     
-    MYIntroductionPanel *panelGesturesTripleSwipe= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Three-finger swipe up to increase opacity of the onscreen controls. Three-finger swipe down to decrease the opacity." image:nil];
+    MYIntroductionPanel *panelGesturesDoubleSwipe= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Two-finger swipe in any directions to show show all the controls. Tap empty space to dismiss." video:@"DoubleSwipe"];
+    
+    MYIntroductionPanel *panelGesturesTripleSwipe= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Play" description:@"Three-finger swipe up to increase opacity of the onscreen controls. Three-finger swipe down to decrease the opacity." video:@"3FingersSwipe"];
     
     
     MYIntroductionPanel *panelCredits= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Credits" description:@"Original author:    Project Manager:    Website/Forum:\nWhales (retired)    KevinGranade        GlyphGryph\n\nCurrent Main Developers/Github Managers:\nKevinGranade, Rivet-the-Zombie, BevapDin, Coolthulu, i2amroy\n\nCataclysm:Dark Days Ahead is the result of contributions from over 300 volunteers. You can download compiled versions of Cataclysm DDA for Linux, Mac and Windows systems for free at http://en.cataclysmdda.com\n\nFor a full list of contributors please see:\nhttps://github.com/CleverRaven/Cataclysm-DDA/contributors\nCataclysm: Dark Days Ahead is released under CC-BY-SA 3.0." image:nil];
     
     
-    MYIntroductionPanel *panelChangeLanguage= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Change Language" description:@"Three-finger swipe up to increase opacity of the onscreen controls. Three-finger swipe down to decrease the opacity." image:nil];
+    MYIntroductionPanel *panelChangeLanguage= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Change Language" description:@"Goto Options->Interface->Language to change language." video:@"ChangeLanguage"];
     
-    MYIntroductionPanel *panelChangeTileSet= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Change Tileset" description:@"Three-finger swipe up to increase opacity of the onscreen controls. Three-finger swipe down to decrease the opacity." image:nil];
+    MYIntroductionPanel *panelChangeTileSet= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Change Tileset" description:@"Goto Options->Interface->Graphics->Choose tileset to change tileset." video:@"ChangeTileset"];
     
-    MYIntroductionPanel *panelBeta1= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Notes About Beta Version" description:@"This beta is based on \n\n\n\nAll sounds in this beta will be replaced in the final version.\n\n\n\nPlease report bugs/issues in the forum." image:nil];
+    MYIntroductionPanel *panelBeta1= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"About iOS Version" description:@"This iOS beta is based on \n\n\n\nAll sounds in this beta will be replaced in the final version.\n\n\n\nPlease report bugs/issues in the forum at http://dancingbottle.com/" image:nil];
     
     
     //[introductionView setBackgroundColor:[UIColor blackColor]];
@@ -1203,9 +1205,14 @@ enum
                                                      panelControlTabButtons,
                                                      panelControlDPad,
                                                      panelGesturesSwipeUpAndDown,
+                                                     panelGesturesLongPress,
+                                                     panelGesturesSwipeRight,
+                                                     panelGesturesSwipeLeft,
                                                      panelGesturesPause,
                                                      panelGesturesDoubleSwipe,
                                                      panelGesturesTripleSwipe,
+                                                     panelChangeLanguage,
+                                                     panelChangeTileSet,
                                                      panelCredits ]];
     [self.view addSubview:introductionView];
 

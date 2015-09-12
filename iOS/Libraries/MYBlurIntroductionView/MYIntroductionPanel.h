@@ -30,9 +30,9 @@ static UIColor *kSeparatorLineColor = nil;
 -(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description;
 -(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description header:(UIView *)headerView;
 -(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description image:(UIImage *)image;
--(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description images:(NSArray *)images;
 -(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description image:(UIImage *)image header:(UIView *)headerView;
 -(id)initWithFrame:(CGRect)frame nibNamed:(NSString *)nibName;
+-(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description video:(NSString *)video;
 
 //Support Methods
 +(BOOL)runningiOS7;

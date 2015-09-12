@@ -7,7 +7,8 @@
 //
 
 #import "MYIntroductionPanel.h"
-#import "SDVersion.h"
+
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface MYIntroductionPanel ()
 
@@ -21,6 +22,8 @@
 
 @property (nonatomic, assign) BOOL isCustomPanel;
 @property (nonatomic, assign) BOOL hasCustomAnimation;
+
+@property (nonatomic, retain) MPMoviePlayerController *player;
 
 @end
 
@@ -48,8 +51,33 @@
     return [self initWithFrame: frame title: title description: description image: image header: nil];
 }
 
--(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description images:(NSArray *)images{
-    return [self initWithFrame: frame title: title description: description images: images header: nil];
+-(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description video:(NSString *)video{
+    return [self initWithFrame: frame title: title description: description video: video header: nil];
+}
+
+-(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description video:(NSString *)video header:(UIView *)headerView{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        [self initializeConstants];
+        
+        self.PanelHeaderView = headerView;
+        self.PanelTitle = title;
+        self.PanelDescription = description;
+        
+        NSURL* myURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:video ofType:@"mp4" ]];
+        _player = [[MPMoviePlayerController alloc] initWithContentURL: myURL];
+        [_player prepareToPlay];
+        [_player.view setFrame:CGRectMake(0, 0, self.bounds.size.width/2.0f, self.bounds.size.height/2.0f )];
+        [_player.view setCenter:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds) * 1.25f)];
+        [_player setRepeatMode:MPMovieRepeatModeOne];
+        [_player setControlStyle:MPMovieControlStyleNone];
+        [_player setScalingMode:MPMovieScalingModeAspectFit];
+        [self addSubview:_player.view];
+        //self.PanelImageView = [[UIImageView alloc] initWithImage:image];
+        [self buildPanelWithFrame:frame];
+    }
+    return self;
 }
 
 -(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description image:(UIImage *)image header:(UIView *)headerView{
@@ -62,24 +90,6 @@
         self.PanelTitle = title;
         self.PanelDescription = description;
         self.PanelImageView = [[UIImageView alloc] initWithImage:image];
-        [self buildPanelWithFrame:frame];
-    }
-    return self;
-}
-
--(id)initWithFrame:(CGRect)frame title:(NSString *)title description:(NSString *)description images:(NSArray *)images header:(UIView *)headerView{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        [self initializeConstants];
-        
-        self.PanelHeaderView = headerView;
-        self.PanelTitle = title;
-        self.PanelDescription = description;
-        self.PanelImageView = [[UIImageView alloc] initWithImage:images[0]];
-        self.PanelImageView.animationImages = [NSArray arrayWithArray:images];
-        self.PanelImageView.animationDuration = 1.0f;
-        self.PanelImageView.animationRepeatCount = 0;
         [self buildPanelWithFrame:frame];
     }
     return self;
@@ -98,44 +108,6 @@
 }
 
 -(void)initializeConstants{
-    
-    if ( [SDVersion deviceSize] == Screen4inch)
-    {
-
-    }
-    else if ( [SDVersion deviceSize] == Screen3Dot5inch)
-    {
-
-    }
-    else if ( [SDVersion deviceSize] == Screen4Dot7inch)
-    {
-
-    }
-    else if ( [SDVersion deviceSize] == Screen5Dot5inch)
-    {
-
-    }
-    else if( [SDVersion deviceVersion] == iPad2 )
-    {
-
-    }
-    else if( [SDVersion deviceVersion] == iPadMini )
-    {
-
-    }
-    else if( [SDVersion deviceVersion] == iPadAir )
-    {
-
-    }
-    else if( [SDVersion deviceVersion] == iPadMini2 )
-    {
-
-    }
-    else
-    {
-
-    }
-    
     kTitleFont = [UIFont boldSystemFontOfSize:21];
     kTitleTextColor = [UIColor whiteColor];
     kDescriptionFont = [UIFont systemFontOfSize:14];
@@ -229,6 +201,7 @@
         _PanelHeaderView.alpha = 0;
     }
     _PanelImageView.alpha = 0;
+    [_player stop];
 }
 
 - (void) showContent
@@ -244,13 +217,13 @@
     }
     CGRect initialTitleFrame = [self PanelTitleLabel].frame;
     CGRect initialDescriptionFrame = [self PanelDescriptionLabel].frame;
-    CGRect initialImageFrame = [self PanelImageView].frame;
+    //CGRect initialImageFrame = [self PanelImageView].frame;
     
     //Offset frames
     [[self PanelTitleLabel] setFrame:CGRectMake(initialTitleFrame.origin.x + 10, initialTitleFrame.origin.y, initialTitleFrame.size.width, initialTitleFrame.size.height)];
     [[self PanelDescriptionLabel] setFrame:CGRectMake(initialDescriptionFrame.origin.x + 10, initialDescriptionFrame.origin.y, initialDescriptionFrame.size.width, initialDescriptionFrame.size.height)];
     [[self PanelHeaderView] setFrame:CGRectMake(initialHeaderFrame.origin.x, initialHeaderFrame.origin.y - 10, initialHeaderFrame.size.width, initialHeaderFrame.size.height)];
-    [[self PanelImageView] setFrame:CGRectMake(initialImageFrame.origin.x, initialImageFrame.origin.y + 10, initialImageFrame.size.width, initialImageFrame.size.height)];
+    //[[self PanelImageView] setFrame:CGRectMake(initialImageFrame.origin.x, initialImageFrame.origin.y + 10, initialImageFrame.size.width, initialImageFrame.size.height)];
     
     //Animate title and header
     [UIView animateWithDuration:0.3 animations:^{
@@ -267,10 +240,9 @@
         [UIView animateWithDuration:0.3 animations:^{
             [[self PanelDescriptionLabel] setAlpha:1];
             [[self PanelDescriptionLabel] setFrame:initialDescriptionFrame];
-            [[self PanelImageView] setAlpha:1];
-            [[self PanelImageView] setFrame:initialImageFrame];
-            if( [[self PanelImageView] animationImages] != nil )
-               [[self PanelImageView] startAnimating];
+            //[[self PanelImageView] setAlpha:1];
+            //[[self PanelImageView] setFrame:initialImageFrame];
+            [[self player] play];
         }];
     }];
 }

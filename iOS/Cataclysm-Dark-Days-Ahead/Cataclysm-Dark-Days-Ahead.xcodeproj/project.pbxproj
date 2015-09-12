@@ -181,6 +181,20 @@
 		A602D9CF1B8C724300EA2879 /* config in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CC1B8C724300EA2879 /* config */; };
 		A602D9D01B8C724300EA2879 /* data in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CD1B8C724300EA2879 /* data */; };
 		A602D9D11B8C724300EA2879 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = A602D9CE1B8C724300EA2879 /* lang */; };
+		A60FB83F1BA345A1008EC763 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FB83E1BA345A1008EC763 /* MediaPlayer.framework */; };
+		A60FB8531BA345D3008EC763 /* 3FingersSwipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB8451BA345D2008EC763 /* 3FingersSwipe.mp4 */; };
+		A60FB8541BA345D3008EC763 /* ChangeLanguage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB8461BA345D2008EC763 /* ChangeLanguage.mp4 */; };
+		A60FB8551BA345D3008EC763 /* ChangeTileset.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB8471BA345D2008EC763 /* ChangeTileset.mp4 */; };
+		A60FB8571BA345D3008EC763 /* ConfirmCancel.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB8491BA345D2008EC763 /* ConfirmCancel.mp4 */; };
+		A60FB8581BA345D3008EC763 /* DoubleSwipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB84A1BA345D2008EC763 /* DoubleSwipe.mp4 */; };
+		A60FB8591BA345D3008EC763 /* DPad.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB84B1BA345D2008EC763 /* DPad.mp4 */; };
+		A60FB85A1BA345D3008EC763 /* LongPress.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB84C1BA345D2008EC763 /* LongPress.mp4 */; };
+		A60FB85B1BA345D3008EC763 /* PauseDrive.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB84D1BA345D2008EC763 /* PauseDrive.mp4 */; };
+		A60FB85C1BA345D3008EC763 /* SwipeLeft.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB84E1BA345D2008EC763 /* SwipeLeft.mp4 */; };
+		A60FB85D1BA345D3008EC763 /* SwipeRight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB84F1BA345D2008EC763 /* SwipeRight.mp4 */; };
+		A60FB85E1BA345D3008EC763 /* SwipeUp.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB8501BA345D2008EC763 /* SwipeUp.mp4 */; };
+		A60FB85F1BA345D3008EC763 /* TabStair.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB8511BA345D2008EC763 /* TabStair.mp4 */; };
+		A60FB8601BA345D3008EC763 /* Zoom.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A60FB8521BA345D2008EC763 /* Zoom.mp4 */; };
 		A62C1ADB1B9EEF5900898F51 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A62C1AD91B9EEF5900898F51 /* iTunesArtwork.png */; };
 		A62C1ADC1B9EEF5900898F51 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A62C1ADA1B9EEF5900898F51 /* iTunesArtwork@2x.png */; };
 		A677B1A01B8CDC740034F15B /* dPad-Down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A677B18F1B8CDC740034F15B /* dPad-Down@2x.png */; };
@@ -560,6 +574,20 @@
 		A602D9CC1B8C724300EA2879 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../BundledData/config; sourceTree = "<group>"; };
 		A602D9CD1B8C724300EA2879 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../BundledData/data; sourceTree = "<group>"; };
 		A602D9CE1B8C724300EA2879 /* lang */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lang; path = ../BundledData/lang; sourceTree = "<group>"; };
+		A60FB83E1BA345A1008EC763 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		A60FB8451BA345D2008EC763 /* 3FingersSwipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3FingersSwipe.mp4; path = ../BundledData/3FingersSwipe.mp4; sourceTree = "<group>"; };
+		A60FB8461BA345D2008EC763 /* ChangeLanguage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ChangeLanguage.mp4; path = ../BundledData/ChangeLanguage.mp4; sourceTree = "<group>"; };
+		A60FB8471BA345D2008EC763 /* ChangeTileset.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ChangeTileset.mp4; path = ../BundledData/ChangeTileset.mp4; sourceTree = "<group>"; };
+		A60FB8491BA345D2008EC763 /* ConfirmCancel.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ConfirmCancel.mp4; path = ../BundledData/ConfirmCancel.mp4; sourceTree = "<group>"; };
+		A60FB84A1BA345D2008EC763 /* DoubleSwipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DoubleSwipe.mp4; path = ../BundledData/DoubleSwipe.mp4; sourceTree = "<group>"; };
+		A60FB84B1BA345D2008EC763 /* DPad.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DPad.mp4; path = ../BundledData/DPad.mp4; sourceTree = "<group>"; };
+		A60FB84C1BA345D2008EC763 /* LongPress.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = LongPress.mp4; path = ../BundledData/LongPress.mp4; sourceTree = "<group>"; };
+		A60FB84D1BA345D2008EC763 /* PauseDrive.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = PauseDrive.mp4; path = ../BundledData/PauseDrive.mp4; sourceTree = "<group>"; };
+		A60FB84E1BA345D2008EC763 /* SwipeLeft.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = SwipeLeft.mp4; path = ../BundledData/SwipeLeft.mp4; sourceTree = "<group>"; };
+		A60FB84F1BA345D2008EC763 /* SwipeRight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = SwipeRight.mp4; path = ../BundledData/SwipeRight.mp4; sourceTree = "<group>"; };
+		A60FB8501BA345D2008EC763 /* SwipeUp.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = SwipeUp.mp4; path = ../BundledData/SwipeUp.mp4; sourceTree = "<group>"; };
+		A60FB8511BA345D2008EC763 /* TabStair.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = TabStair.mp4; path = ../BundledData/TabStair.mp4; sourceTree = "<group>"; };
+		A60FB8521BA345D2008EC763 /* Zoom.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zoom.mp4; path = ../BundledData/Zoom.mp4; sourceTree = "<group>"; };
 		A62C1AD91B9EEF5900898F51 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		A62C1ADA1B9EEF5900898F51 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		A677B18F1B8CDC740034F15B /* dPad-Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dPad-Down@2x.png"; sourceTree = "<group>"; };
@@ -593,6 +621,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60FB83F1BA345A1008EC763 /* MediaPlayer.framework in Frameworks */,
 				A6D6A67C1B8EFC4B00BCD61C /* AVFoundation.framework in Frameworks */,
 				A602D8071B8C694100EA2879 /* UIKit.framework in Frameworks */,
 				A602D7FC1B8C682C00EA2879 /* Accelerate.framework in Frameworks */,
@@ -626,6 +655,7 @@
 		A602D7A21B8C638300EA2879 = {
 			isa = PBXGroup;
 			children = (
+				A60FB83E1BA345A1008EC763 /* MediaPlayer.framework */,
 				A677B18E1B8CDC740034F15B /* Resources */,
 				A602D7AD1B8C638300EA2879 /* Cataclysm-Dark-Days-Ahead */,
 				A602D7C71B8C638400EA2879 /* Cataclysm-Dark-Days-AheadTests */,
@@ -1047,6 +1077,19 @@
 		A602D9CB1B8C721F00EA2879 /* BundledData */ = {
 			isa = PBXGroup;
 			children = (
+				A60FB8451BA345D2008EC763 /* 3FingersSwipe.mp4 */,
+				A60FB8461BA345D2008EC763 /* ChangeLanguage.mp4 */,
+				A60FB8471BA345D2008EC763 /* ChangeTileset.mp4 */,
+				A60FB8491BA345D2008EC763 /* ConfirmCancel.mp4 */,
+				A60FB84A1BA345D2008EC763 /* DoubleSwipe.mp4 */,
+				A60FB84B1BA345D2008EC763 /* DPad.mp4 */,
+				A60FB84C1BA345D2008EC763 /* LongPress.mp4 */,
+				A60FB84D1BA345D2008EC763 /* PauseDrive.mp4 */,
+				A60FB84E1BA345D2008EC763 /* SwipeLeft.mp4 */,
+				A60FB84F1BA345D2008EC763 /* SwipeRight.mp4 */,
+				A60FB8501BA345D2008EC763 /* SwipeUp.mp4 */,
+				A60FB8511BA345D2008EC763 /* TabStair.mp4 */,
+				A60FB8521BA345D2008EC763 /* Zoom.mp4 */,
 				A6BBC8EE1B90455200E31621 /* DTA_Eminor_Spheres.wav */,
 				A6BBC8EF1B90455200E31621 /* StabStringsCinematic_ZA02.520.wav */,
 				A602D9CC1B8C724300EA2879 /* config */,
@@ -1233,32 +1276,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				A602D9CF1B8C724300EA2879 /* config in Resources */,
+				A60FB8531BA345D3008EC763 /* 3FingersSwipe.mp4 in Resources */,
 				A677B1B01B8CDC740034F15B /* Yes_Touched@2x.png in Resources */,
 				A677B1AA1B8CDC740034F15B /* Next_Touched@2x.png in Resources */,
+				A60FB8571BA345D3008EC763 /* ConfirmCancel.mp4 in Resources */,
 				A677B1A71B8CDC740034F15B /* dPad-UpLeft@2x.png in Resources */,
 				A602D7BA1B8C638300EA2879 /* Main.storyboard in Resources */,
+				A60FB85D1BA345D3008EC763 /* SwipeRight.mp4 in Resources */,
 				A677B1A11B8CDC740034F15B /* dPad-DownLeft@2x.png in Resources */,
+				A60FB85E1BA345D3008EC763 /* SwipeUp.mp4 in Resources */,
 				A62C1ADB1B9EEF5900898F51 /* iTunesArtwork.png in Resources */,
 				A677B1A01B8CDC740034F15B /* dPad-Down@2x.png in Resources */,
 				A677B1A91B8CDC740034F15B /* Next@2x.png in Resources */,
 				A6BBC8F01B90455200E31621 /* DTA_Eminor_Spheres.wav in Resources */,
 				A602D9BD1B8C6A6E00EA2879 /* version.cmake in Resources */,
+				A60FB8551BA345D3008EC763 /* ChangeTileset.mp4 in Resources */,
+				A60FB85A1BA345D3008EC763 /* LongPress.mp4 in Resources */,
 				A602D9D01B8C724300EA2879 /* data in Resources */,
 				A677B1AC1B8CDC740034F15B /* No_Touched@2x.png in Resources */,
 				A677B1A81B8CDC740034F15B /* dPad-UpRight@2x.png in Resources */,
 				A602D9701B8C6A6E00EA2879 /* generate_bindings.lua in Resources */,
+				A60FB85B1BA345D3008EC763 /* PauseDrive.mp4 in Resources */,
 				A602D96F1B8C6A6E00EA2879 /* CMakeLists.txt in Resources */,
 				A677B1A51B8CDC740034F15B /* dPad-Right@2x.png in Resources */,
 				A677B1A41B8CDC740034F15B /* dPad-None@2x.png in Resources */,
 				A602D9D11B8C724300EA2879 /* lang in Resources */,
+				A60FB85C1BA345D3008EC763 /* SwipeLeft.mp4 in Resources */,
 				A602D7BF1B8C638300EA2879 /* LaunchScreen.xib in Resources */,
+				A60FB8591BA345D3008EC763 /* DPad.mp4 in Resources */,
 				A62C1ADC1B9EEF5900898F51 /* iTunesArtwork@2x.png in Resources */,
+				A60FB8601BA345D3008EC763 /* Zoom.mp4 in Resources */,
+				A60FB8541BA345D3008EC763 /* ChangeLanguage.mp4 in Resources */,
 				A677B1AD1B8CDC740034F15B /* Prev@2x.png in Resources */,
 				A6BBC8F11B90455200E31621 /* StabStringsCinematic_ZA02.520.wav in Resources */,
 				A602D7BC1B8C638300EA2879 /* Images.xcassets in Resources */,
 				A677B1A21B8CDC740034F15B /* dPad-DownRight@2x.png in Resources */,
 				A677B1AE1B8CDC740034F15B /* Prev_Touched@2x.png in Resources */,
+				A60FB85F1BA345D3008EC763 /* TabStair.mp4 in Resources */,
 				A602D9BF1B8C6A6E00EA2879 /* version.h.in in Resources */,
+				A60FB8581BA345D3008EC763 /* DoubleSwipe.mp4 in Resources */,
 				A677B1AB1B8CDC740034F15B /* No@2x.png in Resources */,
 				A677B1A61B8CDC740034F15B /* dPad-Up@2x.png in Resources */,
 				A677B1AF1B8CDC740034F15B /* Yes@2x.png in Resources */,
