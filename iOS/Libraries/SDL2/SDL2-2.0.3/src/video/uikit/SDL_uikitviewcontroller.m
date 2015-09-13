@@ -965,6 +965,7 @@ enum
     [self stringForDirection:direction];
     //NSLog(@"Changing direction to: %@", [self stringForDirection:direction]);
     //[self updateDirectionLabel];
+    
 }
 
 - (void)dPadDidReleaseDirection:(JSDPad *)dpad
@@ -1186,11 +1187,11 @@ enum
     MYIntroductionPanel *panelCredits= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Credits" description:@"Original author:    Project Manager:    Website/Forum:\nWhales (retired)    KevinGranade        GlyphGryph\n\nCurrent Main Developers/Github Managers:\nKevinGranade, Rivet-the-Zombie, BevapDin, Coolthulu, i2amroy\n\nCataclysm:Dark Days Ahead is the result of contributions from over 300 volunteers. You can download compiled versions of Cataclysm DDA for Linux, Mac and Windows systems for free at http://en.cataclysmdda.com\n\nFor a full list of contributors please see:\nhttps://github.com/CleverRaven/Cataclysm-DDA/contributors\nCataclysm: Dark Days Ahead is released under CC-BY-SA 3.0." image:nil];
     
     
-    MYIntroductionPanel *panelChangeLanguage= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Change Language" description:@"Goto Options->Interface->Language to change language." video:@"ChangeLanguage"];
+    MYIntroductionPanel *panelChangeLanguage= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Change Language" description:@"Go to Options->Interface->Language to change language." video:@"ChangeLanguage"];
     
-    MYIntroductionPanel *panelChangeTileSet= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Change Tileset" description:@"Goto Options->Interface->Graphics->Choose tileset to change tileset." video:@"ChangeTileset"];
+    MYIntroductionPanel *panelChangeTileSet= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"How To Change Tileset" description:@"Go to Options->Interface->Graphics->Choose tileset to change tileset." video:@"ChangeTileset"];
     
-    MYIntroductionPanel *panelBeta1= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"About iOS Version" description:@"This iOS beta is based on \n\n\n\nAll sounds in this beta will be replaced in the final version.\n\n\n\nPlease report bugs/issues in the forum at http://dancingbottle.com/" image:nil];
+    MYIntroductionPanel *panelBeta1= [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"About iOS Version" description:@"This beta version is brought you by Dancing Bottle.\n\nPlease report bugs/issues in the forum at http://dancingbottle.com/" image:nil];
     
     
     //[introductionView setBackgroundColor:[UIColor blackColor]];
@@ -1213,7 +1214,8 @@ enum
                                                      panelGesturesTripleSwipe,
                                                      panelChangeLanguage,
                                                      panelChangeTileSet,
-                                                     panelCredits ]];
+                                                     panelCredits,
+                                                     panelBeta1 ]];
     [self.view addSubview:introductionView];
 
 }
@@ -1229,6 +1231,17 @@ enum
     [soundPlayer play];
     
     //[self doVolumeFade2];
+    
+    SDL_WindowData *data = self->window->driverdata;
+    SDL_VideoDisplay *display = SDL_GetDisplayForWindow(self->window);
+    SDL_DisplayModeData *displaymodedata = (SDL_DisplayModeData *) display->current_mode.driverdata;
+    const CGSize size = data->view.bounds.size;
+    int w, h;
+    
+    w = (int)(size.width * displaymodedata->scale);
+    h = (int)(size.height * displaymodedata->scale);
+    
+    SDL_SendWindowEvent(self->window, SDL_WINDOWEVENT_EXPOSED, w, h);
 }
 
 -(void)introduction:(MYBlurIntroductionView *)introductionView didChangeToPanel:(MYIntroductionPanel *)panel withIndex:(NSInteger)panelIndex
