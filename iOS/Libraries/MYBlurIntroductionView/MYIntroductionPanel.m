@@ -9,6 +9,7 @@
 #import "MYIntroductionPanel.h"
 
 #import <MediaPlayer/MediaPlayer.h>
+#import "SDVersion.h"
 
 @interface MYIntroductionPanel ()
 
@@ -108,9 +109,57 @@
 }
 
 -(void)initializeConstants{
-    kTitleFont = [UIFont boldSystemFontOfSize:21];
+    if ( [SDVersion deviceSize] == Screen4inch)
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:22];
+        kDescriptionFont = [UIFont systemFontOfSize:14];
+    }
+    else if ( [SDVersion deviceSize] == Screen3Dot5inch)
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:21];
+        kDescriptionFont = [UIFont systemFontOfSize:14];
+    }
+    else if ( [SDVersion deviceSize] == Screen4Dot7inch)
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:24];
+        kDescriptionFont = [UIFont systemFontOfSize:16];
+    }
+    else if ( [SDVersion deviceSize] == Screen5Dot5inch)
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:28];
+        kDescriptionFont = [UIFont systemFontOfSize:20];
+    }
+    else if( [SDVersion deviceVersion] == iPad2 )
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:48];
+        kDescriptionFont = [UIFont systemFontOfSize:32];
+    }
+    else if( [SDVersion deviceVersion] == iPadMini )
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:48];
+        kDescriptionFont = [UIFont systemFontOfSize:32];
+    }
+    else if( [SDVersion deviceVersion] == iPadAir )
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:96];
+        kDescriptionFont = [UIFont systemFontOfSize:64];
+    }
+    else if( [SDVersion deviceVersion] == iPadMini2 )
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:96];
+        kDescriptionFont = [UIFont systemFontOfSize:64];
+    }
+    else
+    {
+        kTitleFont = [UIFont boldSystemFontOfSize:22];
+        kDescriptionFont = [UIFont systemFontOfSize:14];
+    }
+    
+    
+    
+    
     kTitleTextColor = [UIColor whiteColor];
-    kDescriptionFont = [UIFont systemFontOfSize:14];
+    
     kDescriptionTextColor = [UIColor whiteColor];
     kSeparatorLineColor = [UIColor colorWithWhite:0 alpha:0.1];
     
