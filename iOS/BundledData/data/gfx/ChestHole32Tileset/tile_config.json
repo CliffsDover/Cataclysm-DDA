@@ -1877,6 +1877,84 @@
           "rotates": false
         },
         {
+          "id": "bikini_bottom",
+          "fg": 3578,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "overlay_worn_bikini_bottom",
+          "fg": 3579,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "birchbark",
+          "fg": 3580,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "long_glove_white",
+          "fg": 3581,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "quiver_birchbark",
+          "fg": 3582,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "quiver_large_birchbark",
+          "fg": 3583,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "shoes_birchbark",
+          "fg": 3584,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "gown",
+          "fg": 3585,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "thigh_high_boots",
+          "fg": 3586,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "willowbark",
+          "fg": 3587,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "overlay_worn_gown",
+          "fg": 3588,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "overlay_worn_thigh_high_boots",
+          "fg": 3589,
+          "bg": 632,
+          "rotates": false
+        },
+        {
+          "id": "overlay_worn_long_glove_white",
+          "fg": 3590,
+          "bg": 632,
+          "rotates": false
+        },
+        {
           "id": "bikini_top_fur",
           "fg": 263,
           "bg": 632,
@@ -20220,6 +20298,42 @@
         {
           "id": "t_tree_birch_season_winter",
           "fg": 3570,
+          "bg": 669,
+          "rotates": false
+        },
+        {
+          "id": "t_tree_willow_harvested",
+          "fg": 3572,
+          "bg": 669,
+          "rotates": false
+        },
+        {
+          "id": "t_tree_willow_harvested_season_autumn",
+          "fg": 3573,
+          "bg": 669,
+          "rotates": false
+        },
+        {
+          "id": "t_tree_willow_harvested_season_winter",
+          "fg": 3574,
+          "bg": 669,
+          "rotates": false
+        },
+        {
+          "id": "t_tree_birch_harvested_season_autumn",
+          "fg": 3575,
+          "bg": 669,
+          "rotates": false
+        },
+        {
+          "id": "t_tree_birch_harvested",
+          "fg": 3576,
+          "bg": 669,
+          "rotates": false
+        },
+        {
+          "id": "t_tree_birch_harvested_season_winter",
+          "fg": 3577,
           "bg": 669,
           "rotates": false
         },
