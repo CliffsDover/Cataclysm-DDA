@@ -1,0 +1,9 @@
+#RETRO ASCII TILESET
+#Name of the tileset
+NAME: retroascii30
+#Viewing (Option) name of the tileset
+VIEW: RetroASCII30
+#JSON Path - Default of gfx/tile_config.json
+JSON: tile_config.json
+#Tileset Path - Default of gfx/tinytile.png
+TILESET: retroasciitiles.png
