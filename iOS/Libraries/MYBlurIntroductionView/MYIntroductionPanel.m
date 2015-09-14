@@ -141,13 +141,13 @@
     }
     else if( [SDVersion deviceVersion] == iPadAir )
     {
-        kTitleFont = [UIFont boldSystemFontOfSize:96];
-        kDescriptionFont = [UIFont systemFontOfSize:64];
+        kTitleFont = [UIFont boldSystemFontOfSize:48];
+        kDescriptionFont = [UIFont systemFontOfSize:32];
     }
     else if( [SDVersion deviceVersion] == iPadMini2 )
     {
-        kTitleFont = [UIFont boldSystemFontOfSize:96];
-        kDescriptionFont = [UIFont systemFontOfSize:64];
+        kTitleFont = [UIFont boldSystemFontOfSize:48];
+        kDescriptionFont = [UIFont systemFontOfSize:32];
     }
     else
     {
@@ -291,7 +291,8 @@
             [[self PanelDescriptionLabel] setFrame:initialDescriptionFrame];
             //[[self PanelImageView] setAlpha:1];
             //[[self PanelImageView] setFrame:initialImageFrame];
-            [[self player] play];
+            if( [self player] )
+                [[self player] play];
         }];
     }];
 }
