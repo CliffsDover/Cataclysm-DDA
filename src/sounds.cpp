@@ -888,7 +888,7 @@ void sfx::do_footstep() {
             ter_type( "t_chainfence_h" ),
             ter_type( "t_chainfence_v" ),
         };
-        /*if( !g->u.wearing_something_on( bp_foot_l ) ) {
+        if( !g->u.wearing_something_on( bp_foot_l ) ) {
             play_variant_sound( "plmove", "walk_barefoot", heard_volume, 0, 0.8, 1.2 );
             start_sfx_timestamp = std::chrono::high_resolution_clock::now();
             return;
@@ -912,7 +912,7 @@ void sfx::do_footstep() {
             play_variant_sound( "plmove", "clear_obstacle", heard_volume, 0, 0.8, 1.2 );
             start_sfx_timestamp = std::chrono::high_resolution_clock::now();
             return;
-        } else*/ {
+        } else {
             play_variant_sound( "plmove", "walk_tarmac", heard_volume, 0, 1.2, 1.2 );
             start_sfx_timestamp = std::chrono::high_resolution_clock::now();
             return;
