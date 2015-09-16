@@ -19,7 +19,7 @@
 @property (nonatomic, retain) UILabel *PanelTitleLabel;
 @property (nonatomic, retain) UILabel *PanelDescriptionLabel;
 @property (nonatomic, retain) UIView *PanelSeparatorLine;
-@property (nonatomic, retain) UIImageView *PanelImageView;
+//@property (nonatomic, retain) UIImageView *PanelImageView;
 
 @property (nonatomic, assign) BOOL isCustomPanel;
 @property (nonatomic, assign) BOOL hasCustomAnimation;
@@ -90,7 +90,7 @@
         self.PanelHeaderView = headerView;
         self.PanelTitle = title;
         self.PanelDescription = description;
-        self.PanelImageView = [[UIImageView alloc] initWithImage:image];
+//        self.PanelImageView = [[UIImageView alloc] initWithImage:image];
         [self buildPanelWithFrame:frame];
     }
     return self;
@@ -228,12 +228,12 @@
     runningYOffset += panelDescriptionHeight + kDescriptionImagePadding;
     
     //Add image, if there is room
-    if (self.PanelImageView.image) {
-        self.PanelImageView.frame = CGRectMake(kLeftRightMargins, runningYOffset, self.frame.size.width - 2*kLeftRightMargins, self.frame.size.height - runningYOffset - kBottomPadding);
-        self.PanelImageView.contentMode = UIViewContentModeCenter;
-        self.PanelImageView.clipsToBounds = YES;
-        [self addSubview:self.PanelImageView];
-    }
+//    if (self.PanelImageView.image) {
+//        self.PanelImageView.frame = CGRectMake(kLeftRightMargins, runningYOffset, self.frame.size.width - 2*kLeftRightMargins, self.frame.size.height - runningYOffset - kBottomPadding);
+//        self.PanelImageView.contentMode = UIViewContentModeCenter;
+//        self.PanelImageView.clipsToBounds = YES;
+//        [self addSubview:self.PanelImageView];
+//    }
 
     // If this is a custom panel, set the has Custom animation boolean
     if (self.isCustomPanel == YES) {
@@ -249,7 +249,7 @@
     if (_PanelHeaderView) {
         _PanelHeaderView.alpha = 0;
     }
-    _PanelImageView.alpha = 0;
+//    _PanelImageView.alpha = 0;
     [_player stop];
 }
 

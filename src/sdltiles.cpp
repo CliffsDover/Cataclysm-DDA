@@ -289,11 +289,12 @@ int HandleAppEvents(void *userdata, SDL_Event *event)
              */
             ReleaseSounds();
             return 0;
-//        case SDL_APP_WILLENTERBACKGROUND:
-//            /* Prepare your app to go into the background.  Stop loops, etc.
-//             This gets called when the user hits the home button, or gets a call.
-//             */
-//            return 0;
+        case SDL_APP_WILLENTERBACKGROUND:
+            /* Prepare your app to go into the background.  Stop loops, etc.
+             This gets called when the user hits the home button, or gets a call.
+             */
+            ReleaseSounds();
+            return 0;
 //        case SDL_APP_DIDENTERBACKGROUND:
 //            /* This will get called if the user accepted whatever sent your app to the background.
 //             If the user got a phone call and canceled it, you'll instead get an    SDL_APP_DIDENTERFOREGROUND event and restart your loops.
